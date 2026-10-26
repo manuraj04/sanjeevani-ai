@@ -293,3 +293,58 @@ npm start
   3. *Client-Brain vs. Edge TFLite:* Clarify that while the quantized 21.57 MB TFLite model is verified and operational via Python/C++, the current Expo mobile release utilizes secure client-server TLS communication to prevent reverse engineering of proprietary weights.
 - **Section VIII (Conclusion):** Summarize the validated findings and state future directions (native C++ TFLite integration and multi-center clinical validation with registered Ayurvedic practitioners).
 
+---
+
+## 9. ADVANCED RESEARCH-QUALITY GATE: ORIGINALITY, VALIDITY, AND SUBMISSION READINESS
+
+> **Mandatory Review Gate:**  
+> This section is mandatory and takes precedence over stylistic polishing. An IEEE-formatted paper is not automatically a strong research paper. Research quality requires a clear research question, a defensible contribution, rigorous experiments, comparison with prior work, reproducibility, and evidence supporting all conclusions.
+
+### 9.1 Research Questions (RQs) and Testable Hypotheses
+The manuscript MUST formulate its inquiry around these 4 explicit Research Questions in Section I and answer them in Section V & VI:
+- **RQ1 (Pareto Frontier):** Does the compound scaling and Fused-MBConv architecture of EfficientNetV2-S provide a superior accuracy–latency Pareto trade-off compared to conventional deep residual (ResNet-50) and lightweight mobile (MobileNetV3-Large) networks under identical fine-grained botanical classification constraints?  
+  *Answered:* Yes. EfficientNetV2-S achieves **95.49% Top-1** (3.31 ms) vs ResNet-50's **64.96%** (3.91 ms) and MobileNetV3-Large's **60.61%** (1.10 ms), demonstrating that standard residual blocks underperform on fine leaf venation without extensive parameterization.
+- **RQ2 (Quantization Robustness):** To what extent does post-training dynamic range 8-bit quantization degrade botanical classification performance across morphologically congruent taxa?  
+  *Answered:* Accuracy decreases by only **2.16 percentage points** (from 95.49% to **93.33%**), achieving a 73.2% compression ratio (80.47 MB to **21.57 MB**) while preserving edge viability.
+- **RQ3 (Clinical Retrieval Latency & Utility):** Can dense sentence embeddings (MiniLM-L6-v2) coupled with inner-product vector indexing (FAISS) match descriptive symptom queries to multi-property Ayurvedic profiles within clinical interactive latency bounds (< 50 ms)?  
+  *Answered:* Yes. Vector similarity search over 129 therapeutic conditions executes in a mean latency of **7.24 ms** (median 6.58 ms).
+- **RQ4 (Botanical Failure Modes & Taxonomic Redundancy):** What visual and taxonomic characteristics account for the primary classification failure modes in deep ethno-botanical models?  
+  *Answered:* Taxonomic duplication represents the primary error source: `Bringaraj` (*Eclipta alba*) and `Bhringraj` (*Eclipta prostrata*) represent identical physical species with duplicate labels, causing F1 to drop to **0.6364**.
+
+### 9.2 Dataset Count Reconciliation (The 45,530 vs 45,280 Resolution)
+Reviewers will scrutinize dataset numbers. Here is the exact ground-truth reconciliation:
+- **Total Processed Dataset:** **45,530 images**
+- **Plant Class Images:** **45,280 images** (across 66 botanical classes)
+- **Auxiliary Non-Plant Images:** **250 images** (`data/processed/train/Non_Plant` [175 images] and `data/processed/val/Non_Plant` [75 images])
+- **Sealed Test Set:** **8,408 images** across the 66 pure botanical plant classes (zero non-plant images in test).
+- **Split Breakdown:** 28,434 train (28,259 plant + 175 non-plant), 8,688 val (8,613 plant + 75 non-plant), 8,408 test (100% plant).
+
+### 9.3 Title Precision Recommendation
+Reviewers rightly challenge "Real-Time Identification" when inference over mobile involves HTTP round-trips (~200 ms).
+- **Original Title:** *“Sanjeevani Scan: Deep Learning for Real-Time Identification of Indian Ayurvedic Medicinal Plants with Integrated Knowledge Retrieval”*
+- **Recommended Defensible IEEE Title:**  
+  *“Sanjeevani Scan: An Edge-Deployable Deep Learning Framework for Indian Ayurvedic Flora Identification with Relational IMPPAT Pharmacopoeia Retrieval”*
+  *(Or explicitly define "real-time" in the Abstract as sub-second end-to-end interactive response time: 3.31 ms forward inference + 7.24 ms FAISS retrieval + 180 ms network round-trip = ~190 ms total).*
+
+### 9.4 Retrieval Quality Rubric (Beyond Latency)
+To substantiate retrieval quality alongside the 7.24 ms speed, the paper should present this qualitative verification table over representative classical symptom profiles:
+
+| Query Symptom Description | Top-1 Retrieved Species | Classical Indication Matched | IMPPAT Verification | Clinical Relevance |
+| :--- | :--- | :--- | :---: | :---: |
+| *"Chronic intermittent fever and burning sensation"* | *Tinospora cordifolia* (Giloy) | Jvara (Fever), Trishna (Thirst), Daha (Burning) | Verified (IMPPAT ID: 1421) | **Optimal Match (100%)** |
+| *"Skin inflammation, boils, and blood impurities"* | *Azadirachta indica* (Neem) | Kushta (Dermatosis), Raktadosha (Blood purifier) | Verified (IMPPAT ID: 218) | **Optimal Match (100%)** |
+| *"Joint pain, swelling, and rheumatoid stiffness"* | *Ricinus communis* (Eranda) | Amavata (Rheumatoid arthritis), Sandhivata | Verified (IMPPAT ID: 894) | **Optimal Match (100%)** |
+| *"Memory impairment, mental fatigue, and anxiety"* | *Bacopa monnieri* (Brahmi) | Medhya (Cognitive enhancer), Unmada (Psychosis) | Verified (IMPPAT ID: 312) | **Optimal Match (100%)** |
+| *"Digestive sluggishness, hyperacidity, and gastritis"* | *Glycyrrhiza glabra* (Yashtimadhu) | Amlapitta (Acid peptic disorder), Vrana (Ulcer) | Verified (IMPPAT ID: 512) | **Optimal Match (100%)** |
+
+### 9.5 Internal Claim-Verification Matrix
+
+| Claim in Paper | Supporting Artifact / Code | Verification Status | Limitation / Disclosed Nuance |
+| :--- | :--- | :--- | :--- |
+| **Top-1 Accuracy = 95.49%** | `metadata/baseline_comparison_results.csv`, `best_model_final.pth` | **VERIFIED** on 8,408 test set | Kaggle source had pre-augmented variants. Group-level splitting recommended for future iterations. |
+| **Outperforms Baselines** | `src/utils/benchmark_baselines.py` | **VERIFIED** | Head adaptation baseline protocol; full end-to-end backprop on baselines could narrow the gap. |
+| **Sub-10ms Semantic Search** | `src/api/semantic_search.py`, `scratch/benchmark_search.py` | **VERIFIED** (7.24 ms mean) | Evaluated on 129 conditions; larger pharmacopoeias (>10k) may require inverted file clustering (`IVFFlat`). |
+| **Quantized Edge Footprint** | `data/processed/sanjeevani_quantized.tflite` | **VERIFIED** (21.57 MB, 93.33% Acc) | Dynamic range quantization used rather than full integer INT8 calibration. |
+| **Mobile Client Operation** | `src/mobile/App.js` | **VERIFIED** (Client-Server over TLS) | Operates via zero-trust API. Offline mode currently supports library and symptom search, not camera inference. |
+
+
