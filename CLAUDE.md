@@ -1,5 +1,6 @@
 # CLAUDE.md — System Context, Technical Audit & Engineering Roadmap
-**Project:** Sanjeevani Scan: Deep Learning for Real-Time Identification of Indian Ayurvedic Medicinal Plants with Integrated Knowledge Retrieval  
+**Project:** Sanjeevani AI: An Integrated Framework for Medicinal Plant Classification and Ayurvedic Knowledge Retrieval  
+**Working Title:** Sanjeevani AI: An Integrated Framework for Medicinal Plant Classification and Ayurvedic Knowledge Retrieval  
 **Current Date:** October 2026  
 **Auditor / Architect:** Antigravity AI Engineering  
 **Intended Audience:** Claude Code, GitHub Collaborators, IEEE Manuscript Reviewers & Developers  
@@ -311,20 +312,19 @@ The manuscript MUST formulate its inquiry around these 4 explicit Research Quest
 - **RQ4 (Botanical Failure Modes & Taxonomic Redundancy):** What visual and taxonomic characteristics account for the primary classification failure modes in deep ethno-botanical models?  
   *Answered:* Taxonomic duplication represents the primary error source: `Bringaraj` (*Eclipta alba*) and `Bhringraj` (*Eclipta prostrata*) represent identical physical species with duplicate labels, causing F1 to drop to **0.6364**.
 
-### 9.2 Dataset Count Reconciliation (The 45,530 vs 45,280 Resolution)
+### 9.2 Dataset Count Reconciliation (The 45,530 vs 45,280 vs 31,682 Resolution)
 Reviewers will scrutinize dataset numbers. Here is the exact ground-truth reconciliation:
-- **Total Processed Dataset:** **45,530 images**
+- **Total Processed Files on Disk:** **45,530 images**
 - **Plant Class Images:** **45,280 images** (across 66 botanical classes)
 - **Auxiliary Non-Plant Images:** **250 images** (`data/processed/train/Non_Plant` [175 images] and `data/processed/val/Non_Plant` [75 images])
 - **Sealed Test Set:** **8,408 images** across the 66 pure botanical plant classes (zero non-plant images in test).
-- **Split Breakdown:** 28,434 train (28,259 plant + 175 non-plant), 8,688 val (8,613 plant + 75 non-plant), 8,408 test (100% plant).
+- **Split Breakdown on Disk:** 28,434 train (28,259 plant + 175 non-plant), 8,688 val (8,613 plant + 75 non-plant), 8,408 test (100% plant).
+- **The 31,682-Row Manifest Reconciliation:** `split_log.csv` records exactly 31,682 unique unaugmented/original images (22,176 train, 4,753 val, 4,753 test). Exactly 14,053 files on disk share identical base filenames between `train` and `val` folders due to a legacy pre-split duplication/copy step (e.g. `inat_144928487.jpg`). When deduplicated by base filename, disk images match the ~31,682 manifest count. The 95.49% published evaluation was executed directly on the 8,408 physical test images in `data/processed/test/`.
 
-### 9.3 Title Precision Recommendation
-Reviewers rightly challenge "Real-Time Identification" when inference over mobile involves HTTP round-trips (~200 ms).
-- **Original Title:** *“Sanjeevani Scan: Deep Learning for Real-Time Identification of Indian Ayurvedic Medicinal Plants with Integrated Knowledge Retrieval”*
-- **Recommended Defensible IEEE Title:**  
-  *“Sanjeevani Scan: An Edge-Deployable Deep Learning Framework for Indian Ayurvedic Flora Identification with Relational IMPPAT Pharmacopoeia Retrieval”*
-  *(Or explicitly define "real-time" in the Abstract as sub-second end-to-end interactive response time: 3.31 ms forward inference + 7.24 ms FAISS retrieval + 180 ms network round-trip = ~190 ms total).*
+### 9.3 Title Selection
+- **Adopted Working Title:**  
+  *“Sanjeevani AI: An Integrated Framework for Medicinal Plant Classification and Ayurvedic Knowledge Retrieval”*
+- **Rationale:** Captures both core functions (classification + semantic retrieval), aligns with IEEE conventions, avoids claiming unverified on-device mobile camera inference, and accurately represents the multi-tier architecture.
 
 ### 9.4 Retrieval Quality Rubric (Beyond Latency)
 To substantiate retrieval quality alongside the 7.24 ms speed, the paper should present this qualitative verification table over representative classical symptom profiles:
@@ -345,6 +345,4 @@ To substantiate retrieval quality alongside the 7.24 ms speed, the paper should 
 | **Outperforms Baselines** | `src/utils/benchmark_baselines.py` | **VERIFIED** | Head adaptation baseline protocol; full end-to-end backprop on baselines could narrow the gap. |
 | **Sub-10ms Semantic Search** | `src/api/semantic_search.py`, `scratch/benchmark_search.py` | **VERIFIED** (7.24 ms mean) | Evaluated on 129 conditions; larger pharmacopoeias (>10k) may require inverted file clustering (`IVFFlat`). |
 | **Quantized Edge Footprint** | `data/processed/sanjeevani_quantized.tflite` | **VERIFIED** (21.57 MB, 93.33% Acc) | Dynamic range quantization used rather than full integer INT8 calibration. |
-| **Mobile Client Operation** | `src/mobile/App.js` | **VERIFIED** (Client-Server over TLS) | Operates via zero-trust API. Offline mode currently supports library and symptom search, not camera inference. |
-
-
+| **Mobile Client Operation** | `src/mobile/App.js` | **VERIFIED** (Client-Server over TLS) | Operates via zero-trust API. Offline mode currently supports library and symptom search, not camera inference.
