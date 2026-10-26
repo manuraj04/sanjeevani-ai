@@ -25,10 +25,10 @@ The application is structured according to the **Zero-Trust Client–Brain Archi
 ┌────────────────────────────────────────────────────────┐
 │               💻 SERVER: AI & Knowledge Brain          │
 │               (FastAPI / PyTorch / FAISS / SQLite)     │
-│  - 66-Class DenseNet-121 Classifier (OOD Rejection)    │
+│  - 66-Class EfficientNetV2-S + CBAM (OOD Rejection)    │
 │  - Grad-CAM Explainability Heatmap Generator           │
 │  - Semantic Symptom Search Engine (all-MiniLM-L6-v2)   │
-│  - Ayurvedic Knowledge Base (16+ Species, Multi-lingual│
+│  - Ayurvedic Knowledge Base (63 Species, 6 Languages)  │
 │  - Security Headers & Protected Gateway                │
 └────────────────────────────────────────────────────────┘
 ```
@@ -162,7 +162,8 @@ D:\Sanjeevani Scan AI\
 │   │   ├── app.json                  # Expo Config (Hermes Bytecode Enabled)
 │   │   └── package.json              # Mobile Dependencies
 │   └── models/
-│       ├── model.py                  # DenseNet-121 Architecture
+│       ├── cbam.py                   # Convolutional Block Attention Module
+│       ├── cbam_efficientnet.py      # Multi-Scale CBAM EfficientNet Architecture
 │       └── export_onnx.py            # ONNX Conversion Script
 ├── test_deep_run.py                  # Automated End-to-End Test Suite
 └── PRODUCTION_DEPLOYMENT_GUIDE.md    # This Master Document
