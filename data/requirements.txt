@@ -1,0 +1,42 @@
+# Sanjeevani Dataset Engineering — Python dependencies
+# Install via setup_env.bat  OR:
+#   python -m venv D:\sanjeevani_env
+#   D:\sanjeevani_env\Scripts\pip install -r requirements.txt
+#
+# IMPORTANT: numpy is pinned to 1.26.x — numpy 2.x DLLs are blocked
+# by this machine's Application Control policy. Do NOT upgrade numpy.
+
+# Image processing
+Pillow>=10.0.0
+opencv-python==4.9.0.80    # last version that accepts numpy<2
+imagehash>=4.3.1
+
+# Data
+pandas>=2.0.0
+numpy==1.26.4               # pinned — 2.x blocked by Application Control policy
+scikit-learn>=1.3.0
+
+# Visualisation
+matplotlib>=3.7.0
+
+# Network / API
+requests>=2.31.0
+tqdm>=4.65.0
+
+# Kaggle API (requires ~/.kaggle/kaggle.json)
+kaggle>=1.5.16
+
+# Deep Learning (PyTorch)
+torch>=2.0.0
+torchvision>=0.15.0
+albumentations>=1.3.0
+pytorch-grad-cam>=0.2.7
+
+# Backend API
+fastapi>=0.100.0
+uvicorn>=0.23.0
+python-multipart>=0.0.6
+
+# Semantic Search
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2

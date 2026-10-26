@@ -1,0 +1,490 @@
+SANJEEVANI SCAN
+Deep Learning Based Medicinal Plant Identification & Ayurvedic Information System
+PROJECT REPORT DOCUMENT
+  ▸  Problem Statement
+  ▸  Existing Systems & Their Limitations
+  ▸  Proposed System — Sanjeevani Scan
+  ▸  System Methodology — End to End
+1. Problem Statement
+Core Problem
+India possesses one of the world's richest medicinal plant heritages, with over 8,000 documented species recognized in traditional Ayurvedic practice. Yet the accurate identification of these plants — a task that historically required decades of botanical expertise — remains inaccessible to the vast majority of citizens, rural healthcare workers, AYUSH practitioners, students, and researchers. Misidentification of medicinal plants can lead to ineffective or hazardous treatment outcomes, making this not merely an academic challenge but a public health concern.
+1.1 Context and Background
+India's traditional Ayurvedic system of medicine relies on precise knowledge of thousands of plant species, each with distinct therapeutic properties, active phytochemical compounds, Dosha interactions, and contraindications. The National AYUSH Mission and bodies like the Ministry of Ayush have been actively promoting Ayurvedic healthcare as a sustainable, culturally rooted alternative to synthetic medicine. However, a fundamental bottleneck persists: the lack of accessible, reliable, and technology-aided tools for plant identification.
+Today, the knowledge of medicinal plant identification is primarily held by a shrinking population of trained vaidyas, botanists, and experienced practitioners. There is no scalable mechanism for transferring this knowledge to the next generation of users, field workers, or consumers who use herbal products. Misidentified plants — particularly in forested or rural collection scenarios — have resulted in documented cases of medicinal substitution, adulteration, and adverse reactions.
+1.2 Specific Problem Gaps
+The following specific problems motivate the development of Sanjeevani Scan:
+Problem Area
+Detailed Description
+No Accessible Identification Tool for Indian Ayurvedic Plants
+While generic plant identification applications such as PlantNet and iNaturalist exist, none are optimized for the 2,500+ species used in Indian Ayurvedic medicine. These tools do not account for regional botanical variation, are not trained on Indian sub-species, and provide no Ayurvedic context alongside identification results.
+Absence of Ayurvedic Knowledge Integration
+No existing digital system automatically links a plant's visual identification to its Dosha profile (Vata, Pitta, Kapha), Rasa (taste), Guna (properties), therapeutic applications, phytochemical composition, and contraindications. This gap forces users to consult multiple disconnected sources even after successful identification.
+Manual Identification is Expert-Dependent and Non-Scalable
+Traditional identification requires physical examination by trained experts — a resource that is scarce, geographically concentrated in urban centers, and unavailable on demand. This creates a complete accessibility gap for rural communities, field researchers, and self-practitioners.
+Lack of Explainability in AI-Based Systems
+Existing deep learning approaches for plant identification operate as black boxes — they output a species name without indicating why or which visual features informed the decision. In the context of medicinal plants, where misidentification has clinical consequences, unexplained predictions erode trust and are clinically unacceptable.
+Offline Inaccessibility
+India's rural regions — where medicinal plant collection and use is most prevalent — often lack consistent internet connectivity. No existing system provides a fully functional, offline-capable plant identification tool for field deployment.
+No Symptom-to-Plant Reverse Discovery
+Existing tools only support plant-to-information lookup (identify first, then learn). No system enables the reverse: a user describing a health condition or symptom and receiving ranked Ayurvedic plant recommendations. This reverse lookup capability is essential for practitioners prescribing treatment.
+1.3 Problem Statement (Formal Definition)
+Formal Problem Statement
+The absence of an intelligent, explainable, and deployable system for the real-time identification of Indian Ayurvedic medicinal plants — coupled with the non-existence of any integrated platform linking plant visual recognition to structured Ayurvedic therapeutic knowledge — represents a critical unresolved challenge in the intersection of Artificial Intelligence, Ethnobotany, and Healthcare. This project addresses the need for a deep learning based, mobile-deployable system capable of accurately classifying medicinal plant species from leaf images, providing model-explainable inference through gradient-based visual attribution, and surfacing plant-specific Ayurvedic profiles from a curated knowledge base — all within a single, offline-capable, user-accessible application.
+1.4 Objectives Derived from the Problem
+Develop and curate a comprehensive, labelled dataset of 60–80 Indian Ayurvedic medicinal plant species by combining publicly available image repositories with targeted augmentation strategies.
+Design a Multi-Scale Attention CNN architecture incorporating Channel and Spatial Attention (CBAM) that achieves ≥87% Top-1 classification accuracy, outperforming baseline transfer learning models on the same dataset.
+Construct a structured Ayurvedic knowledge base linking each classified species to its Dosha profile, Rasa, Guna, pharmacological actions, therapeutic uses, phytochemical compounds, and known contraindications, sourced from IMPPAT and TKDL.
+Implement a reverse semantic retrieval system enabling users to query Ayurvedic plants by health condition or symptom using sentence-transformer based semantic similarity.
+Integrate Gradient-weighted Class Activation Mapping (Grad-CAM) into the inference pipeline to provide visual explanations for every classification result, displayed as a heatmap overlay on the scanned image.
+Build and deploy a cross-platform mobile application with real-time leaf scan capability, confidence-aware output, and full offline inference via a quantized TFLite model.
+Validate the system through structured user testing with practitioners, students, and botanists — measuring classification accuracy, knowledge retrieval relevance, and system usability.
+2. Existing Systems
+This section provides a structured analysis of currently available systems — both commercial applications and academic prototypes — that address plant identification or Ayurvedic knowledge retrieval. Each system is evaluated across key dimensions to establish its capabilities and limitations relative to the problem statement defined in Section 1.
+2.1 Commercial / Publicly Available Applications
+  PlantNet (Pl@ntNet)  
+Type
+Mobile Application / Web Service
+Developer
+INRIA, CIRAD, INRAE — France
+Purpose
+Crowdsourced plant identification using image matching against a global herbarium database.
+How It Works
+User photographs a plant organ (leaf, flower, fruit, bark). The image is compared against a visual index of known plant observations using a deep CNN feature extractor. Results are presented as a ranked species list with confidence scores.
+Strengths
+Global coverage — 30,000+ species
+Multi-organ input (leaf, flower, bark, fruit)
+Open API for research use
+Large and active contributor community
+Limitations
+Not trained on Indian Ayurvedic sub-species or regional varieties
+No Ayurvedic or medicinal knowledge associated with results
+Accuracy drops significantly for visually similar species in the same genus
+No offline mode; requires internet connectivity at all times
+No explainability — no indication of what visual feature drove the classification
+Accuracy Note
+~80% Top-1 for common species; drops for rare Indian species
+Core Gap
+Generic global tool — no Ayurvedic integration, no Indian species optimization
+  iNaturalist  
+Type
+Citizen Science Mobile Application
+Developer
+California Academy of Sciences & National Geographic
+Purpose
+Community-driven biodiversity observation and species identification platform.
+How It Works
+Users photograph organisms and submit observations. A deep learning model (using vision models trained on observations) provides automated ID suggestions. Community experts review and confirm identifications.
+Strengths
+Enormous dataset — 100M+ observations
+Strong community validation mechanism
+Taxonomically broad coverage
+Useful for research and biodiversity tracking
+Limitations
+Not a real-time identification tool — relies on community confirmation which can take hours to days
+Medicinal properties not surfaced — pure taxonomic system only
+No Ayurvedic context whatsoever
+Model not fine-tuned for Indian medicinal plants
+Requires internet; no offline functionality
+No confidence-aware fallback or re-scan prompt
+Accuracy Note
+Community validated; automated suggestions ~70–85% for common species
+Core Gap
+Research/observation platform, not a medicinal or Ayurvedic use case tool
+  PictureThis  
+Type
+Commercial Mobile Application
+Developer
+Glority Global Group Ltd.
+Purpose
+Real-time plant identification and basic care information for gardeners and hobbyists.
+How It Works
+Subscription-based app using deep learning CNN classification trained on a large proprietary plant image dataset. Results show plant name, basic description, and care tips.
+Strengths
+Fast and accurate for common garden and ornamental plants
+Clean, consumer-friendly UI
+Covers plant diseases alongside identification
+Limitations
+Subscription paywall — not accessible to rural communities or students
+No Indian Ayurvedic medicinal plant specialization
+No Dosha, Rasa, Guna, or therapeutic information
+No explainability features
+Proprietary — no API or research access
+Not optimized for field conditions, complex backgrounds, or rare Indian species
+Accuracy Note
+High for common plants (~90%); lower for rare Indian medicinal species
+Core Gap
+Commercial gardening tool — completely misaligned with Ayurvedic medicinal use case
+  LeafSnap  
+Type
+Mobile Application (Research Origin)
+Developer
+Columbia University, University of Maryland, Smithsonian Institution
+Purpose
+Tree species identification from leaf photographs, primarily for North American species.
+How It Works
+Computer vision-based identification using leaf shape, venation, and texture features extracted through image processing pipelines. Originally used non-deep-learning visual bag-of-words models; later updated with CNN features.
+Strengths
+Pioneer in plant identification technology
+Lab-quality identification for clean leaf scans
+Good shape and venation feature extraction methodology
+Limitations
+Coverage limited to North American tree species — no Indian plants
+Works only with clean white-background leaf scans
+Completely fails on field images with complex backgrounds
+No medicinal or Ayurvedic properties
+Development largely discontinued after ~2014; dataset is outdated
+Accuracy Note
+~70–96% on clean lab images; very low on field images
+Core Gap
+Outdated, geographically irrelevant, no medicinal context
+2.2 Academic Research Systems
+Beyond commercial applications, several academic prototypes have been developed specifically for medicinal plant identification. While these systems advance the state of the art in classification accuracy, they are uniformly limited in scope, deployment readiness, and knowledge integration.
+System
+What It Does
+Critical Gap
+AyurLeaf (2019)
+40-species Ayurvedic CNN classifier. Achieves 96.76% accuracy. No app, no knowledge base, no deployment.
+Classification only — no system beyond the model.
+DeepHerb (2021)
+Xception+SVM achieving 97%+ on 40 Indian herb species. Introduced the DeepHerb public dataset.
+Model benchmark only. No mobile, no Ayurvedic information output.
+Ayur-PlantNet (2023)
+100 Indian species with background segmentation. Hierarchical classification framework.
+Closest to a system — but no app released, no knowledge base, no XAI.
+Kavitha et al. (2024)
+Real-time CNN on 6 Indian species. 98.3% accuracy. Mentions mobile deployment.
+Only 6 species. No knowledge base. Too narrow for real-world use.
+PSR-LeafNet (2024)
+Multi-path 3-network fusion with MRMR feature selection for 15+ species.
+No deployment, no Ayurvedic knowledge, small species scope.
+2.3 Consolidated Gap Analysis
+The following matrix maps all existing systems against the functional requirements of the problem statement. An absence of a feature across ALL existing systems defines the justification for developing Sanjeevani Scan.
+Feature / Capability
+PlantNet
+iNaturalist
+PictureThis
+AyurLeaf
+Ayur-PlantNet
+Sanjeevani Scan (Proposed)
+Indian Ayurvedic species coverage
+Partial
+Partial
+Partial
+40 sp.
+100 sp.
+60–80 sp. (curated)
+Real-time leaf identification
+Yes
+No
+Yes
+Model only
+Model only
+Yes
+Explainability (Grad-CAM)
+No
+No
+No
+No
+No
+Yes ✓
+Ayurvedic knowledge base
+No
+No
+No
+No
+No
+Yes ✓
+Dosha / Rasa / Guna profiling
+No
+No
+No
+No
+No
+Yes ✓
+Symptom → Plant reverse lookup
+No
+No
+No
+No
+No
+Yes ✓
+Confidence-aware output
+Partial
+No
+No
+No
+No
+Yes ✓
+Offline mobile deployment
+No
+No
+No
+No
+Partial
+Yes ✓
+Open / Non-commercial access
+Yes
+Yes
+No
+Research
+Research
+Yes ✓
+3. Proposed System — Sanjeevani Scan
+System Overview
+Sanjeevani Scan is a deep learning powered, mobile-first, Ayurvedic plant identification and knowledge retrieval system. It enables users to scan any Indian medicinal plant leaf in real-time using their smartphone camera, receive an AI-generated species identification with visual explanation (Grad-CAM heatmap), and immediately access a structured Ayurvedic information profile — including Dosha compatibility, Rasa, Guna, therapeutic uses, active phytochemical compounds, and contraindications. The system additionally supports a reverse lookup mode where users can search for Ayurvedic plants by entering a health condition or symptom, receiving semantically ranked plant recommendations.
+3.1 System Architecture Overview
+Sanjeevani Scan is structured into four integrated layers: the Data Layer, the Intelligence Layer, the Knowledge Layer, and the Application Layer. Each layer is independently maintainable and communicates through well-defined APIs.
+Data Layer
+Curated, cleaned, and augmented image dataset of 60–80 Indian Ayurvedic medicinal plant species. Structured Ayurvedic knowledge base built from IMPPAT and TKDL, stored in a queryable SQLite or PostgreSQL database. Master CSV tracking all images, labels, splits, and verification status.
+Intelligence Layer
+Multi-Scale Attention CNN (primary classifier) + EfficientNetV2 baseline. Background removal pipeline (rembg/U2Net). Albumentations augmentation pipeline. Grad-CAM explainability module. Sentence-Transformer semantic search engine for symptom-to-plant retrieval. TFLite quantized model for offline mobile inference.
+API Layer
+FastAPI backend exposing: /predict (image → top-5 species + confidence), /explain (image → Grad-CAM heatmap), /plant/{id} (species → full Ayurvedic profile), /search (symptom text → ranked plant list). Deployed on cloud (Railway / AWS EC2) for online mode.
+Application Layer
+React Native cross-platform mobile application. Camera scan → real-time inference → result card with heatmap overlay. Swipeable Ayurvedic profile tabs (Overview, Dosha, Uses, Phytochemicals, Precautions). Offline mode using bundled TFLite model. Symptom search screen with ranked plant suggestions.
+3.2 Key Novel Contributions
+The following contributions distinguish Sanjeevani Scan from all existing systems reviewed in Section 2:
+  ◆  Multi-Scale Attention CNN Architecture
+A purpose-designed CNN incorporating Convolutional Block Attention Module (CBAM) blocks applied at multiple feature scales. This allows the model to selectively attend to diagnostically relevant leaf regions — venation patterns, leaf margins, surface texture — rather than relying on color or global shape alone. This architecture outperforms baseline transfer learning models on small-to-medium sized Indian medicinal plant datasets.
+  ◆  Integrated Ayurvedic Knowledge System
+A structured, query-linked database built from IMPPAT (1,742 plants, 9,596 phytochemicals) and TKDL (Government of India Traditional Knowledge Digital Library). Every classified species is linked to: Dosha compatibility, Rasa (taste), Guna (properties), Virya (potency), Vipaka (post-digestive effect), active phytochemical compounds, therapeutic indications, and contraindications.
+  ◆  Embedded Grad-CAM Explainability
+Every classification result is accompanied by a Grad-CAM heatmap overlay showing which regions of the scanned leaf contributed most to the model's prediction. This is the first system in the medicinal plant identification domain to surface this explanation directly in the application UI rather than as an offline analysis tool.
+  ◆  Semantic Symptom-to-Plant Reverse Lookup
+Using Sentence-BERT (all-MiniLM-L6-v2), the system encodes both user symptom queries and plant therapeutic descriptions into a shared semantic space. Cosine similarity retrieval returns the top-5 Ayurvedic plants most relevant to the described condition — enabling reverse discovery without requiring users to know a plant name upfront.
+  ◆  Confidence-Aware Inference with Re-Scan Prompts
+When the model's top-1 confidence falls below a 70% threshold, the application displays a clear visual warning and prompts the user to attempt re-scanning from a different angle or with better lighting. This prevents silent misidentification — a critical safety feature for medicinal plant contexts.
+  ◆  Offline-Capable Field Deployment
+The PyTorch model is exported to ONNX format and converted to a quantized TFLite model (target: <20 MB), bundled directly within the React Native application. Full species classification functions without internet access — making the system operable in forests, rural areas, and agricultural settings where connectivity is unreliable.
+3.3 System Components Detail
+3.3.1 Deep Learning Model — Multi-Scale Attention CNN
+The proposed Multi-Scale Attention CNN is built on top of an EfficientNetV2-S backbone (pretrained on ImageNet) with three key modifications:
+CBAM Attention Blocks inserted after EfficientNet feature stages 3, 5, and 7 — applying channel attention (what features matter) followed by spatial attention (where in the image those features are).
+Multi-scale feature fusion: feature maps from three different resolution levels (28×28, 14×14, 7×7) are extracted, upsampled to a common size, concatenated, and passed through a fusion head — allowing the model to simultaneously reason about fine texture (high-res) and global shape (low-res).
+Custom classification head: Dropout(0.4) → Linear(in, 512) → GELU → Dropout(0.3) → Linear(512, N_classes) with label smoothing (ε=0.1) applied to the CrossEntropy loss for improved calibration.
+3.3.2 Ayurvedic Knowledge Base Schema
+The knowledge base is structured as a relational database with the following core tables:
+Table
+Key Fields
+Source
+plants
+plant_id, species_name, botanical_name, family, region, habitat
+IMPPAT + TKDL
+ayurvedic_profile
+plant_id, dosha_effect, rasa, guna, virya, vipaka, prabhava
+TKDL / classical texts
+therapeutic_uses
+plant_id, condition, use_description, classical_reference
+IMPPAT + TKDL
+phytochemicals
+plant_id, compound_name, compound_class, pubchem_id, activity
+IMPPAT + PubChem
+contraindications
+plant_id, condition, severity, notes
+IMPPAT + literature
+plant_images
+image_id, plant_id, image_path, source, split, verified
+Dataset CSV
+3.3.3 Application User Flow
+The mobile application is designed around a minimal, four-screen user flow that eliminates unnecessary complexity:
+Home Screen
+Entry point with two primary actions: 'Scan a Leaf' and 'Search by Symptom'. Displays recently scanned plants as cards.
+Camera / Scan Screen
+Live camera feed with leaf-framing guide overlay. On capture: image is preprocessed locally (resize, normalize), passed to bundled TFLite model (offline) or API (online). Loading indicator while inference runs.
+Result Screen
+Displays: (a) Predicted species name with confidence ring visualization, (b) Grad-CAM heatmap overlay on scanned image, (c) Confidence warning banner if < 70%, (d) Swipeable tabs — Overview / Ayurvedic Profile / Uses & Remedies / Phytochemicals / Precautions.
+Search Screen
+Free-text input: 'Find plants for...' User enters health condition or symptom. Semantic search returns top-5 ranked plant cards with brief relevance summary. Tapping a card opens its full Ayurvedic profile (same Result Screen).
+4. Methodology
+The methodology of Sanjeevani Scan follows a structured, phase-gated development process comprising five major stages: Data Engineering, Model Development, Knowledge Base Construction, System Integration, and Evaluation. Each stage produces a verifiable deliverable and feeds directly into the next.
+4.1 Methodology Overview Diagram
+The following table represents the sequential methodology pipeline:
+Stage
+Name
+Key Activities
+Deliverable
+Stage 1
+Data Engineering
+Collect → Clean → Label → Augment → Split
+Verified, split dataset (70/15/15)
+Stage 2
+Model Development
+Baseline CNNs → Custom Attention CNN → Training → Ablation
+Trained model ≥87% Top-1 accuracy
+Stage 3
+Knowledge Construction
+IMPPAT/TKDL extraction → Schema design → Population → Validation
+Queryable Ayurvedic knowledge database
+Stage 4
+System Integration
+FastAPI backend → React Native app → Grad-CAM → Semantic search → TFLite
+Working end-to-end application
+Stage 5
+Evaluation
+Accuracy metrics → Confusion matrix → User study → Calibration analysis
+Validated, documented system
+4.2 Stage 1 — Data Engineering
+4.2.1 Data Collection
+The dataset is assembled from three primary sources: (1) Kaggle Indian Medicinal Plants Dataset (~80 species, ~17,000 images), (2) MedLeaf Dataset (30 species, 1,800 curated images), and (3) iNaturalist field-collected observations (filtered by species name using the API). A minimum of 200 verified images per species is targeted, with a final dataset size of 12,000–18,000 images across 60–80 species.
+4.2.2 Data Cleaning Pipeline
+Format standardization: All images converted to JPEG/PNG RGB format. Corrupt files identified using PIL exception handling and removed.
+Size filtering: Images below 64×64 pixels are discarded as insufficient for meaningful feature extraction.
+Duplicate removal: Perceptual hashing (pHash via imagehash library) identifies and removes near-duplicate images including augmented copies of the same source image present across multiple datasets.
+Label verification: Each class folder is cross-referenced against IMPPAT botanical names and Wikipedia species images. Suspect images are quarantined to a review folder for manual validation.
+Background removal (selected species): For species with high inter-class visual similarity, rembg (U2Net backbone) is applied to remove noisy backgrounds, improving feature discriminability.
+4.2.3 Augmentation Strategy
+Training data is augmented using the Albumentations library with the following transformation pipeline applied stochastically per image per epoch:
+Transformation
+Parameters
+Purpose
+RandomRotate90
+p=0.5
+Orientation invariance
+Horizontal / Vertical Flip
+p=0.5
+Mirror symmetry handling
+Rotate
+limit=±30°, p=0.5
+Angular variation in leaf orientation
+RandomBrightnessContrast
+±0.2, p=0.4
+Lighting condition variation
+HueSaturationValue
+H±10, S±20, V±10, p=0.3
+Color cast and seasonal variation
+GaussNoise
+var=(10,50), p=0.3
+Sensor noise simulation
+MotionBlur
+blur_limit=5, p=0.2
+Camera shake simulation
+CoarseDropout
+8 holes, 16×16px, p=0.3
+Occlusion and partial leaf simulation
+CLAHE
+clip_limit=2.0, p=0.3
+Adaptive contrast enhancement
+4.2.4 Dataset Splitting
+Stratified splitting ensures proportional class representation across all three splits. The master_labels.csv is split using sklearn.model_selection.train_test_split with stratify=species_name and random_state=42 for reproducibility. Final split: 70% Training / 15% Validation / 15% Test. The test set is locked upon creation and accessed only once for final model evaluation.
+4.3 Stage 2 — Model Development
+4.3.1 Baseline Model Training
+Three baseline models are trained using transfer learning from ImageNet weights before the custom architecture is developed. This establishes performance benchmarks for comparison:
+MobileNetV3-Large — lightweight baseline representing mobile deployment constraints.
+EfficientNetV2-S — strong general-purpose baseline representing the current state of the art in efficient CNN architectures.
+ResNet50 — classical deep residual network baseline for comparison with older literature.
+4.3.2 Training Protocol — Two-Phase Transfer Learning
+Phase
+Description
+Epochs
+Learning Rate
+Frozen?
+Phase 1
+(Head Training)
+Only the classification head is trained. All backbone weights are frozen. Allows the new head to adapt to the medicinal plant feature space without catastrophic forgetting.
+5–8 epochs
+1e-3 (Adam)
+Backbone frozen
+Phase 2
+(Fine-Tuning)
+Last 2 feature blocks of the backbone are unfrozen with a much lower learning rate (differential LR). The head continues training at a higher rate. Backbone adapts to domain-specific features.
+15–20 epochs
+1e-5 (backbone)
+1e-4 (head)
+Partially unfrozen
+4.3.3 Training Hyperparameters and Configuration
+Hyperparameter
+Value
+Rationale
+Batch Size
+32
+Balanced GPU memory utilization and gradient stability
+Input Resolution
+224 × 224 px
+Standard for EfficientNet; center-cropped with aspect-ratio preservation
+Optimizer
+Adam (phase 1), AdamW (phase 2)
+AdamW decoupled weight decay improves fine-tuning generalization
+Loss Function
+CrossEntropyLoss + Label Smoothing (ε=0.1)
+Label smoothing prevents overconfident predictions on training set
+LR Scheduler
+CosineAnnealingLR
+Smooth LR decay prevents sharp loss spikes near minima
+Class Weighting
+Inverse frequency weighting
+Mitigates class imbalance for species with < 200 images
+Early Stopping
+Patience = 5 epochs on val loss
+Prevents overfitting and unnecessary training time
+Normalization
+ImageNet mean/std: [0.485, 0.456, 0.406] / [0.229, 0.224, 0.225]
+Required for meaningful pretrained weight transfer
+4.4 Stage 3 — Knowledge Base Construction
+The Ayurvedic knowledge base is populated from two primary data sources: IMPPAT (Indian Medicinal Plants, Phytochemistry and Therapeutics) covering 1,742 plant species and 9,596 phytochemicals, and TKDL (Traditional Knowledge Digital Library) containing formulations and classical references from Ayurvedic texts including Charaka Samhita, Sushruta Samhita, and Ashtanga Hridayam.
+The construction process follows three steps: (1) Data extraction — downloading and parsing IMPPAT's publicly accessible dataset and TKDL references; (2) Schema mapping — normalizing heterogeneous source formats into the unified relational schema defined in Section 3.3.2; (3) Validation — cross-referencing 15% of entries against published Ayurvedic pharmacopoeias (API — Ayurvedic Pharmacopoeia of India) to verify accuracy before deployment.
+4.5 Stage 4 — System Integration
+System integration proceeds in four sequential sub-stages:
+4.5.1 Backend API
+FastAPI application exposing four endpoints: /predict (image classification), /explain (Grad-CAM generation), /plant/{id} (knowledge retrieval), /search (semantic symptom query). Deployed with uvicorn on cloud infrastructure. CORS configured for mobile client access.
+4.5.2 Grad-CAM Integration
+pytorch-grad-cam library targets the final convolutional layer of the backbone. For each prediction, the gradient of the target class score with respect to the final feature map is computed and upsampled to input resolution. The resulting heatmap is overlaid on the original image using a color jet map and returned as a base64-encoded image in the API response.
+4.5.3 Semantic Search
+All plant therapeutic descriptions are encoded offline into a FAISS vector index using the sentence-transformers all-MiniLM-L6-v2 model. At query time, the user's symptom text is encoded and the top-k nearest neighbor plants (by cosine similarity) are retrieved from the index in < 50ms.
+4.5.4 Mobile Application
+React Native application with @tensorflow/tfjs-react-native for on-device TFLite inference. Camera access via react-native-vision-camera. Navigation via React Navigation stack. UI components including confidence ring, Grad-CAM overlay viewer, and swipeable Ayurvedic profile tabs built with @gorhom/bottom-sheet.
+4.6 Stage 5 — Evaluation Framework
+4.6.1 Model Evaluation Metrics
+Metric
+Definition and Target
+Top-1 Accuracy
+Primary metric. Percentage of test images where the highest-confidence prediction matches ground truth. Target: ≥87%.
+Top-5 Accuracy
+Percentage of test images where ground truth is within the 5 highest-confidence predictions. Target: ≥97%.
+Macro F1-Score
+Unweighted average F1 across all species classes. Prevents majority-class bias from inflating the metric. Target: ≥0.85.
+Per-Class F1
+Individual F1 scores per species — identifies which plants the model consistently struggles with. Used to guide targeted data collection.
+Confusion Matrix
+Visual heatmap of class-level misclassifications — identifies species pairs that are systematically confused. Critical for Ayurvedic safety assessment.
+Confidence Calibration
+Reliability diagrams showing whether predicted confidence probabilities match empirical accuracy. A well-calibrated model's 80% confidence outputs should be correct ~80% of the time.
+4.6.2 System Validation — User Study
+Beyond technical metrics, a structured user study will be conducted with three user groups:
+Ayurveda practitioners or vaidyas (n≥10): Assess accuracy of plant identification and correctness of Ayurvedic profile information against their domain expertise.
+Botany / life science students (n≥15): Evaluate ease of use, information comprehensibility, and confidence in system output.
+General public / rural health workers (n≥15): Assess interface usability, scan workflow clarity, and utility of symptom search feature.
+Evaluation instruments will include the System Usability Scale (SUS) questionnaire, task completion rate measurements, and a structured knowledge accuracy checklist validated against the Ayurvedic Pharmacopoeia of India.
+5. Existing vs. Proposed — Summary Comparison
+Dimension
+Existing Systems
+Sanjeevani Scan (Proposed)
+Identification Approach
+Transfer learning on generic ImageNet features with no domain-specific architectural modification
+Multi-Scale Attention CNN with CBAM blocks fine-tuned specifically for Indian Ayurvedic leaf morphology
+Species Coverage
+20–100 species in research; commercial apps not optimized for Indian Ayurvedic species
+60–80 curated Indian Ayurvedic species with verified labels and field-image augmentation
+Explainability
+None — black-box predictions only
+Grad-CAM heatmap overlay displayed in app UI for every prediction
+Knowledge Integration
+None — species name only
+Full Ayurvedic profile: Dosha, Rasa, Guna, uses, phytochemicals, contraindications
+Reverse Discovery
+Not available in any existing system
+Semantic symptom-to-plant search using Sentence-BERT + FAISS vector index
+Confidence Handling
+Raw probability only; no user guidance on low-confidence cases
+Visual confidence ring + warning banner + re-scan prompt below 70% threshold
+Offline Capability
+Not available (commercial) or planned only (research)
+Quantized TFLite model bundled in app; full offline inference without internet
+Mobile Deployment
+Commercial apps exist; research prototypes not deployed
+React Native cross-platform app with end-to-end scan → result → profile workflow
+Accessibility
+Paywalled (commercial) or not available (research)
+Open, free access; designed for rural and field deployment
+Validation
+Accuracy on test set only; no practitioner validation
+Technical accuracy + practitioner user study + SUS usability evaluation

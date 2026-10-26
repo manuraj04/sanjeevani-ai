@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/clean_images.py)",
+      "Bash(tee logs/clean_images.log)"
+    ]
+  }
+}

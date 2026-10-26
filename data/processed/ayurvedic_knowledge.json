@@ -1,0 +1,3308 @@
+[
+    {
+        "species_name": "Azadirachta indica",
+        "botanical_name": "Azadirachta indica A. Juss.",
+        "common_name": "Neem",
+        "common_names": {
+            "en": "Neem (Indian Lilac)",
+            "hi": "नीम (Neem)",
+            "kn": "ಬೇವು (Bevu)",
+            "ta": "வேம்பு (Vembu)",
+            "te": "వేప (Vepa)",
+            "ml": "ആര്യവേപ്പ് (Aryaveppu)"
+        },
+        "family": "Meliaceae",
+        "region": "Throughout India",
+        "habitat": "Tropical and subtropical regions",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Krimighna (Anti-microbial)"
+        },
+        "uses": [
+            {
+                "condition": "Skin disorders",
+                "use_description": "Used for acne, eczema, fungal infections, and wound healing.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Fever",
+                "use_description": "Used in bitter decoctions for reducing viral and malaria fevers.",
+                "classical_reference": "Sushruta Samhita"
+            },
+            {
+                "condition": "Dental hygiene",
+                "use_description": "Twigs used as natural toothbrushes to prevent gingivitis.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Azadirachtin",
+                "compound_class": "Limonoid",
+                "pubchem_id": "5281303",
+                "activity": "Insecticidal, anti-inflammatory"
+            },
+            {
+                "compound_name": "Nimbin",
+                "compound_class": "Triterpenoid",
+                "pubchem_id": "101683",
+                "activity": "Anti-inflammatory, anti-pyretic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "High",
+                "notes": "May possess abortifacient properties. Avoid during conception."
+            }
+        ]
+    },
+    {
+        "species_name": "Ocimum tenuiflorum",
+        "botanical_name": "Ocimum tenuiflorum L.",
+        "common_name": "Tulsi",
+        "common_names": {
+            "en": "Tulsi (Holy Basil)",
+            "hi": "तुलसी (Tulsi)",
+            "kn": "ತುಳಸಿ (Tulasi)",
+            "ta": "துளசி (Thulasi)",
+            "te": "తులసి (Tulasi)",
+            "ml": "തുളസി (Thulasi)"
+        },
+        "family": "Lamiaceae",
+        "region": "Throughout India",
+        "habitat": "Cultivated across plains and home gardens",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Katu (Pungent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Vishaghna (Anti-toxic)"
+        },
+        "uses": [
+            {
+                "condition": "Cough and Cold",
+                "use_description": "Expectorant for respiratory conditions, bronchitis, and asthma.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Immunity and Stress",
+                "use_description": "Adaptogenic herb that boosts resistance against stress.",
+                "classical_reference": "Ayurvedic Pharmacopoeia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Eugenol",
+                "compound_class": "Phenylpropene",
+                "pubchem_id": "3314",
+                "activity": "Analgesic, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Bleeding disorders",
+                "severity": "Moderate",
+                "notes": "May slow blood clotting in high doses."
+            }
+        ]
+    },
+    {
+        "species_name": "Withania somnifera",
+        "botanical_name": "Withania somnifera (L.) Dunal",
+        "common_name": "Ashwagandha",
+        "common_names": {
+            "en": "Ashwagandha (Indian Ginseng)",
+            "hi": "अश्वगंधा (Ashwagandha)",
+            "kn": "ಅಶ್ವಗಂಧ (Ashwagandha)",
+            "ta": "அமுக்கிரா (Amukkira)",
+            "te": "అశ్వగంధ (Ashwagandha)",
+            "ml": "അമുക്കുരം (Amukkuram)"
+        },
+        "family": "Solanaceae",
+        "region": "Drier parts of India",
+        "habitat": "Dry and sub-tropical regions",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent), Madhura (Sweet)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Rasayana (Rejuvenative)"
+        },
+        "uses": [
+            {
+                "condition": "Anxiety and Stress",
+                "use_description": "Powerful adaptogen to relieve chronic stress and cortisol levels.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Vitality and Strength",
+                "use_description": "Enhances muscular strength, vitality, and stamina (Bala).",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Withaferin A",
+                "compound_class": "Steroidal lactone",
+                "pubchem_id": "265237",
+                "activity": "Anti-inflammatory, anti-tumor"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "High",
+                "notes": "Avoid high therapeutic doses during pregnancy."
+            }
+        ]
+    },
+    {
+        "species_name": "Bacopa monnieri",
+        "botanical_name": "Bacopa monnieri (L.) Wettst.",
+        "common_name": "Brahmi",
+        "common_names": {
+            "en": "Brahmi (Water Hyssop)",
+            "hi": "ब्राह्मी (Brahmi)",
+            "kn": "ಬ್ರಾಹ್ಮೀ (Brahmi)",
+            "ta": "பிராமி (Brahmi)",
+            "te": "బ్రాహ్మి (Brahmi)",
+            "ml": "ബ്രഹ്മി (Brahmi)"
+        },
+        "family": "Plantaginaceae",
+        "region": "Wet, tropical environments",
+        "habitat": "Marshy areas throughout India",
+        "profile": {
+            "dosha_effect": "Balances Vata, Pitta, and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Medhya (Brain Tonic)"
+        },
+        "uses": [
+            {
+                "condition": "Memory loss",
+                "use_description": "Enhances cognitive function, concentration, and intellect.",
+                "classical_reference": "Sushruta Samhita"
+            },
+            {
+                "condition": "Anxiety and Insomnia",
+                "use_description": "Calms the nervous system and promotes peaceful sleep.",
+                "classical_reference": "Charaka Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Bacoside A",
+                "compound_class": "Saponin",
+                "pubchem_id": "119794",
+                "activity": "Neuroprotective, memory-enhancing"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Bradycardia",
+                "severity": "Low",
+                "notes": "May slightly reduce heart rate."
+            }
+        ]
+    },
+    {
+        "species_name": "Aloe barbadensis",
+        "botanical_name": "Aloe vera (L.) Burm.f.",
+        "common_name": "Aloe Vera",
+        "common_names": {
+            "en": "Aloe Vera (Ghritkumari)",
+            "hi": "घृतकुमारी / एलोवेरा (Ghritkumari)",
+            "kn": "ಲೋಳೆಸರ (Lolesara)",
+            "ta": "கற்றாழை (Kattralai)",
+            "te": "కలబంద (Kalabanda)",
+            "ml": "കറ്റാർവാഴ (Kattarvazha)"
+        },
+        "family": "Asphodelaceae",
+        "region": "Dry and coastal regions",
+        "habitat": "Cultivated widely across arid zones",
+        "profile": {
+            "dosha_effect": "Balances all three doshas (Tridoshic)",
+            "rasa": "Tikta (Bitter), Madhura (Sweet)",
+            "guna": "Guru (Heavy), Snigdha (Unctuous), Picchila (Slimy)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Rasayana (Rejuvenative)"
+        },
+        "uses": [
+            {
+                "condition": "Burns and wounds",
+                "use_description": "Topical application speeds epithelial healing and cools inflammation.",
+                "classical_reference": "Bhavaprakasha"
+            },
+            {
+                "condition": "Digestive disorders",
+                "use_description": "Soothes acid reflux and gently cleanses the bowels.",
+                "classical_reference": "Ayurvedic Pharmacopoeia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Aloin",
+                "compound_class": "Anthraquinone",
+                "pubchem_id": "100234",
+                "activity": "Laxative, soothing"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "High",
+                "notes": "Oral consumption of yellow latex can cause uterine contractions."
+            }
+        ]
+    },
+    {
+        "species_name": "Curcuma longa",
+        "botanical_name": "Curcuma longa L.",
+        "common_name": "Turmeric",
+        "common_names": {
+            "en": "Turmeric (Haldi)",
+            "hi": "हल्दी (Haldi)",
+            "kn": "ಅರಿಶಿನ (Arishina)",
+            "ta": "மஞ்சள் (Manjal)",
+            "te": "పసుపు (Pasupu)",
+            "ml": "മഞ്ഞൾ (Manjal)"
+        },
+        "family": "Zingiberaceae",
+        "region": "Tropical India",
+        "habitat": "Cultivated extensively across warm plains",
+        "profile": {
+            "dosha_effect": "Balances Vata, Pitta, and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent)",
+            "guna": "Ruksha (Dry), Laghu (Light)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Krimighna (Anti-microbial)"
+        },
+        "uses": [
+            {
+                "condition": "Inflammation and Joint Pain",
+                "use_description": "Reduces joint inflammation and arthritic swelling.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Wounds and Cuts",
+                "use_description": "Antiseptic powder for preventing infection on fresh lacerations.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Curcumin",
+                "compound_class": "Curcuminoid",
+                "pubchem_id": "969516",
+                "activity": "Anti-inflammatory, antioxidant"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Gallstones",
+                "severity": "Moderate",
+                "notes": "May stimulate gallbladder contractions."
+            }
+        ]
+    },
+    {
+        "species_name": "Zingiber officinale",
+        "botanical_name": "Zingiber officinale Roscoe",
+        "common_name": "Ginger",
+        "common_names": {
+            "en": "Ginger (Adrak / Shunthi)",
+            "hi": "अदरक / सोंठ (Adrak)",
+            "kn": "ಶುಂಠಿ (Shunti)",
+            "ta": "இஞ்சி / சுக்கு (Inji)",
+            "te": "అల్లం / శొంఠి (Allam)",
+            "ml": "ഇഞ്ചി / ചുക്ക് (Inchi)"
+        },
+        "family": "Zingiberaceae",
+        "region": "Throughout India",
+        "habitat": "Cultivated in moist tropical areas",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Katu (Pungent)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Deepana (Digestive Stimulant)"
+        },
+        "uses": [
+            {
+                "condition": "Indigestion and Bloating",
+                "use_description": "Kindles digestive fire (Agni) and expels intestinal gas.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Nausea and Morning Sickness",
+                "use_description": "Soothes motion sickness and nausea safely.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Gingerol",
+                "compound_class": "Phenol",
+                "pubchem_id": "442793",
+                "activity": "Anti-emetic, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Bleeding disorders",
+                "severity": "Low",
+                "notes": "May inhibit platelet aggregation in large doses."
+            }
+        ]
+    },
+    {
+        "species_name": "Moringa oleifera",
+        "botanical_name": "Moringa oleifera Lam.",
+        "common_name": "Moringa",
+        "common_names": {
+            "en": "Moringa (Drumstick Tree)",
+            "hi": "सहजन (Sahjan / Moringa)",
+            "kn": "ನುಗ್ಗೆಕಾಯಿ (Nuggekayi)",
+            "ta": "முருங்கை (Murungai)",
+            "te": "మునగ (Munaga)",
+            "ml": "മുരിങ്ങ (Muringa)"
+        },
+        "family": "Moringaceae",
+        "region": "Sub-Himalayan tracts and throughout India",
+        "habitat": "Wild and cultivated across tropics",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Vata",
+            "rasa": "Katu (Pungent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Ruksha (Dry), Teekshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Krimighna (Anti-microbial)"
+        },
+        "uses": [
+            {
+                "condition": "Malnutrition and Fatigue",
+                "use_description": "Nutrient powerhouse rich in iron, calcium, and bioavailable vitamins.",
+                "classical_reference": "Ayurvedic Pharmacopoeia"
+            },
+            {
+                "condition": "Joint pain and Gout",
+                "use_description": "Pappu and leaf soup used to relieve chronic arthritis.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Quercetin",
+                "compound_class": "Flavonoid",
+                "pubchem_id": "5280343",
+                "activity": "Antioxidant"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "High",
+                "notes": "Avoid root and bark extracts during pregnancy."
+            }
+        ]
+    },
+    {
+        "species_name": "Phyllanthus emblica",
+        "botanical_name": "Phyllanthus emblica L.",
+        "common_name": "Amla",
+        "common_names": {
+            "en": "Amla (Indian Gooseberry)",
+            "hi": "आंवला (Amla)",
+            "kn": "ನೆಲ್ಲಿಕಾಯಿ (Nellikayi)",
+            "ta": "நெல்லிக்காய் (Nellikai)",
+            "te": "ఉసిరి (Usiri)",
+            "ml": "നെല്ലിക്ക (Nellikka)"
+        },
+        "family": "Phyllanthaceae",
+        "region": "Deciduous forests of India",
+        "habitat": "Wild and cultivated across plains",
+        "profile": {
+            "dosha_effect": "Balances all three doshas (Tridoshic)",
+            "rasa": "Amla (Sour), Madhura (Sweet), Tikta (Bitter), Kashaya (Astringent), Katu (Pungent)",
+            "guna": "Guru (Heavy), Sheeta (Cold)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Rasayana (Rejuvenative)"
+        },
+        "uses": [
+            {
+                "condition": "Immunity and Longevity",
+                "use_description": "Supreme source of natural Vitamin C and rejuvenating antioxidant.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Hair loss and Greying",
+                "use_description": "Nourishes scalp and prevents premature greying.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Gallic Acid",
+                "compound_class": "Phenolic Acid",
+                "pubchem_id": "370",
+                "activity": "Antioxidant, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Hypoglycemia",
+                "severity": "Low",
+                "notes": "May potentiate insulin action; monitor blood sugar."
+            }
+        ]
+    },
+    {
+        "species_name": "Aegle marmelos",
+        "botanical_name": "Aegle marmelos (L.) Corrêa",
+        "common_name": "Bael",
+        "common_names": {
+            "en": "Bael (Bilva / Golden Apple)",
+            "hi": "बेल / बिल्व (Bael / Bilva)",
+            "kn": "ಬೇಲ (Bela)",
+            "ta": "வில்வம் (Vilvam)",
+            "te": "మారేడు (Maredu)",
+            "ml": "കൂവളം (Koovalam)"
+        },
+        "family": "Rutaceae",
+        "region": "Dry forests across India",
+        "habitat": "Wild and cultivated near sacred groves",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Kashaya (Astringent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Grahi (Bowel-binding)"
+        },
+        "uses": [
+            {
+                "condition": "Diarrhea and IBS",
+                "use_description": "Unripe fruit pulp heals mucosal lining and controls chronic dysentery.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Diabetes",
+                "use_description": "Leaf extract helps maintain healthy blood glucose levels.",
+                "classical_reference": "Ayurvedic Pharmacopoeia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Marmelosin",
+                "compound_class": "Coumarin",
+                "pubchem_id": "31405",
+                "activity": "Anthelmintic, anti-bacterial"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Severe Constipation",
+                "severity": "Moderate",
+                "notes": "Astringent properties can aggravate dry constipation."
+            }
+        ]
+    },
+    {
+        "species_name": "Clitoria ternatea",
+        "botanical_name": "Clitoria ternatea L.",
+        "common_name": "Aparajita",
+        "common_names": {
+            "en": "Aparajita (Butterfly Pea)",
+            "hi": "अपराजिता (Aparajita)",
+            "kn": "ಶಂಖಪುಷ್ಪ (Shankhapushpa)",
+            "ta": "சங்குப்பூ (Sangupoo)",
+            "te": "శంఖపుష్పం (Shankhapushpam)",
+            "ml": "ശംഖുപുഷ്പം (Shankhupushpam)"
+        },
+        "family": "Fabaceae",
+        "region": "Tropical India",
+        "habitat": "Climbing vine in moist and sunny areas",
+        "profile": {
+            "dosha_effect": "Balances all three doshas (Tridoshic)",
+            "rasa": "Kashaya (Astringent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Medhya (Brain Tonic)"
+        },
+        "uses": [
+            {
+                "condition": "Memory and Brain Health",
+                "use_description": "Used as a Medhya Rasayana to enhance mental clarity and intellect.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Anxiety and Depression",
+                "use_description": "Blue tea infused with flowers relieves neural exhaustion.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Ternatins",
+                "compound_class": "Anthocyanin",
+                "pubchem_id": "44259648",
+                "activity": "Antioxidant, Neuroprotective"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "Moderate",
+                "notes": "Use under guidance due to mild uterine stimulating potential."
+            }
+        ]
+    },
+    {
+        "species_name": "Tinospora cordifolia",
+        "botanical_name": "Tinospora cordifolia (Willd.) Miers",
+        "common_name": "Giloy",
+        "common_names": {
+            "en": "Giloy (Guduchi / Amrita)",
+            "hi": "गिलोय / गुडूची (Giloy)",
+            "kn": "ಅಮೃತಬಳ್ಳಿ (Amrutha Valli)",
+            "ta": "சீந்தில் (Seenthil)",
+            "te": "తిప్పతీగ (Tippa Teega)",
+            "ml": "ചിറ്റമൃത് (Chittamruth)"
+        },
+        "family": "Menispermaceae",
+        "region": "Throughout tropical India",
+        "habitat": "Climbing shrub found on trees like Neem and Mango",
+        "profile": {
+            "dosha_effect": "Balances all three doshas (Tridoshic)",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Guru (Heavy), Snigdha (Unctuous)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Rasayana (Immunity Booster)"
+        },
+        "uses": [
+            {
+                "condition": "Chronic Fever and Dengue",
+                "use_description": "Boosts blood platelet count and relieves recurrent febrile conditions.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Immunity and Allergy",
+                "use_description": "Purifies blood, regulates immune response, and acts as cellular shield.",
+                "classical_reference": "Sushruta Samhita"
+            },
+            {
+                "condition": "Diabetes",
+                "use_description": "Helps modulate glucose metabolism and prevents diabetic complications.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Tinosporide",
+                "compound_class": "Diterpene",
+                "pubchem_id": "141416",
+                "activity": "Immunomodulatory, hepatoprotective"
+            },
+            {
+                "compound_name": "Berberine",
+                "compound_class": "Alkaloid",
+                "pubchem_id": "2353",
+                "activity": "Anti-microbial, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Autoimmune conditions",
+                "severity": "Moderate",
+                "notes": "Since it stimulates immunity, monitor in severe autoimmune disorders."
+            }
+        ]
+    },
+    {
+        "species_name": "Asparagus racemosus",
+        "botanical_name": "Asparagus racemosus Willd.",
+        "common_name": "Shatavari",
+        "common_names": {
+            "en": "Shatavari (Asparagus)",
+            "hi": "शतावरी (Shatavari)",
+            "kn": "ಶತಾವರಿ (Shatavari)",
+            "ta": "சதாவரி (Thaneervittan)",
+            "te": "శతావరి (Shatavari)",
+            "ml": "ശതാവരി (Shatavari)"
+        },
+        "family": "Asparagaceae",
+        "region": "Throughout tropical India",
+        "habitat": "Rocky and low forest regions",
+        "profile": {
+            "dosha_effect": "Balances Vata and Pitta",
+            "rasa": "Madhura (Sweet), Tikta (Bitter)",
+            "guna": "Guru (Heavy), Snigdha (Unctuous)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Rasayana (Female Reproductive Tonic)"
+        },
+        "uses": [
+            {
+                "condition": "Hormonal Balance",
+                "use_description": "Supports female reproductive health, lactation, and menopause harmony.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Gastric Ulcers and Acidity",
+                "use_description": "Soothes inflamed stomach lining and neutralizes excessive acid.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Shatavarin",
+                "compound_class": "Steroidal saponin",
+                "pubchem_id": "101968848",
+                "activity": "Immunomodulatory, galactagogue"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Kidney disorders",
+                "severity": "Low",
+                "notes": "Acts as a mild diuretic; consult doctor if on diuretics."
+            }
+        ]
+    },
+    {
+        "species_name": "Syzygium cumini",
+        "botanical_name": "Syzygium cumini (L.) Skeels",
+        "common_name": "Jamun",
+        "common_names": {
+            "en": "Jamun (Black Plum)",
+            "hi": "जामुन (Jamun)",
+            "kn": "ನೇರಳೆ (Nerale)",
+            "ta": "நாவல் (Naval)",
+            "te": "నేరేడు (Neredu)",
+            "ml": "ഞാവൽ (Njaval)"
+        },
+        "family": "Myrtaceae",
+        "region": "Throughout Indian subcontinent",
+        "habitat": "Riverbanks and tropical evergreen forests",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Kashaya (Astringent), Madhura (Sweet), Amla (Sour)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Mutrasangrahaniya (Reduces excess urination)"
+        },
+        "uses": [
+            {
+                "condition": "Diabetes Mellitus",
+                "use_description": "Seed kernel powder lowers blood sugar and checks polyuria.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Diarrhea and Gum Health",
+                "use_description": "Bark decoction tightens loose stools and treats bleeding gums.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Jamboline",
+                "compound_class": "Glycoside",
+                "pubchem_id": "5281855",
+                "activity": "Anti-hyperglycemic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Fasting / Empty Stomach",
+                "severity": "Low",
+                "notes": "Do not consume large amounts on empty stomach."
+            }
+        ]
+    },
+    {
+        "species_name": "Justicia adhatoda",
+        "botanical_name": "Justicia adhatoda L.",
+        "common_name": "Adulsa",
+        "common_names": {
+            "en": "Adulsa (Vasaka / Malabar Nut)",
+            "hi": "अडूसा / वासा (Adulsa / Vasa)",
+            "kn": "ಆಡುಸೋಗೆ (Adusoge)",
+            "ta": "ஆடாதோடை (Adathodai)",
+            "te": "అడ్డసరం (Addasaram)",
+            "ml": "ആടലോടകം (Adalodakam)"
+        },
+        "family": "Acanthaceae",
+        "region": "Plains and lower Himalayas",
+        "habitat": "Wild shrub along roadsides and waste grounds",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Kasa-shwasahara (Bronchodilator)"
+        },
+        "uses": [
+            {
+                "condition": "Severe Cough and Asthma",
+                "use_description": "Dilates bronchial passages and expels thick phlegm.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Bleeding Disorders",
+                "use_description": "Hemostatic herb for epistaxis (nosebleeds) and hemoptysis.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Vasicine",
+                "compound_class": "Quinazoline alkaloid",
+                "pubchem_id": "8935",
+                "activity": "Bronchodilator, expectorant"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "High",
+                "notes": "Uterotonic alkaloid; contraindicated in pregnancy."
+            }
+        ]
+    },
+    {
+        "species_name": "Eclipta prostrata",
+        "botanical_name": "Eclipta prostrata (L.) L.",
+        "common_name": "Bhringraj",
+        "common_names": {
+            "en": "Bhringraj (False Daisy)",
+            "hi": "भृंगराज (Bhringraj)",
+            "kn": "ಗರಿಗ (Gariga)",
+            "ta": "கரிசலாங்கண்ணி (Karisalanganni)",
+            "te": "గుంటగలగర (Guntagalagara)",
+            "ml": "കയ്യോന്നി (Kayyonni)"
+        },
+        "family": "Asteraceae",
+        "region": "Throughout India",
+        "habitat": "Moist soil, rice fields, and canal borders",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Katu (Pungent), Tikta (Bitter)",
+            "guna": "Ruksha (Dry), Laghu (Light)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Keshya (Hair Rejuvenator)"
+        },
+        "uses": [
+            {
+                "condition": "Hair Fall and Alopecia",
+                "use_description": "Oil massaged into scalp stops baldness and deepens natural hair color.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Liver Disorders and Jaundice",
+                "use_description": "Protects hepatocytes and optimizes bile secretion.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Wedelolactone",
+                "compound_class": "Coumestan",
+                "pubchem_id": "5281812",
+                "activity": "Hepatoprotective, hair follicle stimulant"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Low Blood Pressure",
+                "severity": "Low",
+                "notes": "May mildly lower blood pressure."
+            }
+        ]
+    },
+    {
+        "species_name": "Sesbania grandiflora",
+        "botanical_name": "Sesbania grandiflora (L.) Pers.",
+        "common_name": "Agathi",
+        "common_names": {
+            "en": "Agathi (Hummingbird Tree)",
+            "hi": "अगस्ति (Agasti)",
+            "kn": "ಅಗಸೆ (Agase)",
+            "ta": "அகத்தி (Agathi)",
+            "te": "అవిసె (Avise)",
+            "ml": "അഗത്തി (Agathi)"
+        },
+        "family": "Fabaceae",
+        "region": "Tropical South Asia",
+        "habitat": "Warm, humid plains and coastal gardens",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Chakshushya (Vision Enhancer)"
+        },
+        "uses": [
+            {
+                "condition": "Eye health",
+                "use_description": "Traditional remedy for night blindness and eye strain.",
+                "classical_reference": "Bhavaprakasha"
+            },
+            {
+                "condition": "Mouth ulcers",
+                "use_description": "Leaves chewed or consumed as tonic to soothe stomatitis.",
+                "classical_reference": "Ayurvedic Pharmacopoeia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Grandiflorin",
+                "compound_class": "Flavonoid",
+                "pubchem_id": "442571",
+                "activity": "Antioxidant, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Excessive intake",
+                "severity": "Low",
+                "notes": "May cause mild laxative effect if eaten raw in large amounts."
+            }
+        ]
+    },
+    {
+        "species_name": "Terminalia arjuna",
+        "botanical_name": "Terminalia arjuna (Roxb. ex DC.) Wight & Arn.",
+        "common_name": "Arjuna",
+        "common_names": {
+            "en": "Arjuna (White Marudah)",
+            "hi": "अर्जुन (Arjuna)",
+            "kn": "ಮದ್ದಿ (Maddi)",
+            "ta": "மருதம் (Marutham)",
+            "te": "మద్ది (Maddi)",
+            "ml": "മരുത് (Maruthu)"
+        },
+        "family": "Combretaceae",
+        "region": "Riverbanks throughout India",
+        "habitat": "Moist river basins and deciduous forests",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Kashaya (Astringent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Hridya (Cardiotonic)"
+        },
+        "uses": [
+            {
+                "condition": "Cardiovascular wellness",
+                "use_description": "Strengthens heart muscle function and promotes healthy arterial pressure.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Fracture healing",
+                "use_description": "Aids bone healing and calcium metabolism when taken with milk.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Arjunic acid",
+                "compound_class": "Triterpenoid",
+                "pubchem_id": "119042",
+                "activity": "Cardioprotective, antioxidant"
+            },
+            {
+                "compound_name": "Arjunetin",
+                "compound_class": "Glycoside",
+                "pubchem_id": "442579",
+                "activity": "Endothelial tonic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Severe hypotension",
+                "severity": "Moderate",
+                "notes": "Monitor with prescription cardiovascular medication."
+            }
+        ]
+    },
+    {
+        "species_name": "Ficus benghalensis",
+        "botanical_name": "Ficus benghalensis L.",
+        "common_name": "Banyan",
+        "common_names": {
+            "en": "Banyan (Indian Fig)",
+            "hi": "बरगद (Bargad / Vata)",
+            "kn": "ಆಲದ ಮರ (Aalada Mara)",
+            "ta": "ஆலமரம் (Aalamaram)",
+            "te": "మర్రి చెట్టు (Marri Chettu)",
+            "ml": "പേരാൽ (Peraal)"
+        },
+        "family": "Moraceae",
+        "region": "Throughout the Indian subcontinent",
+        "habitat": "Plains, roadsides, and temple groves",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Kashaya (Astringent)",
+            "guna": "Guru (Heavy), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Varnya (Complexion Rejuvenator)"
+        },
+        "uses": [
+            {
+                "condition": "Oral hygiene",
+                "use_description": "Aerial root chew-twigs strengthen gum tissues and treat periodontitis.",
+                "classical_reference": "Sushruta Samhita"
+            },
+            {
+                "condition": "Diarrhea",
+                "use_description": "Bark decoction acts as a potent natural astringent.",
+                "classical_reference": "Charaka Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Bengalenoside",
+                "compound_class": "Flavonoid glycoside",
+                "pubchem_id": "101689",
+                "activity": "Hypoglycemic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Severe constipation",
+                "severity": "Low",
+                "notes": "Highly astringent action may worsen dry colon states."
+            }
+        ]
+    },
+    {
+        "species_name": "Piper betle",
+        "botanical_name": "Piper betle L.",
+        "common_name": "Betel",
+        "common_names": {
+            "en": "Betel Leaf (Paan)",
+            "hi": "पान (Paan / Tambula)",
+            "kn": "ವೀಳ್ಯದೆಲೆ (Vilyadele)",
+            "ta": "வெற்றிலை (Vettilai)",
+            "te": "తమలపాకు (Tamalapaku)",
+            "ml": "വെറ്റില (Vettila)"
+        },
+        "family": "Piperaceae",
+        "region": "Warm tropical coastal India",
+        "habitat": "Trellised plantations and humid shade",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Deepana (Digestive Fire Igniter)"
+        },
+        "uses": [
+            {
+                "condition": "Digestive sluggishness",
+                "use_description": "Stimulates salivary and gastric secretion after heavy meals.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Respiratory congestion",
+                "use_description": "Warm leaf poultice with castor oil applied to chest relieves pediatric congestion.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Chavibetol",
+                "compound_class": "Phenolic",
+                "pubchem_id": "7343",
+                "activity": "Antimicrobial, carminative"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Acid peptic disorder",
+                "severity": "Moderate",
+                "notes": "Avoid unmitigated consumption during acute gastric ulcers."
+            }
+        ]
+    },
+    {
+        "species_name": "Areca catechu",
+        "botanical_name": "Areca catechu L.",
+        "common_name": "BetelNut",
+        "common_names": {
+            "en": "Betel Nut (Areca)",
+            "hi": "सुपारी (Supari / Puga)",
+            "kn": "ಅಡಿಕೆ (Adike)",
+            "ta": "பாக்கு (Paakku)",
+            "te": "పోక చెక్క (Poka Chekka)",
+            "ml": "അടയ്ക്ക (Adaykka)"
+        },
+        "family": "Arecaceae",
+        "region": "Western Ghats, Coastal belts, Assam",
+        "habitat": "Tropical palms and rainforest fringes",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Kashaya (Astringent), Tikta (Bitter)",
+            "guna": "Ruksha (Dry), Guru (Heavy)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Krimighna (Anthelmintic)"
+        },
+        "uses": [
+            {
+                "condition": "Intestinal parasites",
+                "use_description": "Classical purified nut powder used in expulsion of tapeworms.",
+                "classical_reference": "Sushruta Samhita"
+            },
+            {
+                "condition": "Gingivitis",
+                "use_description": "Astringent decoction used as gargle for bleeding gums.",
+                "classical_reference": "Ashtanga Hridaya"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Arecoline",
+                "compound_class": "Alkaloid",
+                "pubchem_id": "2230",
+                "activity": "Cholinergic agonist"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Chronic usage",
+                "severity": "High",
+                "notes": "Purified nut only; unpurified commercial chewing is strictly contraindicated."
+            }
+        ]
+    },
+    {
+        "species_name": "Piper nigrum",
+        "botanical_name": "Piper nigrum L.",
+        "common_name": "BlackPepper",
+        "common_names": {
+            "en": "Black Pepper",
+            "hi": "काली मिर्च (Kali Mirch / Maricha)",
+            "kn": "ಕಾಳುಮೆಣಸು (Kalu Menasu)",
+            "ta": "மிளகு (Milagu)",
+            "te": "మిరియాలు (Miriyalu)",
+            "ml": "കുരുമുളക് (Kurumulaku)"
+        },
+        "family": "Piperaceae",
+        "region": "Malabar Coast, Western Ghats",
+        "habitat": "Evergreen moist rainforests",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Vata, increases Pitta",
+            "rasa": "Katu (Pungent)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Pramathi (Channel Cleanser)"
+        },
+        "uses": [
+            {
+                "condition": "Bioenhancement (Yogavahi)",
+                "use_description": "Core pillar of Trikatu formula; boosts bioavailability of active botanicals.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Bronchitis and Asthma",
+                "use_description": "Clears stubborn phlegm and stimulates pulmonary ventilation.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Piperine",
+                "compound_class": "Alkaloid",
+                "pubchem_id": "638024",
+                "activity": "Bioenhancer, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Gastritis / Peptic Ulcer",
+                "severity": "High",
+                "notes": "May aggravate hyperacidity and stomach lining."
+            }
+        ]
+    },
+    {
+        "species_name": "Ricinus communis",
+        "botanical_name": "Ricinus communis L.",
+        "common_name": "Castor",
+        "common_names": {
+            "en": "Castor (Eranda)",
+            "hi": "अरंडी (Arandi / Eranda)",
+            "kn": "ಔಡಲ (Oudala)",
+            "ta": "ஆமணக்கு (Aamanakku)",
+            "te": "ఆముదము (Aamudamu)",
+            "ml": "ആവണക്ക് (Aavanakku)"
+        },
+        "family": "Euphorbiaceae",
+        "region": "Widespread across India",
+        "habitat": "Wastelands, field borders, and dry scrub",
+        "profile": {
+            "dosha_effect": "Supreme pacifier of Vata dosha",
+            "rasa": "Madhura (Sweet), Katu (Pungent), Kashaya (Astringent)",
+            "guna": "Guru (Heavy), Snigdha (Unctuous), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Vrishya, Vatahara"
+        },
+        "uses": [
+            {
+                "condition": "Rheumatoid arthritis (Amavata)",
+                "use_description": "Eranda taila is the premier classical therapeutic for deep joint aches.",
+                "classical_reference": "Chakradatta"
+            },
+            {
+                "condition": "Constipation",
+                "use_description": "Gentle, non-habit forming purgative for chronic colon dry states.",
+                "classical_reference": "Charaka Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Ricinoleic acid",
+                "compound_class": "Fatty acid",
+                "pubchem_id": "140300",
+                "activity": "Analgesic, purgative"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Raw seed ingestion",
+                "severity": "Extreme",
+                "notes": "Raw seeds contain ricin toxin; only cold-pressed medicinal oil must be used."
+            }
+        ]
+    },
+    {
+        "species_name": "Matricaria chamomilla",
+        "botanical_name": "Matricaria chamomilla L.",
+        "common_name": "Chamomile",
+        "common_names": {
+            "en": "German Chamomile",
+            "hi": "बाबूना (Babuna)",
+            "kn": "ಕ್ಯಾಮೊಮೈಲ್ (Chamomile)",
+            "ta": "சாமந்தி (Seemai Chamomile)",
+            "te": "చామంతి (Seema Chamanti)",
+            "ml": "ചമോമൈൽ (Chamomile)"
+        },
+        "family": "Asteraceae",
+        "region": "Sub-Himalayan ranges, Punjab, temperate hills",
+        "habitat": "Sunny meadows, cultivated herb gardens",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha, pacifies agitated Vata",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Nidrajanana (Sleep inducer), Shothahara"
+        },
+        "uses": [
+            {
+                "condition": "Insomnia & anxiety",
+                "use_description": "Gentle calming infusion reduces restlessness and promotes restorative deep sleep.",
+                "classical_reference": "Unani & Ayurvedic Materia Medica"
+            },
+            {
+                "condition": "Digestive cramping",
+                "use_description": "Relieves abdominal spasms, infant colic, and inflammatory bowel distress.",
+                "classical_reference": "Traditional Herbal Pharmacopoeia"
+            },
+            {
+                "condition": "Skin irritation",
+                "use_description": "Topical compress soothes sunburns, eczema, and dermatitis flare-ups.",
+                "classical_reference": "Phytotherapy Principles"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Apigenin",
+                "compound_class": "Flavone",
+                "pubchem_id": "5280443",
+                "activity": "GABA-receptor binding, anti-anxiety"
+            },
+            {
+                "compound_name": "Chamazulene",
+                "compound_class": "Sesquiterpene",
+                "pubchem_id": "10719",
+                "activity": "Potent anti-inflammatory"
+            },
+            {
+                "compound_name": "Bisabolol",
+                "compound_class": "Terpenoid",
+                "pubchem_id": "1549992",
+                "activity": "Antimicrobial, skin soothing"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Asteraceae family allergy",
+                "severity": "Moderate",
+                "notes": "Individuals allergic to ragweed or marigolds may exhibit hypersensitivity."
+            }
+        ]
+    },
+    {
+        "species_name": "Plumbago zeylanica",
+        "botanical_name": "Plumbago zeylanica L.",
+        "common_name": "Chitraka",
+        "common_names": {
+            "en": "Ceylon Leadwort",
+            "hi": "चित्रक (Chitrak)",
+            "kn": "ಚಿತ್ರಮೂಲ (Chitramoola)",
+            "ta": "கொடிவேலி (Kodiveli)",
+            "te": "చిత్రమూలము (Chitramoolamu)",
+            "ml": "കൊടുവേലി (Koduveli)"
+        },
+        "family": "Plumbaginaceae",
+        "region": "Throughout peninsular India",
+        "habitat": "Dry scrub, forest undergrowths",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha, sharpens Agni",
+            "rasa": "Katu (Pungent)",
+            "guna": "Laghu (Light), Ruksha (Dry), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Deepana-Pachana (Prime Agni Igniter)"
+        },
+        "uses": [
+            {
+                "condition": "Impaired digestion (Agnumandya)",
+                "use_description": "Foremost herb for reigniting metabolic digestive fire and digesting toxins (Ama).",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Hemorrhoids (Arshas)",
+                "use_description": "Promotes portal circulation and clears vascular engorgement in hemorrhoids.",
+                "classical_reference": "Ashtanga Hridaya"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Plumbagin",
+                "compound_class": "Naphthoquinone",
+                "pubchem_id": "4815",
+                "activity": "Digestive stimulant, antimicrobial"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "High",
+                "notes": "Potent uterine stimulant; strictly contraindicated during pregnancy."
+            }
+        ]
+    },
+    {
+        "species_name": "Syzygium aromaticum",
+        "botanical_name": "Syzygium aromaticum (L.) Merr. & L.M.Perry",
+        "common_name": "Clove",
+        "common_names": {
+            "en": "Clove",
+            "hi": "लौंग (Laung / Lavanga)",
+            "kn": "ಲವಂಗ (Lavanga)",
+            "ta": "கிராம்பு (Kirambu)",
+            "te": "లవంగము (Lavangamu)",
+            "ml": "ഗ്രാമ്പൂ (Grampoo)"
+        },
+        "family": "Myrtaceae",
+        "region": "Southern hills of Tamil Nadu and Kerala",
+        "habitat": "Moist, tropical evergreen hills",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Tikta (Bitter), Katu (Pungent)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Sheeta (Cold - Post digestive coolness)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Chakshushya, Deepana"
+        },
+        "uses": [
+            {
+                "condition": "Dental pain",
+                "use_description": "Eugenol oil provides rapid local analgesia and combats oral bacteria.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Cough & Hiccups",
+                "use_description": "Chewing cloves arrests persistent spastic cough and nausea.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Eugenol",
+                "compound_class": "Phenylpropanoid",
+                "pubchem_id": "3314",
+                "activity": "Local anesthetic, antiseptic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Gastric bleeding",
+                "severity": "Moderate",
+                "notes": "High doses may irritate eroded mucous membranes."
+            }
+        ]
+    },
+    {
+        "species_name": "Coriandrum sativum",
+        "botanical_name": "Coriandrum sativum L.",
+        "common_name": "Coriander",
+        "common_names": {
+            "en": "Coriander (Cilantro)",
+            "hi": "धनिया (Dhaniya)",
+            "kn": "ಕೊತ್ತಂಬರಿ (Kothambari)",
+            "ta": "கொத்தமல்லி (Kothamalli)",
+            "te": "కొత్తిమీర (Kothimeera)",
+            "ml": "മല്ലി (Malli)"
+        },
+        "family": "Apiaceae",
+        "region": "Cultivated across India",
+        "habitat": "Well-drained agricultural plains",
+        "profile": {
+            "dosha_effect": "Balances all three doshas (Tridoshahara)",
+            "rasa": "Tikta (Bitter), Madhura (Sweet), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Ushna (Mild Warm) / Cooling leaf",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Daha-prashamana (Burning Sensation Pacifier)"
+        },
+        "uses": [
+            {
+                "condition": "Urinary burning",
+                "use_description": "Coriander cold infusion (Hima) flushes urinary tract and cools dysuria.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Indigestion and acidity",
+                "use_description": "Soothes acid regurgitation without depressing digestive capacity.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Linalool",
+                "compound_class": "Monoterpene",
+                "pubchem_id": "6549",
+                "activity": "Carminative, antispasmodic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "General safety",
+                "severity": "Low",
+                "notes": "Safe for regular culinary and therapeutic use."
+            }
+        ]
+    },
+    {
+        "species_name": "Murraya koenigii",
+        "botanical_name": "Murraya koenigii (L.) Spreng.",
+        "common_name": "CurryLeaf",
+        "common_names": {
+            "en": "Curry Leaf",
+            "hi": "कढ़ी पत्ता (Kadi Patta / Kaidarya)",
+            "kn": "ಕರಿಬೇವು (Karibevu)",
+            "ta": "கறிவேப்பிலை (Kariveppilai)",
+            "te": "కరివేపాకు (Karivepaku)",
+            "ml": "കറിവേപ്പില (Kariveppila)"
+        },
+        "family": "Rutaceae",
+        "region": "Subtropical foothills and gardens across India",
+        "habitat": "Forest fringes, open scrub",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent), Madhura (Sweet)",
+            "guna": "Laghu (Light)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Keshya (Hair Tonic), Deepana"
+        },
+        "uses": [
+            {
+                "condition": "Hair pigmentation & growth",
+                "use_description": "Leaves boiled in coconut oil prevent premature graying and strengthen roots.",
+                "classical_reference": "Bhavaprakasha"
+            },
+            {
+                "condition": "Dyslipidemia & Diabetes",
+                "use_description": "Regulates blood glucose spikes and lowers oxidized cholesterol.",
+                "classical_reference": "Ayurvedic Pharmacopoeia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Mahanimbine",
+                "compound_class": "Carbazole alkaloid",
+                "pubchem_id": "442588",
+                "activity": "Antioxidant, hypolipidemic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "General safety",
+                "severity": "Low",
+                "notes": "Extremely safe culinary herb."
+            }
+        ]
+    },
+    {
+        "species_name": "Cedrus deodara",
+        "botanical_name": "Cedrus deodara (Roxb. ex D.Don) G.Don",
+        "common_name": "Devadaru",
+        "common_names": {
+            "en": "Himalayan Cedar (Deodar)",
+            "hi": "देवदारु (Devdaru)",
+            "kn": "ದೇವದಾರು (Devadaru)",
+            "ta": "தேவதாரு (Devadaru)",
+            "te": "దేవదారు (Devadaru)",
+            "ml": "ദേവതാരം (Devatharam)"
+        },
+        "family": "Pinaceae",
+        "region": "Himalayan belt (1500m to 3200m)",
+        "habitat": "High mountain slopes, conifer forests",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Shothahara (Anti-edema)"
+        },
+        "uses": [
+            {
+                "condition": "Chronic arthritis",
+                "use_description": "Wood oil paste reduces joint inflammation, stiffness, and sciatica.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Cough and Sinusitis",
+                "use_description": "Vapor inhalation liquefies tenacious mucus and opens respiratory passages.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Himachalol",
+                "compound_class": "Sesquiterpene",
+                "pubchem_id": "12308678",
+                "activity": "Spasmolytic, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Internal oil dosage",
+                "severity": "Moderate",
+                "notes": "Essential oil should not be ingested undiluted."
+            }
+        ]
+    },
+    {
+        "species_name": "Trigonella foenum-graecum",
+        "botanical_name": "Trigonella foenum-graecum L.",
+        "common_name": "Fenugreek",
+        "common_names": {
+            "en": "Fenugreek (Methi)",
+            "hi": "मेथी (Methi)",
+            "kn": "ಮೆಂತ್ಯ (Menthya)",
+            "ta": "வெந்தயம் (Venthayam)",
+            "te": "మెంతులు (Menthulu)",
+            "ml": "ഉലുവ (Uluva)"
+        },
+        "family": "Fabaceae",
+        "region": "Widely cultivated across Rajasthan, Gujarat, UP",
+        "habitat": "Loamy agricultural fields",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Stanyajanana (Lactation Promotor)"
+        },
+        "uses": [
+            {
+                "condition": "Diabetes (Madhumeha)",
+                "use_description": "Slows intestinal carbohydrate absorption and enhances insulin sensitivity.",
+                "classical_reference": "Chakradatta"
+            },
+            {
+                "condition": "Postpartum lactation",
+                "use_description": "Classic galactagogue for nursing mothers.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Trigonelline",
+                "compound_class": "Alkaloid",
+                "pubchem_id": "5570",
+                "activity": "Hypoglycemic, neuroprotective"
+            },
+            {
+                "compound_name": "Diosgenin",
+                "compound_class": "Sapogenin",
+                "pubchem_id": "99474",
+                "activity": "Hormone balancing"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Early pregnancy",
+                "severity": "Moderate",
+                "notes": "Excess concentrated seed consumption may stimulate uterine contractions."
+            }
+        ]
+    },
+    {
+        "species_name": "Centella asiatica",
+        "botanical_name": "Centella asiatica (L.) Urb.",
+        "common_name": "GotoKola",
+        "common_names": {
+            "en": "Gotu Kola (Indian Pennywort)",
+            "hi": "मंडूकपर्णी (Mandukaparni)",
+            "kn": "ಒಂದೆಲಗ (Ondelaga)",
+            "ta": "வல்லாரை (Vallarai)",
+            "te": "సరస్వతి ఆకు (Saraswathi Aaku)",
+            "ml": "കുടങ്ങൽ (Kudangal)"
+        },
+        "family": "Apiaceae",
+        "region": "Wet marshlands across tropical India",
+        "habitat": "Pond banks, paddy ridges, damp stream edges",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent), Madhura (Sweet)",
+            "guna": "Laghu (Light)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Medhya Rasayana (Premier Cognitive Enhancer)"
+        },
+        "uses": [
+            {
+                "condition": "Memory & intellect enhancement",
+                "use_description": "Elite Medhya Rasayana; regenerates neurological pathways and concentration.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Wound repair & collagen",
+                "use_description": "Accelerates cutaneous healing and prevents keloid scar formation.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Asiaticoside",
+                "compound_class": "Triterpenoid saponin",
+                "pubchem_id": "99649",
+                "activity": "Neuroprotective, wound healing"
+            },
+            {
+                "compound_name": "Madecassoside",
+                "compound_class": "Saponin",
+                "pubchem_id": "6441589",
+                "activity": "Anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "High doses",
+                "severity": "Low",
+                "notes": "Very high doses may cause mild drowsiness in sensitive persons."
+            }
+        ]
+    },
+    {
+        "species_name": "Psidium guajava",
+        "botanical_name": "Psidium guajava L.",
+        "common_name": "Guava",
+        "common_names": {
+            "en": "Guava (Amrood)",
+            "hi": "अमरूद (Amrood)",
+            "kn": "ಸೀಬೆಹಣ್ಣು (Seebe)",
+            "ta": "கொய்யா (Koyya)",
+            "te": "జామ (Jaama)",
+            "ml": "പേരയ്ക്ക (Perakka)"
+        },
+        "family": "Myrtaceae",
+        "region": "Cultivated across all Indian agro-climatic zones",
+        "habitat": "Orchards, home gardens, tropical plains",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Kashaya (Astringent), Madhura (Sweet)",
+            "guna": "Guru (Heavy)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Grahi (Bowel Binding), Raktastambhana"
+        },
+        "uses": [
+            {
+                "condition": "Toothache and gum inflammation",
+                "use_description": "Tender leaf decoction used as astringent mouthwash.",
+                "classical_reference": "Traditional Folklore Materia"
+            },
+            {
+                "condition": "Diarrhea",
+                "use_description": "Unripe fruit and leaf tea check acute diarrheal motility.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Quercetin",
+                "compound_class": "Flavonol",
+                "pubchem_id": "5280343",
+                "activity": "Antidiarrheal, antiviral"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Constipation",
+                "severity": "Low",
+                "notes": "Excess astringent leaf intake may firm stools excessively."
+            }
+        ]
+    },
+    {
+        "species_name": "Gymnema sylvestre",
+        "botanical_name": "Gymnema sylvestre (Retz.) R.Br. ex Sm.",
+        "common_name": "Gudmar",
+        "common_names": {
+            "en": "Gymnema (Sugar Destroyer)",
+            "hi": "गुड़मार (Gudmar / Madhunashini)",
+            "kn": "ಮಧುನಾಶಿನಿ (Madhunashini)",
+            "ta": "சிறுகுறிஞ்சான் (Sirukurinjan)",
+            "te": "పొడపత్రి (Podapatri)",
+            "ml": "ചക്കരക്കൊല്ലി (Chakkarakkolli)"
+        },
+        "family": "Apocynaceae",
+        "region": "Central and Southern Western Ghats",
+        "habitat": "Dry tropical deciduous forests",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Madhumehahara (Sugar Destroyer)"
+        },
+        "uses": [
+            {
+                "condition": "Hyperglycemia & Sugar cravings",
+                "use_description": "Chewing leaves selectively suppresses sweet taste receptors and stimulates beta cells.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Metabolic weight management",
+                "use_description": "Reduces appetite for refined carbohydrates and clears Kapha sluggishness.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Gymnemic acid",
+                "compound_class": "Triterpenoid saponin",
+                "pubchem_id": "119047",
+                "activity": "Sweet receptor antagonist, insulinotropic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Hypoglycemia",
+                "severity": "Moderate",
+                "notes": "Monitor closely when combined with prescription diabetic medications."
+            }
+        ]
+    },
+    {
+        "species_name": "Terminalia chebula",
+        "botanical_name": "Terminalia chebula Retz.",
+        "common_name": "Haritaki",
+        "common_names": {
+            "en": "Chebulic Myrobalan (Haritaki)",
+            "hi": "हरड़ (Harad / Haritaki)",
+            "kn": "ಅಳಲೆಕಾಯಿ (Alalekayi)",
+            "ta": "கடுக்காய் (Kadukkai)",
+            "te": "కరక్కాయ (Karakkaya)",
+            "ml": "കടുക്ക (Kadukka)"
+        },
+        "family": "Combretaceae",
+        "region": "Sub-Himalayan tracts, deciduous forests across India",
+        "habitat": "Hill forests and plateau woodlands",
+        "profile": {
+            "dosha_effect": "Balances all three doshas (Tridoshahara)",
+            "rasa": "Pancharasa (Has 5 tastes except salty, predominantly Kashaya)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Vayasthapana (Supreme Anti-aging Rasayana)"
+        },
+        "uses": [
+            {
+                "condition": "Digestive purification & Longevity",
+                "use_description": "Called 'Mother of Herbs' in Ayurveda; gentle bowel tonic that removes cellular waste.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Triphala foundation",
+                "use_description": "Key component of Triphala for eye health, gut microbiome, and longevity.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Chebulinic acid",
+                "compound_class": "Tannin",
+                "pubchem_id": "73402",
+                "activity": "Antioxidant, hepatoprotective"
+            },
+            {
+                "compound_name": "Corilagin",
+                "compound_class": "Ellagitannin",
+                "pubchem_id": "73568",
+                "activity": "Anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Extreme exhaustion / Fasting",
+                "severity": "Moderate",
+                "notes": "Avoid during severe dehydration, emaciation, or immediate post-fasting."
+            }
+        ]
+    },
+    {
+        "species_name": "Hibiscus rosa-sinensis",
+        "botanical_name": "Hibiscus rosa-sinensis L.",
+        "common_name": "Hibiscus",
+        "common_names": {
+            "en": "Hibiscus (China Rose)",
+            "hi": "गुड़हल (Gudhal / Japa)",
+            "kn": "ದಾಸವಾಳ (Dasavala)",
+            "ta": "செம்பருத்தி (Sembaruthi)",
+            "te": "మందార (Mandaara)",
+            "ml": "ചെമ്പരത്തി (Chembarathi)"
+        },
+        "family": "Malvaceae",
+        "region": "Cultivated across tropical India",
+        "habitat": "Home gardens and ornamental landscapes",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Kashaya (Astringent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Keshya (Hair Rejuvenator), Hridya"
+        },
+        "uses": [
+            {
+                "condition": "Hair thinning & Dandruff",
+                "use_description": "Flower and leaf mucilage conditions scalp, strengthens follicles, and cools head.",
+                "classical_reference": "Bhavaprakasha"
+            },
+            {
+                "condition": "Menorrhagia (Excess bleeding)",
+                "use_description": "Cooling astringent flowers arrest uterine bleeding and hot flushes.",
+                "classical_reference": "Ashtanga Hridaya"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Anthocyanins",
+                "compound_class": "Flavonoid",
+                "pubchem_id": "67530",
+                "activity": "Cardioprotective, free-radical scavenger"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy in high therapeutic doses",
+                "severity": "Moderate",
+                "notes": "Flower extracts may have mild emmenagogue properties."
+            }
+        ]
+    },
+    {
+        "species_name": "Pongamia pinnata",
+        "botanical_name": "Pongamia pinnata (L.) Pierre",
+        "common_name": "IndianBeech",
+        "common_names": {
+            "en": "Indian Beech (Karanja)",
+            "hi": "करंज (Karanj)",
+            "kn": "ಹೊಂಗೆ (Honge)",
+            "ta": "புங்க மரம் (Pungam Maram)",
+            "te": "కానుగ (Kanuga)",
+            "ml": "പുങ്ക് (Pungu)"
+        },
+        "family": "Fabaceae",
+        "region": "Throughout riverbanks and coastal India",
+        "habitat": "Tidal rivers, roadsides, coastal sands",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Vata",
+            "rasa": "Tikta (Bitter), Katu (Pungent), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Kushtaghna (Potent Dermatological Healer)"
+        },
+        "uses": [
+            {
+                "condition": "Stubborn skin disorders",
+                "use_description": "Karanja seed oil is premier topical cure for psoriasis, eczema, and scabies.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Wound desensitization",
+                "use_description": "Disinfects dirty ulcers and accelerates tissue granulations.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Karanjin",
+                "compound_class": "Furanoflavonoid",
+                "pubchem_id": "100989",
+                "activity": "Acaricidal, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Internal intake of oil",
+                "severity": "High",
+                "notes": "Crude oil is toxic internally; only purified topical use."
+            }
+        ]
+    },
+    {
+        "species_name": "Hemidesmus indicus",
+        "botanical_name": "Hemidesmus indicus (L.) R.Br. ex Schult.",
+        "common_name": "IndianSarsaparilla",
+        "common_names": {
+            "en": "Indian Sarsaparilla (Anantamul)",
+            "hi": "अनंतमूल (Anantamul / Sariva)",
+            "kn": "ನಾಮದ ಬೇರು (Namada Beru)",
+            "ta": "நன்னாரி (Nannari)",
+            "te": "సుగంధిపాల (Sugandhipala)",
+            "ml": "നറുനീണ്ടി (Naruneendi)"
+        },
+        "family": "Apocynaceae",
+        "region": "Throughout peninsular India",
+        "habitat": "Moist scrub jungles, hill edges",
+        "profile": {
+            "dosha_effect": "Balances all three doshas, especially pacifies Pitta",
+            "rasa": "Madhura (Sweet), Tikta (Bitter)",
+            "guna": "Guru (Heavy), Snigdha (Unctuous)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Raktashodhaka (Premier Blood Purifier)"
+        },
+        "uses": [
+            {
+                "condition": "Blood toxicity & skin boils",
+                "use_description": "Cooling root cleanses metabolic toxins from plasma and clears acne/dermatitis.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Summer heat exhaustion",
+                "use_description": "Famous Nannari sherbet cools systemic heat, hyperacidity, and burning urine.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "2-Hydroxy-4-methoxybenzaldehyde",
+                "compound_class": "Aromatic aldehyde",
+                "pubchem_id": "67324",
+                "activity": "Antioxidant, cooling fragrance"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "General safety",
+                "severity": "Low",
+                "notes": "Extremely safe, gentle herb for all constitutions."
+            }
+        ]
+    },
+    {
+        "species_name": "Costus igneus",
+        "botanical_name": "Costus igneus N.E.Br. (Chamaecostus cuspidatus)",
+        "common_name": "InsulinPlant",
+        "common_names": {
+            "en": "Insulin Plant (Fiery Costus)",
+            "hi": "इंसुलिन का पौधा (Insulin Paudha)",
+            "kn": "ಇನ್ಸುಲಿನ್ ಗಿಡ (Insulin Gida)",
+            "ta": "இன்சுலின் செடி (Insulin Chedi)",
+            "te": "ఇన్సులిన్ మొక్క (Insulin Mokka)",
+            "ml": "ഇൻസുലിൻ ചെടി (Insulin Cheti)"
+        },
+        "family": "Costaceae",
+        "region": "Cultivated gardens in South India",
+        "habitat": "Shady gardens, moist tropical soil",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Pramehaghna (Anti-diabetic)"
+        },
+        "uses": [
+            {
+                "condition": "Blood sugar regulation",
+                "use_description": "Chewing 1-2 fresh leaves daily aids in normalizing fasting blood sugar.",
+                "classical_reference": "Contemporary Clinical Ayurveda"
+            },
+            {
+                "condition": "Oxidative stress in pancreas",
+                "use_description": "Rich in corosolic acid, protecting pancreatic islet cells.",
+                "classical_reference": "Phytotherapy Research"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Corosolic acid",
+                "compound_class": "Triterpenoid",
+                "pubchem_id": "6918840",
+                "activity": "Insulin-mimetic, glucose transport activator"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Hypoglycemia",
+                "severity": "Moderate",
+                "notes": "Do not consume in excess alongside insulin injections without monitoring."
+            }
+        ]
+    },
+    {
+        "species_name": "Andrographis paniculata",
+        "botanical_name": "Andrographis paniculata (Burm.f.) Nees",
+        "common_name": "Kalmegh",
+        "common_names": {
+            "en": "King of Bitters (Kalmegh)",
+            "hi": "कालमेघ (Kalmegh / Bhunimba)",
+            "kn": "ನೆಲಬೇವು (Nela Bevu)",
+            "ta": "நிலவேம்பு (Nilavembu)",
+            "te": "నేలవేము (Nela Vemu)",
+            "ml": "കിരിയാത്ത് (Kiriyath)"
+        },
+        "family": "Acanthaceae",
+        "region": "Deciduous forests across plains of India",
+        "habitat": "Moist shady places, wastelands, and hill slopes",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Intensely Bitter)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Hot) / Cold post-activity",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Yakrit-Uttejaka (Liver Tonic), Jwaraghna"
+        },
+        "uses": [
+            {
+                "condition": "Viral fevers (Dengue, Flu)",
+                "use_description": "Core ingredient of Nilavembu Kudineer for combatting fevers and inflammatory viremia.",
+                "classical_reference": "Siddha & Charaka Samhita"
+            },
+            {
+                "condition": "Hepatoprotection & Jaundice",
+                "use_description": "Stimulates bile synthesis and protects hepatic architecture from toxic injury.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Andrographolide",
+                "compound_class": "Diterpene lactone",
+                "pubchem_id": "5318517",
+                "activity": "Potent hepatoprotective, antiviral"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "High",
+                "notes": "May possess antifertility and emmenagogue properties."
+            }
+        ]
+    },
+    {
+        "species_name": "Bauhinia variegata",
+        "botanical_name": "Bauhinia variegata L.",
+        "common_name": "Kanchnaar",
+        "common_names": {
+            "en": "Mountain Ebony (Kanchnaar)",
+            "hi": "कचनार (Kanchnaar)",
+            "kn": "ಬಾಗೆ (Kanchavala)",
+            "ta": "மந்தாரை (Mandharai)",
+            "te": "దేవకాంచనము (Devakanchanamu)",
+            "ml": "ചുവന്ന മന്ദാരം (Chuvanna Mandaram)"
+        },
+        "family": "Fabaceae",
+        "region": "Sub-Himalayan valleys, deciduous forests",
+        "habitat": "Mixed forests, hill elevations",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Gandamala-nashana (Lymphatic / Thyroid Tonic)"
+        },
+        "uses": [
+            {
+                "condition": "Thyroid nodule & Goiter (Gandamala)",
+                "use_description": "Kanchnaar Guggulu is the premier Ayurvedic formulation for thyroid and lymphatic enlargement.",
+                "classical_reference": "Bhavaprakasha"
+            },
+            {
+                "condition": "PCOS & Cysts",
+                "use_description": "Breaks down Kapha growths, lipomas, and reproductive cysts.",
+                "classical_reference": "Chakradatta"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Kaempferol",
+                "compound_class": "Flavonoid",
+                "pubchem_id": "5280863",
+                "activity": "Antineoplastic, astringent"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Extreme dry constipation",
+                "severity": "Low",
+                "notes": "High astringency may temporarily harden stools."
+            }
+        ]
+    },
+    {
+        "species_name": "Momordica charantia",
+        "botanical_name": "Momordica charantia L.",
+        "common_name": "Karela",
+        "common_names": {
+            "en": "Bitter Gourd (Karela)",
+            "hi": "करेला (Karela / Karavellaka)",
+            "kn": "ಹಾಗಲಕಾಯಿ (Hagalakayi)",
+            "ta": "பாகற்காய் (Pavakkai)",
+            "te": "కాకరకాయ (Kakarakaya)",
+            "ml": "പാവയ്ക്ക (Pavakka)"
+        },
+        "family": "Cucurbitaceae",
+        "region": "Cultivated across all states of India",
+        "habitat": "Trellised farmland, tropical plains",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Mild Warm)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Bhedana, Madhumehahara"
+        },
+        "uses": [
+            {
+                "condition": "Insulin resistance & Diabetes",
+                "use_description": "Contains polypeptide-p (plant insulin) that naturally assists cellular glucose uptake.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Blood purification",
+                "use_description": "Eliminates inflammatory pitta metabolites from blood and clarifies skin.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Charantin",
+                "compound_class": "Steroidal glycoside",
+                "pubchem_id": "100994",
+                "activity": "Potent hypoglycemic"
+            },
+            {
+                "compound_name": "Polypeptide-p",
+                "compound_class": "Plant peptide",
+                "pubchem_id": "6441581",
+                "activity": "Insulin-mimetic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "Moderate",
+                "notes": "Excess concentrated bitter juice may induce uterine contractions."
+            }
+        ]
+    },
+    {
+        "species_name": "Plectranthus amboinicus",
+        "botanical_name": "Plectranthus amboinicus (Lour.) Spreng.",
+        "common_name": "Karpuravalli",
+        "common_names": {
+            "en": "Indian Borage (Mexican Mint)",
+            "hi": "अजवाइन पत्ता / कर्पूरवल्ली (Karpuravalli)",
+            "kn": "ದೊಡ್ಡಪತ್ರೆ (Doddapatre)",
+            "ta": "கற்பூரவள்ளி (Karpuravalli)",
+            "te": "వాము ఆకు (Vamu Aaku)",
+            "ml": "പനിക്കൂർക്ക (Panikoorkka)"
+        },
+        "family": "Lamiaceae",
+        "region": "Grown in households across South India",
+        "habitat": "Kitchen gardens, shaded moist pots",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Kaphahara (Supreme Pediatric Mucolytic)"
+        },
+        "uses": [
+            {
+                "condition": "Infant & adult cough / Cold",
+                "use_description": "Leaf juice with honey is the premier household cure for childhood cough and wheezing.",
+                "classical_reference": "Traditional Siddha & Ayurveda"
+            },
+            {
+                "condition": "Indigestion and bloating",
+                "use_description": "Volatile oils relieve dyspepsia, flatulence, and sluggish bowel motility.",
+                "classical_reference": "Ayurvedic Materia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Carvacrol",
+                "compound_class": "Monoterpenoid phenol",
+                "pubchem_id": "10364",
+                "activity": "Antitussive, antibacterial"
+            },
+            {
+                "compound_name": "Thymol",
+                "compound_class": "Phenol",
+                "pubchem_id": "6989",
+                "activity": "Bronchodilator"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Severe hyperacidity",
+                "severity": "Low",
+                "notes": "Mild pungency; moderate with honey or ghee."
+            }
+        ]
+    },
+    {
+        "species_name": "Holarrhena antidysenterica",
+        "botanical_name": "Holarrhena pubescens Wall. ex G.Don",
+        "common_name": "Kutaja",
+        "common_names": {
+            "en": "Kurchi (Tellicherry Bark)",
+            "hi": "कुटज (Kutaja)",
+            "kn": "ಕೊಡಸಿಗೆ (Kodasige)",
+            "ta": "குடசப்பாலை (Kudasappalai)",
+            "te": "గిరిమల్లిక (Girimallika / Kodisepala)",
+            "ml": "കുടകപ്പാല (Kudagappala)"
+        },
+        "family": "Apocynaceae",
+        "region": "Sub-Himalayan tracts, deciduous forests of Central & Southern India",
+        "habitat": "Open hill forests and deciduous scrub",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Atisarahara (King of Antidiarrheal Herbs)"
+        },
+        "uses": [
+            {
+                "condition": "Dysentery & Amebiasis",
+                "use_description": "Kutajarishta is the celebrated formula for acute amebic dysentery and ulcerative colitis.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Bleeding piles",
+                "use_description": "Arrests intestinal bleeding and tones mucosal lining.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Conessine",
+                "compound_class": "Steroidal alkaloid",
+                "pubchem_id": "9299",
+                "activity": "Antiamoebic, antibacterial"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Chronic constipation",
+                "severity": "Moderate",
+                "notes": "Do not administer when bowel motility is already stalled."
+            }
+        ]
+    },
+    {
+        "species_name": "Citrus limon",
+        "botanical_name": "Citrus limon (L.) Osbeck",
+        "common_name": "Lemon",
+        "common_names": {
+            "en": "Lemon (Nimbu)",
+            "hi": "नींबू (Nimbu / Jambira)",
+            "kn": "ನಿಂಬೆ (Nimbe)",
+            "ta": "எலுமிச்சை (Elimichai)",
+            "te": "నిమ్మకాయ (Nimmakaya)",
+            "ml": "നാരങ്ങ (Narannga)"
+        },
+        "family": "Rutaceae",
+        "region": "Cultivated across all temperate and tropical regions",
+        "habitat": "Domestic gardens and citrus groves",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha, increases Pitta in excess",
+            "rasa": "Amla (Sour)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Ushna (Warm)",
+            "vipaka": "Amla (Sour)",
+            "prabhava": "Rochana (Enhances Taste Appetite)"
+        },
+        "uses": [
+            {
+                "condition": "Anorexia and Nausea (Aruchi)",
+                "use_description": "Lemon juice with rock salt awakens palate and halts emetic reflex.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Vitamin C replenishment",
+                "use_description": "Reinforces cellular immune resistance and aids iron absorption.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Limonene",
+                "compound_class": "Terpene",
+                "pubchem_id": "22311",
+                "activity": "Detoxifying, antioxidant"
+            },
+            {
+                "compound_name": "Ascorbic acid",
+                "compound_class": "Vitamin",
+                "pubchem_id": "54670067",
+                "activity": "Immune enhancer"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Acute hyperacidity",
+                "severity": "Moderate",
+                "notes": "May irritate inflamed stomach ulcers."
+            }
+        ]
+    },
+    {
+        "species_name": "Cymbopogon citratus",
+        "botanical_name": "Cymbopogon citratus (DC.) Stapf",
+        "common_name": "Lemongrass",
+        "common_names": {
+            "en": "Lemongrass",
+            "hi": "लेमनग्रास (Bhustrina / Lemongrass)",
+            "kn": "ಮಜ್ಜಿಗೆ ಹುಲ್ಲು (Majjige Hullu)",
+            "ta": "எலுமிச்சை புல் (Elumichai Pul)",
+            "te": "నిమ్మగడ్డి (Nimmagaddi)",
+            "ml": "വാസനപ്പുല്ല് (Vasanappullu)"
+        },
+        "family": "Poaceae",
+        "region": "Kerala, Western Ghats, Northeast India",
+        "habitat": "Sunny tropical grasslands and cultivations",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Katu (Pungent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Sheeta (Cold - refreshing)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Swedajanana (Promotes Healthy Perspiration)"
+        },
+        "uses": [
+            {
+                "condition": "Fevers and Chills",
+                "use_description": "Warm lemongrass tea induces sweat and safely breaks persistent low-grade fevers.",
+                "classical_reference": "Bhavaprakasha"
+            },
+            {
+                "condition": "Abdominal distention",
+                "use_description": "Relieves painful intestinal spasms and carminative flatulence.",
+                "classical_reference": "Ayurvedic Materia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Citral",
+                "compound_class": "Monoterpene aldehyde",
+                "pubchem_id": "638011",
+                "activity": "Antimicrobial, antipyretic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy in large amounts",
+                "severity": "Moderate",
+                "notes": "Avoid high-concentration extracts during early pregnancy."
+            }
+        ]
+    },
+    {
+        "species_name": "Piper longum",
+        "botanical_name": "Piper longum L.",
+        "common_name": "LongPepper",
+        "common_names": {
+            "en": "Indian Long Pepper",
+            "hi": "पिप्पली (Pippali)",
+            "kn": "ಹಿಪ್ಪಲಿ (Hippali)",
+            "ta": "திப்பிலி (Thippili)",
+            "te": "పిప్పళ్ళు (Pippallu)",
+            "ml": "തിപ്പലി (Thippali)"
+        },
+        "family": "Piperaceae",
+        "region": "Tropical rainforests of Assam, Bengal, Western Ghats",
+        "habitat": "Evergreen forest floors and humid shade",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Katu (Pungent)",
+            "guna": "Laghu (Light), Snigdha (Unctuous), Tikshna (Sharp)",
+            "virya": "Anushnasheeta (Neither too hot nor cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Rasayana (Premier Respiratory Rejuvenator)"
+        },
+        "uses": [
+            {
+                "condition": "Chronic asthma & Bronchitis (Kasa-Shwasa)",
+                "use_description": "Vardhamana Pippali Rasayana rejuvenates lung tissue and arrests recurring infections.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Metabolic enhancement",
+                "use_description": "Third member of Trikatu; eliminates cold metabolic Ama.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Piperlongumine",
+                "compound_class": "Alkaloid",
+                "pubchem_id": "637858",
+                "activity": "Antiasthmatic, immunomodulatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Acute Pitta flare-ups",
+                "severity": "Moderate",
+                "notes": "Do not consume continuously in high doses without milk/ghee."
+            }
+        ]
+    },
+    {
+        "species_name": "Mentha spicata",
+        "botanical_name": "Mentha spicata L.",
+        "common_name": "Mint",
+        "common_names": {
+            "en": "Spearmint / Garden Mint",
+            "hi": "पुदीना (Pudina)",
+            "kn": "ಪುದೀನ (Pudina)",
+            "ta": "புதினா (Pudhina)",
+            "te": "పుదీనా (Pudina)",
+            "ml": "പുതിന (Puthina)"
+        },
+        "family": "Lamiaceae",
+        "region": "Cultivated across the subcontinent",
+        "habitat": "Moist soil, herb beds, riverbanks",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Vata, soothing to Pitta",
+            "rasa": "Katu (Pungent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold - Post ingestion cooling)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Rochana, Deepana"
+        },
+        "uses": [
+            {
+                "condition": "Indigestion and nausea",
+                "use_description": "Fresh mint leaves relieve gastrointestinal gas, morning sickness, and heartburn.",
+                "classical_reference": "Bhavaprakasha"
+            },
+            {
+                "condition": "Headache & mental fatigue",
+                "use_description": "Menthol vapor refreshes cerebral circulation and soothes tension headaches.",
+                "classical_reference": "Ayurvedic Materia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Carvone",
+                "compound_class": "Terpenoid",
+                "pubchem_id": "7439",
+                "activity": "Antispasmodic, digestive"
+            },
+            {
+                "compound_name": "Menthol",
+                "compound_class": "Terpene alcohol",
+                "pubchem_id": "16666",
+                "activity": "Cooling analgesic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Severe GERD",
+                "severity": "Low",
+                "notes": "High doses may relax lower esophageal sphincter in sensitive reflux patients."
+            }
+        ]
+    },
+    {
+        "species_name": "Glycyrrhiza glabra",
+        "botanical_name": "Glycyrrhiza glabra L.",
+        "common_name": "Mulethi",
+        "common_names": {
+            "en": "Licorice (Mulethi)",
+            "hi": "मुलेठी (Mulethi / Yashtimadhu)",
+            "kn": "ಜ್ಯೇಷ್ಠಮಧು (Jyeshthamadhu)",
+            "ta": "அதிமதுரம் (Athimadhuram)",
+            "te": "అతిమధురము (Athimadhuramu)",
+            "ml": "ഇരട്ടിമധുരം (Irattimadhuram)"
+        },
+        "family": "Fabaceae",
+        "region": "Northwest India, cultivated in Punjab and Himalayas",
+        "habitat": "Subtropical river valleys and rich sandy loam",
+        "profile": {
+            "dosha_effect": "Balances Vata and Pitta",
+            "rasa": "Madhura (Sweet)",
+            "guna": "Guru (Heavy), Snigdha (Unctuous)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Kanthya (Vocal Chord Rejuvenator), Chakshushya"
+        },
+        "uses": [
+            {
+                "condition": "Sore throat & Vocal strain",
+                "use_description": "Chewing root sticks coats inflamed pharynx and rejuvenates voice timbre.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Peptic ulcers & Gastritis",
+                "use_description": "Demulcent mucilaginous action shields stomach wall against corrosive acids.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Glycyrrhizin",
+                "compound_class": "Triterpenoid saponin",
+                "pubchem_id": "14982",
+                "activity": "Anti-ulcer, expectorant, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Hypertension (high dose)",
+                "severity": "Moderate",
+                "notes": "Excess chronic consumption over months may cause sodium retention."
+            }
+        ]
+    },
+    {
+        "species_name": "Vitex negundo",
+        "botanical_name": "Vitex negundo L.",
+        "common_name": "Nirgundi",
+        "common_names": {
+            "en": "Five-Leaved Chaste Tree (Nirgundi)",
+            "hi": "निर्गुंडी (Nirgundi)",
+            "kn": "ಲಕ್ಕಿ ಗಿಡ (Lakki Gida)",
+            "ta": "நொச்சி (Nochi)",
+            "te": "వావిలి (Vavili)",
+            "ml": "കരിനൊച്ചി (Karinocchi)"
+        },
+        "family": "Lamiaceae",
+        "region": "Widespread along riverbanks throughout India",
+        "habitat": "Roadsides, wasteland banks, moist shrubland",
+        "profile": {
+            "dosha_effect": "Supreme pacifier of Vata and Kapha",
+            "rasa": "Tikta (Bitter), Katu (Pungent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Shothahara (Premier Anti-inflammatory)"
+        },
+        "uses": [
+            {
+                "condition": "Joint aches & Sciatica (Gridhrasi)",
+                "use_description": "Nirgundi oil and leaf poultices alleviate osteoarthritic inflammation rapidly.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Sinus congestion (Kaphaja Shiroroga)",
+                "use_description": "Leaf steam inhalation relieves heavy frontal headaches and nasal congestion.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Negundoside",
+                "compound_class": "Iridoid glycoside",
+                "pubchem_id": "100990",
+                "activity": "Analgesic, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pitta burning conditions",
+                "severity": "Low",
+                "notes": "Ushna potency; balance with cooling carrier oils."
+            }
+        ]
+    },
+    {
+        "species_name": "Butea monosperma",
+        "botanical_name": "Butea monosperma (Lam.) Taub.",
+        "common_name": "Palash",
+        "common_names": {
+            "en": "Flame of the Forest (Palash)",
+            "hi": "पलाश (Palash / Kinshuka)",
+            "kn": "ಮುತ್ತುಗ (Muttuga)",
+            "ta": "பலாசு (Palarasu)",
+            "te": "మోదుగ (Moduga)",
+            "ml": "പ്ലാശ് (Plash)"
+        },
+        "family": "Fabaceae",
+        "region": "Central India, Gangetic plains, Western Ghats",
+        "habitat": "Dry open plains and deciduous woodlands",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Katu (Pungent), Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Krimighna (Potent Anthelmintic)"
+        },
+        "uses": [
+            {
+                "condition": "Intestinal worms",
+                "use_description": "Palash seed powder with honey purges stubborn parasitic worms.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Bleeding disorders (Raktapitta)",
+                "use_description": "Brilliant orange flower infusion cools feverish bleeding and sunburn.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Butein",
+                "compound_class": "Chalcone",
+                "pubchem_id": "5281222",
+                "activity": "Antioxidant, anthelmintic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy",
+                "severity": "Moderate",
+                "notes": "Seeds exhibit mild antifertility activity; avoid in gestation."
+            }
+        ]
+    },
+    {
+        "species_name": "Carica papaya",
+        "botanical_name": "Carica papaya L.",
+        "common_name": "Papaya",
+        "common_names": {
+            "en": "Papaya (Pawpaw)",
+            "hi": "पपीता (Papita / Erandakarkati)",
+            "kn": "ಪರಂಗಿ ಹಣ್ಣು (Parangi Hannu)",
+            "ta": "பப்பாளி (Pappali)",
+            "te": "బొప్పాయి (Boppayi)",
+            "ml": "പപ്പായ (Pappaya)"
+        },
+        "family": "Caricaceae",
+        "region": "Cultivated across tropical India",
+        "habitat": "Tropical orchards and household gardens",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Madhura (Sweet), Tikta (Bitter - leaf)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Pleehaghna (Spleen & Platelet Booster)"
+        },
+        "uses": [
+            {
+                "condition": "Thrombocytopenia (Low platelets)",
+                "use_description": "Papaya leaf juice extract dramatically stimulates platelet production in dengue.",
+                "classical_reference": "Contemporary Clinical Ayurveda"
+            },
+            {
+                "condition": "Protein indigestion",
+                "use_description": "Papain enzymes digest sluggish gut residues and cleanse intestinal walls.",
+                "classical_reference": "Ayurvedic Materia"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Papain",
+                "compound_class": "Proteolytic enzyme",
+                "pubchem_id": "6441582",
+                "activity": "Digestive, platelet enhancer"
+            },
+            {
+                "compound_name": "Carpaine",
+                "compound_class": "Alkaloid",
+                "pubchem_id": "442589",
+                "activity": "Anthelmintic"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Pregnancy (unripe fruit & leaf)",
+                "severity": "High",
+                "notes": "High latex content causes uterine muscle contractions."
+            }
+        ]
+    },
+    {
+        "species_name": "Bryophyllum pinnatum",
+        "botanical_name": "Kalanchoe pinnata (Lam.) Pers. (Bryophyllum pinnatum)",
+        "common_name": "Patharchatta",
+        "common_names": {
+            "en": "Life Plant (Air Plant)",
+            "hi": "पत्थरचट्टा (Patharchatta / Pashanabheda)",
+            "kn": "ಕಾಡುಬಸಳೆ (Kadu Basale)",
+            "ta": "ரணகள்ளி (Ranakalli)",
+            "te": "రణపాల (Ranapaala)",
+            "ml": "ഇലമുളച്ചി (Ilamulachi)"
+        },
+        "family": "Crassulaceae",
+        "region": "Cultivated across rocks and gardens throughout India",
+        "habitat": "Rocky dry slopes, gardens, masonry walls",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Kashaya (Astringent), Amla (Mild Sour)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Ashmari-bhedana (Kidney Stone Dissolver)"
+        },
+        "uses": [
+            {
+                "condition": "Renal calculi (Kidney Stones)",
+                "use_description": "Famous classical Lithotriptic; breaks down calcium oxalate stones and flushes gravel.",
+                "classical_reference": "Sushruta Samhita"
+            },
+            {
+                "condition": "Wound closure",
+                "use_description": "Crushed succulent leaf poultice seals cuts, boils, and blunt trauma wounds.",
+                "classical_reference": "Chakradatta"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Bryophyllin",
+                "compound_class": "Bufadienolide",
+                "pubchem_id": "119045",
+                "activity": "Lithotriptic, wound healing"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Prolonged excessive consumption",
+                "severity": "Low",
+                "notes": "Safe in standard 1-2 leaf daily therapeutic cycles."
+            }
+        ]
+    },
+    {
+        "species_name": "Ficus religiosa",
+        "botanical_name": "Ficus religiosa L.",
+        "common_name": "Peepal",
+        "common_names": {
+            "en": "Sacred Fig (Peepal)",
+            "hi": "पीपल (Peepal / Ashvattha)",
+            "kn": "ಅರಳಿ ಮರ (Arali Mara)",
+            "ta": "அரச மரம் (Arasa Maram)",
+            "te": "రావి చెట్టు (Raavi Chettu)",
+            "ml": "അരയാൽ (Arayal)"
+        },
+        "family": "Moraceae",
+        "region": "Throughout the Indian subcontinent",
+        "habitat": "Temple shrines, rocky cracks, village centers",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Kashaya (Astringent), Madhura (Sweet)",
+            "guna": "Guru (Heavy), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Varnya, Medhya"
+        },
+        "uses": [
+            {
+                "condition": "Asthma & breathing distress",
+                "use_description": "Bark powder with milk relieves chronic respiratory spasms.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Skin ulcers and burns",
+                "use_description": "Tender leaf paste cools burns and promotes scarless epithelialization.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Campesterol",
+                "compound_class": "Phytosterol",
+                "pubchem_id": "173183",
+                "activity": "Anti-inflammatory, astringent"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Severe constipation",
+                "severity": "Low",
+                "notes": "Mild astringency; ensure adequate fluid intake."
+            }
+        ]
+    },
+    {
+        "species_name": "Punica granatum",
+        "botanical_name": "Punica granatum L.",
+        "common_name": "Pomegranate",
+        "common_names": {
+            "en": "Pomegranate (Dadima)",
+            "hi": "अनार (Anaar / Dadima)",
+            "kn": "ದಾಳಿಂಬೆ (Dalimbe)",
+            "ta": "மாதுளை (Mathulai)",
+            "te": "దానిమ్మ (Danimma)",
+            "ml": "മാതളം (Mathalam)"
+        },
+        "family": "Lythraceae",
+        "region": "Maharashtra, Gujarat, Karnataka, Mediterranean tracts",
+        "habitat": "Dry subtropical orchards, sandy loam",
+        "profile": {
+            "dosha_effect": "Balances all three doshas (Tridoshahara)",
+            "rasa": "Madhura (Sweet), Amla (Sour), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Anushna (Neither excessively hot nor cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Hridya (Cardiovascular Rejuvenator)"
+        },
+        "uses": [
+            {
+                "condition": "Anemia & Heart wellness",
+                "use_description": "Enhances hemoglobin formation and promotes arterial elasticity without increasing acidity.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Dysentery & Colitis",
+                "use_description": "Rind decoction is supreme astringent for halting amoebic colitis.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Punicalagin",
+                "compound_class": "Ellagitannin",
+                "pubchem_id": "44584733",
+                "activity": "Superior antioxidant, cardioprotective"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "General safety",
+                "severity": "Low",
+                "notes": "Highly praised as universal dietary medicine."
+            }
+        ]
+    },
+    {
+        "species_name": "Boerhavia diffusa",
+        "botanical_name": "Boerhavia diffusa L.",
+        "common_name": "Punarnava",
+        "common_names": {
+            "en": "Spreading Hogweed (Punarnava)",
+            "hi": "पुनर्नवा (Punarnava)",
+            "kn": "ಸಂಜೀವಿನಿ ಗಿಡ (Komme Gida)",
+            "ta": "மூக்கிரட்டை (Mookirattai)",
+            "te": "గలిజేరు (Galijeru)",
+            "ml": "തഴുതാമ (Thazhuthama)"
+        },
+        "family": "Nyctaginaceae",
+        "region": "Widespread across all plains of India",
+        "habitat": "Wastelands, field ditches, roadsides",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Vata",
+            "rasa": "Madhura (Sweet), Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Warm)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Shothaghna (Body Rejuvenator & Diuretic)"
+        },
+        "uses": [
+            {
+                "condition": "Kidney disease & Edema (Shotha)",
+                "use_description": "Restores renal clearance, reduces fluid retention, and lowers elevated urea levels.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Liver congestion & Ascites",
+                "use_description": "Regenerates hepatic architecture and drains abdominal fluid.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Punarnavine",
+                "compound_class": "Alkaloid",
+                "pubchem_id": "119043",
+                "activity": "Potent diuretic, renal protector"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Dehydration",
+                "severity": "Moderate",
+                "notes": "Potent diuretic; maintain adequate mineral hydration."
+            }
+        ]
+    },
+    {
+        "species_name": "Rauvolfia serpentina",
+        "botanical_name": "Rauvolfia serpentina (L.) Benth. ex Kurz",
+        "common_name": "Sarpagandha",
+        "common_names": {
+            "en": "Indian Snakeroot (Sarpagandha)",
+            "hi": "सर्पगंधा (Sarpagandha)",
+            "kn": "ಸರ್ಪಗಂಧಿ (Sarpagandhi)",
+            "ta": "சர்ப்பகந்தி (Sarpagandhi)",
+            "te": "సర్పగంధి (Sarpagandhi)",
+            "ml": "സർപ്പഗന്ധി (Sarpagandhi)"
+        },
+        "family": "Apocynaceae",
+        "region": "Sub-Himalayan plains, Western Ghats, Assam",
+        "habitat": "Moist deciduous forest undergrowths",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Tikta (Bitter)",
+            "guna": "Ruksha (Dry)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Nidrajanana, Raktachapahara (Tranquilizer)"
+        },
+        "uses": [
+            {
+                "condition": "Hypertension (High BP)",
+                "use_description": "World-renowned source of Reserpine; safely normalizes arterial hypertension.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Psychosis and severe insomnia (Unmada)",
+                "use_description": "Calms aggravated nervous system and induces restorative sleep.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Reserpine",
+                "compound_class": "Indole alkaloid",
+                "pubchem_id": "5770",
+                "activity": "Antihypertensive, central nervous sedative"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Severe clinical depression",
+                "severity": "High",
+                "notes": "Must only be used under qualified Ayurvedic physician supervision."
+            }
+        ]
+    },
+    {
+        "species_name": "Sesamum indicum",
+        "botanical_name": "Sesamum indicum L.",
+        "common_name": "Sesame",
+        "common_names": {
+            "en": "Sesame (Gingelly)",
+            "hi": "तिल (Til / Tila)",
+            "kn": "ಎಳ್ಳು (Ellu)",
+            "ta": "எள் (Ellu)",
+            "te": "నువ్వులు (Nuvvulu)",
+            "ml": "എള്ള് (Ellu)"
+        },
+        "family": "Pedaliaceae",
+        "region": "Cultivated across Gujarat, MP, Tamil Nadu, Andhra",
+        "habitat": "Warm, sunny plains with loamy soil",
+        "profile": {
+            "dosha_effect": "Premier pacifier of Vata dosha",
+            "rasa": "Madhura (Sweet), Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Guru (Heavy), Snigdha (Unctuous), Sukshma (Subtle penetrating)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Balya (Strengthening), Keshya, Asthibalya"
+        },
+        "uses": [
+            {
+                "condition": "Abhyanga (Daily oil massage)",
+                "use_description": "Foundational oil for all Ayurvedic body therapies; nourishes tissues and joints.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Bone & Dental density",
+                "use_description": "Rich in organic calcium; strengthens teeth and skeletal matrix.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Sesamin",
+                "compound_class": "Lignan",
+                "pubchem_id": "72307",
+                "activity": "Antioxidant, neuroprotective"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "High Pitta bleeding disorders",
+                "severity": "Low",
+                "notes": "Ushna virya; use in moderation during acute summer heat."
+            }
+        ]
+    },
+    {
+        "species_name": "Oroxylum indicum",
+        "botanical_name": "Oroxylum indicum (L.) Kurz",
+        "common_name": "Shyonaka",
+        "common_names": {
+            "en": "Midnight Horror (Indian Trumpet)",
+            "hi": "श्योनाक (Shyonaka)",
+            "kn": "ತತ್ತನ (Tattana)",
+            "ta": "பெருவாங்கை (Peruvangai)",
+            "te": "దుండుగం (Dundugam)",
+            "ml": "പലകപ്പയ്യാനി (Palakapayyanni)"
+        },
+        "family": "Bignoniaceae",
+        "region": "Throughout humid forests of India",
+        "habitat": "Moist deciduous forests and stream edges",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Deepana, Shothahara"
+        },
+        "uses": [
+            {
+                "condition": "Dashamula pillar",
+                "use_description": "Core ingredient of Dashamula; treats neuromuscular pain and postpartum weakness.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Colic and rheumatoid aches",
+                "use_description": "Soothes deep skeletal spasms and cleanses gut toxins.",
+                "classical_reference": "Ashtanga Hridaya"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Baicalein",
+                "compound_class": "Flavone",
+                "pubchem_id": "5281605",
+                "activity": "Anti-inflammatory, neuroprotective"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "General safety",
+                "severity": "Low",
+                "notes": "Used safely within traditional Dashamula preparations."
+            }
+        ]
+    },
+    {
+        "species_name": "Dracaena trifasciata",
+        "botanical_name": "Dracaena trifasciata (Prain) Mabb. (Sansevieria)",
+        "common_name": "SnakePlant",
+        "common_names": {
+            "en": "Snake Plant (Mother-in-law's Tongue)",
+            "hi": "स्नेक प्लांट / मूरवा (Snake Plant)",
+            "kn": "ಸ್ನೇಕ್ ಪ್ಲಾಂಟ್ (Snake Plant)",
+            "ta": "பாம்பு கற்றாழை (Snake Plant)",
+            "te": "స్నేక్ ప్లాంట్ (Snake Plant)",
+            "ml": "സ്നേക്ക് പ്ലാന്റ് (Snake Plant)"
+        },
+        "family": "Asparagaceae",
+        "region": "Cultivated across households throughout India",
+        "habitat": "Dry pots, indoor landscapes, tropical rockeries",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Kapha",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Visha-shodhaka (Air Purifier)"
+        },
+        "uses": [
+            {
+                "condition": "Indoor air purification",
+                "use_description": "Absorbs formaldehyde, benzene, and releases oxygen nocturnally.",
+                "classical_reference": "Contemporary Phytoremediation"
+            },
+            {
+                "condition": "Earache and minor burns",
+                "use_description": "Warmed leaf juice traditionally applied for otalgia and minor skin burns.",
+                "classical_reference": "Folk Ethnobotany"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Ruscogenin",
+                "compound_class": "Sapogenin",
+                "pubchem_id": "99645",
+                "activity": "Venotonic, anti-inflammatory"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Ingestion by domestic pets",
+                "severity": "Moderate",
+                "notes": "Saponins can cause nausea if ingested by household cats/dogs."
+            }
+        ]
+    },
+    {
+        "species_name": "Acorus calamus",
+        "botanical_name": "Acorus calamus L.",
+        "common_name": "Vacha",
+        "common_names": {
+            "en": "Sweet Flag (Calamus)",
+            "hi": "वचा (Vacha / Sweet Flag)",
+            "kn": "ಬಜೆ (Baje)",
+            "ta": "வசம்பு (Vasambu)",
+            "te": "వస (Vasa)",
+            "ml": "വയമ്പ് (Vayambu)"
+        },
+        "family": "Acoraceae",
+        "region": "Marshy wetlands of Kashmir, Manipur, Western Ghats",
+        "habitat": "Stream shallows, swamps, moist clay margins",
+        "profile": {
+            "dosha_effect": "Balances Vata and Kapha",
+            "rasa": "Katu (Pungent), Tikta (Bitter)",
+            "guna": "Laghu (Light), Tikshna (Sharp)",
+            "virya": "Ushna (Hot)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Medhya (Cognitive & Speech Rejuvenator)"
+        },
+        "uses": [
+            {
+                "condition": "Speech impediments & Memory",
+                "use_description": "Given to infants with honey to awaken articulate speech and sharpen intellect.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Epilepsy & Neural fog",
+                "use_description": "Clears blocked cerebral microchannels and dispels neurological stupor.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Asarone",
+                "compound_class": "Phenylpropanoid",
+                "pubchem_id": "73401",
+                "activity": "Sedative, neuroprotective"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Unpurified high doses",
+                "severity": "Moderate",
+                "notes": "Must use purified rhizome in precise micro-dosages."
+            }
+        ]
+    },
+    {
+        "species_name": "Chrysopogon zizanioides",
+        "botanical_name": "Chrysopogon zizanioides (L.) Roberty",
+        "common_name": "Vetiver",
+        "common_names": {
+            "en": "Vetiver (Khus)",
+            "hi": "खस (Khus / Ushira)",
+            "kn": "ಲಾವಂಚ (Lavancha)",
+            "ta": "வெட்டிவேர் (Vettiver)",
+            "te": "వట్టివేరు (Vattiveru)",
+            "ml": "രാമച്ചം (Ramacham)"
+        },
+        "family": "Poaceae",
+        "region": "Throughout riverbanks and plains of India",
+        "habitat": "Riverbanks, marshy alluvium, tropical wetlands",
+        "profile": {
+            "dosha_effect": "Balances Pitta and Vata",
+            "rasa": "Tikta (Bitter), Madhura (Sweet)",
+            "guna": "Laghu (Light), Snigdha (Unctuous)",
+            "virya": "Sheeta (Extremely Cold)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Daha-prashamana (Premier Burning Sensation Cooler)"
+        },
+        "uses": [
+            {
+                "condition": "Extreme internal heat & Sunstroke",
+                "use_description": "Root infused water relieves intense thirst, burning sensation, and fever.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Skin glowing & Prickly heat",
+                "use_description": "Cooling root paste dispels prickly heat and tones complexion.",
+                "classical_reference": "Sushruta Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Khusimol",
+                "compound_class": "Sesquiterpene",
+                "pubchem_id": "119046",
+                "activity": "Cooling, sedative fragrance"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Extreme cold/pneumonia states",
+                "severity": "Low",
+                "notes": "Highly refrigerant virya; avoid during severe chills."
+            }
+        ]
+    },
+    {
+        "species_name": "Terminalia bellirica",
+        "botanical_name": "Terminalia bellirica (Gaertn.) Roxb.",
+        "common_name": "Vibhitaki",
+        "common_names": {
+            "en": "Baheda (Belleric Myrobalan)",
+            "hi": "बहेड़ा (Baheda / Bibhitaki)",
+            "kn": "ತಾರೆಕಾಯಿ (Tharekayi)",
+            "ta": "தான்றிக்காய் (Thandrikkai)",
+            "te": "తానికాయ (Thanikaya)",
+            "ml": "താന്നി (Thanni)"
+        },
+        "family": "Combretaceae",
+        "region": "Deciduous forests across plains and lower hills of India",
+        "habitat": "Deciduous forests, mixed woodlands",
+        "profile": {
+            "dosha_effect": "Supreme pacifier of Kapha dosha",
+            "rasa": "Kashaya (Astringent)",
+            "guna": "Ruksha (Dry), Laghu (Light)",
+            "virya": "Ushna (Warm)",
+            "vipaka": "Madhura (Sweet)",
+            "prabhava": "Kanthya (Vocal Tonic), Keshya"
+        },
+        "uses": [
+            {
+                "condition": "Persistent cough & Voice hoarseness",
+                "use_description": "Key Triphala herb; liquefies and expels obstinate bronchial mucus.",
+                "classical_reference": "Charaka Samhita"
+            },
+            {
+                "condition": "Hair growth & Eye vision",
+                "use_description": "Nourishes optic nerves and darkens premature gray hair.",
+                "classical_reference": "Bhavaprakasha"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Belleric acid",
+                "compound_class": "Triterpenoid",
+                "pubchem_id": "442580",
+                "activity": "Hepatoprotective, expectorant"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Excessive dry constipation",
+                "severity": "Low",
+                "notes": "Strongly drying action on colon mucus if uncompounded."
+            }
+        ]
+    },
+    {
+        "species_name": "Yashada Mineralia",
+        "botanical_name": "Zincum Ayurvedicum / Yashada Bhasma",
+        "common_name": "Yashad",
+        "common_names": {
+            "en": "Ayurvedic Calx of Zinc (Yashada)",
+            "hi": "यशद भस्म (Yashada Bhasma)",
+            "kn": "ಯಶದ ಭಸ್ಮ (Yashada Bhasma)",
+            "ta": "நாக பஸ்பம் (Naga / Yashada Bhasmam)",
+            "te": "యశద భస్మము (Yashada Bhasmam)",
+            "ml": "യശദ ഭസ്മം (Yashada Bhasmam)"
+        },
+        "family": "Mineralia / Rasashastra",
+        "region": "Prepared according to Rasashastra classical texts",
+        "habitat": "Classical Ayurvedic alchemy laboratories",
+        "profile": {
+            "dosha_effect": "Balances Kapha and Pitta",
+            "rasa": "Tikta (Bitter), Kashaya (Astringent)",
+            "guna": "Laghu (Light), Ruksha (Dry)",
+            "virya": "Sheeta (Cold)",
+            "vipaka": "Katu (Pungent)",
+            "prabhava": "Netrya (Ophthalmic Rejuvenator), Pramehaghna"
+        },
+        "uses": [
+            {
+                "condition": "Eye disorders (Timira) & Night vision",
+                "use_description": "Classical micronized zinc calx rejuvenates optic tissues and macular health.",
+                "classical_reference": "Rasa Tarangini"
+            },
+            {
+                "condition": "Chronic diabetes & Non-healing ulcers",
+                "use_description": "Accelerates deep wound repair and balances pancreatic beta-cell vitality.",
+                "classical_reference": "Sharngadhara Samhita"
+            }
+        ],
+        "phytochemicals": [
+            {
+                "compound_name": "Bioavailable Zinc (Nano-calx)",
+                "compound_class": "Mineral micronutrient",
+                "pubchem_id": "23994",
+                "activity": "Immune cofactor, epithelial healer"
+            }
+        ],
+        "contraindications": [
+            {
+                "condition": "Unpurified preparation",
+                "severity": "High",
+                "notes": "Must only be prepared through genuine, classical herbal calcination cycles."
+            }
+        ]
+    }
+]

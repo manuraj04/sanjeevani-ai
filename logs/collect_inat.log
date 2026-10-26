@@ -1,0 +1,303 @@
+2026-07-12 22:56:13,805  INFO  Collecting 67 species from iNaturalist (max 400 each)
+2026-07-12 22:56:13,805  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-07-12 23:02:18,236  INFO    Tulsi: 400 images total
+2026-07-12 23:02:18,240  INFO  [HIGH] Neem (Azadirachta indica)
+2026-07-12 23:08:29,508  INFO    Neem: 400 images total
+2026-07-12 23:08:29,512  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-07-12 23:08:39,714  INFO    Brahmi: 136 images total
+2026-07-12 23:08:39,715  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-07-12 23:08:52,816  INFO    Ashwagandha: 207 images total
+2026-07-12 23:08:52,817  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-07-12 23:09:01,204  INFO    AloeVera: 114 images total
+2026-07-12 23:09:01,208  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-07-12 23:09:07,235  INFO    Turmeric: 76 images total
+2026-07-12 23:09:07,236  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-07-12 23:09:10,766  INFO    Ginger: 27 images total
+2026-07-12 23:09:10,767  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-07-12 23:10:29,873  INFO  Collecting 67 species from iNaturalist (max 400 each)
+2026-07-12 23:10:29,873  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-07-12 23:10:29,874  INFO    Tulsi: already 400 images — skipping
+2026-07-12 23:10:29,874  INFO  [HIGH] Neem (Azadirachta indica)
+2026-07-12 23:10:29,874  INFO    Neem: already 400 images — skipping
+2026-07-12 23:10:29,875  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-07-12 23:10:37,564  INFO    Brahmi: 136 images total
+2026-07-12 23:10:37,565  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-07-12 23:10:49,179  INFO    Ashwagandha: 207 images total
+2026-07-12 23:10:49,180  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-07-12 23:10:56,668  INFO    AloeVera: 114 images total
+2026-07-12 23:10:56,670  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-07-12 23:11:01,954  INFO    Turmeric: 76 images total
+2026-07-12 23:11:01,955  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-07-12 23:11:05,065  INFO    Ginger: 27 images total
+2026-07-12 23:11:05,066  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-07-12 23:17:18,844  INFO    Moringa: 400 images total
+2026-07-12 23:17:18,847  INFO  [HIGH] CurryLeaf (Murraya koenigii)
+2026-07-12 23:23:52,713  INFO    CurryLeaf: 400 images total
+2026-07-12 23:23:52,717  INFO  [HIGH] Betel (Piper betle)
+2026-07-12 23:23:58,961  INFO    Betel: 91 images total
+2026-07-12 23:23:58,962  INFO  [HIGH] Mint (Mentha spicata)
+2026-07-12 23:24:02,630  INFO    Mint: 28 images total
+2026-07-12 23:24:02,631  INFO  [HIGH] Lemongrass (Cymbopogon citratus)
+2026-07-12 23:24:09,601  INFO    Lemongrass: 74 images total
+2026-07-12 23:24:09,602  INFO  [HIGH] IndianBeech (Millettia pinnata)
+2026-07-12 23:30:27,909  INFO    IndianBeech: 400 images total
+2026-07-12 23:30:27,915  INFO  [HIGH] Amla (Phyllanthus emblica)
+2026-07-12 23:36:05,947  INFO    Amla: 400 images total
+2026-07-12 23:36:05,950  INFO  [HIGH] Bael (Aegle marmelos)
+2026-07-12 23:42:18,953  INFO    Bael: 400 images total
+2026-07-12 23:42:18,957  INFO  [HIGH] Giloy (Tinospora cordifolia)
+2026-07-12 23:44:05,671  INFO    Giloy: 287 images total
+2026-07-12 23:44:05,674  INFO  [HIGH] Shatavari (Asparagus racemosus)
+2026-07-12 23:44:19,493  INFO    Shatavari: 109 images total
+2026-07-12 23:44:19,494  INFO  [HIGH] GotoKola (Centella asiatica)
+2026-07-12 23:46:46,017  INFO    GotoKola: 304 images total
+2026-07-12 23:46:46,018  INFO  [HIGH] Kalmegh (Andrographis paniculata)
+2026-07-12 23:51:06,552  INFO    Kalmegh: 358 images total
+2026-07-12 23:51:06,554  INFO  [HIGH] Adulsa (Justicia adhatoda)
+2026-07-12 23:51:45,283  INFO    Adulsa: 257 images total
+2026-07-12 23:51:45,285  INFO  [HIGH] Haritaki (Terminalia chebula)
+2026-07-12 23:51:52,131  INFO    Haritaki: 89 images total
+2026-07-12 23:51:52,132  INFO  [HIGH] Gudmar (Gymnema sylvestre)
+2026-07-12 23:51:56,489  INFO    Gudmar: 50 images total
+2026-07-12 23:51:56,489  INFO  [HIGH] Nirgundi (Vitex negundo)
+2026-07-12 23:52:11,391  INFO    Nirgundi: 188 images total
+2026-07-12 23:52:11,394  INFO  [HIGH] BlackPepper (Piper nigrum)
+2026-07-12 23:52:17,905  INFO    BlackPepper: 82 images total
+2026-07-12 23:52:17,906  INFO  [HIGH] LongPepper (Piper longum)
+2026-07-12 23:52:21,701  INFO    LongPepper: 10 images total
+2026-07-12 23:52:21,702  INFO  [MEDIUM] Guava (Psidium guajava)
+2026-07-12 23:58:36,431  INFO    Guava: 400 images total
+2026-07-12 23:58:36,436  INFO  [MEDIUM] Papaya (Carica papaya)
+2026-07-13 00:05:13,320  INFO    Papaya: 400 images total
+2026-07-13 00:05:13,324  INFO  [MEDIUM] Bhringraj (Eclipta prostrata)
+2026-07-13 00:11:28,332  INFO    Bhringraj: 400 images total
+2026-07-13 00:11:28,338  INFO  [MEDIUM] Punarnava (Boerhavia diffusa)
+2026-07-13 00:16:13,414  INFO    Punarnava: 335 images total
+2026-07-13 00:16:13,416  INFO  [MEDIUM] Karela (Momordica charantia)
+2026-07-13 00:33:39,858  INFO    Karela: 400 images total
+2026-07-13 00:33:39,863  INFO  [MEDIUM] Jamun (Syzygium cumini)
+2026-07-13 00:51:41,010  INFO    Jamun: 400 images total
+2026-07-13 00:51:41,014  INFO  [MEDIUM] Hibiscus (Hibiscus rosa-sinensis)
+2026-07-13 01:08:56,095  INFO    Hibiscus: 400 images total
+2026-07-13 01:08:56,103  INFO  [MEDIUM] IndianPennywort (Hydrocotyle asiatica)
+2026-07-13 01:22:17,958  INFO    IndianPennywort: 294 images total
+2026-07-13 01:22:17,960  INFO  [MEDIUM] Castor (Ricinus communis)
+2026-07-13 03:44:18,639  INFO    Castor: 400 images total
+2026-07-13 03:44:18,647  INFO  [MEDIUM] Mulethi (Glycyrrhiza glabra)
+2026-07-13 03:44:20,837  INFO    Mulethi: 0 images total
+2026-07-13 03:44:20,839  INFO  [MEDIUM] Karpuravalli (Coleus aromaticus)
+2026-07-13 03:55:22,549  INFO    Karpuravalli: 213 images total
+2026-07-13 03:55:22,552  INFO  [MEDIUM] InsulinPlant (Costus igneus)
+2026-07-13 03:55:33,813  INFO    InsulinPlant: 2 images total
+2026-07-13 03:55:33,815  INFO  [MEDIUM] Peepal (Ficus religiosa)
+2026-07-13 04:17:15,068  INFO    Peepal: 400 images total
+2026-07-13 04:17:15,076  INFO  [MEDIUM] Banyan (Ficus benghalensis)
+2026-07-13 09:03:38,309  WARNING    Banyan page 3: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Ficus+benghalensis&quality_grade=research&photos=true&per_page=50&page=3&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-07-13 09:03:43,310  INFO    Banyan: 76 images total
+2026-07-13 09:03:43,310  INFO  [MEDIUM] Aparajita (Clitoria ternatea)
+2026-07-13 09:20:47,172  INFO    Aparajita: 400 images total
+2026-07-13 09:20:47,179  INFO  [MEDIUM] Patharchatta (Bryophyllum pinnatum)
+2026-07-13 09:38:11,337  INFO    Patharchatta: 400 images total
+2026-07-13 09:38:11,341  INFO  [MEDIUM] Bringaraj (Eclipta alba)
+2026-07-13 09:53:43,589  INFO    Bringaraj: 400 images total
+2026-07-13 09:53:43,595  INFO  [MEDIUM] HolyBasilVana (Ocimum gratissimum)
+2026-07-13 09:54:13,150  INFO    HolyBasilVana: 11 images total
+2026-07-13 09:54:13,151  INFO  [MEDIUM] Amruth (Tinospora sinensis)
+2026-07-13 09:54:31,623  INFO    Amruth: 7 images total
+2026-07-13 09:54:31,625  INFO  [MEDIUM] Palash (Butea monosperma)
+2026-07-13 10:10:28,832  INFO    Palash: 400 images total
+2026-07-13 10:10:28,836  INFO  [MEDIUM] Vibhitaki (Terminalia bellirica)
+2026-07-13 10:19:58,214  INFO    Vibhitaki: 233 images total
+2026-07-13 10:19:58,216  INFO  [MEDIUM] Arjuna (Terminalia arjuna)
+2026-07-13 10:36:09,946  INFO    Arjuna: 400 images total
+2026-07-13 10:36:09,950  INFO  [MEDIUM] Sarpagandha (Rauvolfia serpentina)
+2026-07-13 10:46:54,956  INFO    Sarpagandha: 276 images total
+2026-07-13 10:46:54,957  INFO  [MEDIUM] Vacha (Acorus calamus)
+2026-07-13 10:46:59,917  INFO    Vacha: 1 images total
+2026-07-13 10:46:59,918  INFO  [MEDIUM] Chitraka (Plumbago zeylanica)
+2026-07-13 11:02:35,455  INFO    Chitraka: 400 images total
+2026-07-13 11:02:35,463  INFO  [MEDIUM] Kutaja (Holarrhena pubescens)
+2026-07-13 11:16:38,605  INFO    Kutaja: 299 images total
+2026-07-13 11:16:38,607  INFO  [MEDIUM] Kanchnaar (Bauhinia variegata)
+2026-07-13 11:27:00,483  INFO    Kanchnaar: 239 images total
+2026-07-13 11:27:00,485  INFO  [MEDIUM] Agathi (Sesbania grandiflora)
+2026-07-13 11:30:46,373  INFO    Agathi: 84 images total
+2026-07-13 11:30:46,376  INFO  [MEDIUM] BetelNut (Areca catechu)
+2026-07-13 11:36:31,623  INFO    BetelNut: 133 images total
+2026-07-13 11:36:31,625  INFO  [MEDIUM] Vetiver (Chrysopogon zizanioides)
+2026-07-13 11:37:54,732  INFO    Vetiver: 33 images total
+2026-07-13 11:37:54,734  INFO  [MEDIUM] Pomegranate (Punica granatum)
+2026-07-13 11:54:49,112  INFO    Pomegranate: 400 images total
+2026-07-13 11:54:49,116  INFO  [MEDIUM] Fenugreek (Trigonella foenum-graecum)
+2026-07-13 11:55:04,840  INFO    Fenugreek: 5 images total
+2026-07-13 11:55:04,842  INFO  [MEDIUM] IndianSarsaparilla (Hemidesmus indicus)
+2026-07-13 12:10:30,757  INFO    IndianSarsaparilla: 346 images total
+2026-07-13 12:10:30,759  INFO  [MEDIUM] Clove (Syzygium aromaticum)
+2026-07-13 12:10:39,765  INFO    Clove: 2 images total
+2026-07-13 12:10:39,767  INFO  [LOW] SnakePlant (Sansevieria trifasciata)
+2026-07-13 12:21:13,698  INFO    SnakePlant: 211 images total
+2026-07-13 12:21:13,700  INFO  [LOW] Lemon (Citrus limon)
+2026-07-13 12:23:28,379  INFO    Lemon: 45 images total
+2026-07-13 12:23:28,382  INFO  [LOW] Chamomile (Matricaria chamomilla)
+2026-07-13 12:23:48,609  INFO    Chamomile: 6 images total
+2026-07-13 12:23:48,611  INFO  [LOW] Devadaru (Cedrus deodara)
+2026-07-13 12:33:10,011  INFO    Devadaru: 182 images total
+2026-07-13 12:33:10,012  INFO  [LOW] Yashad (Withania coagulans)
+2026-07-13 12:33:11,647  INFO    Yashad: 0 images total
+2026-07-13 12:33:11,649  INFO  [LOW] Shyonaka (Oroxylum indicum)
+2026-07-13 12:37:46,347  INFO    Shyonaka: 97 images total
+2026-07-13 12:37:46,349  INFO  [LOW] Sesame (Sesamum indicum)
+2026-07-13 12:56:43,691  INFO    Sesame: 400 images total
+2026-07-13 12:56:43,697  INFO  [LOW] Coriander (Coriandrum sativum)
+2026-07-13 13:02:27,709  INFO    Coriander: 114 images total
+2026-07-13 13:18:57,679  INFO  Collecting 67 species from iNaturalist (max 400 each)
+2026-07-13 13:18:57,679  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-07-13 13:18:57,681  INFO    Tulsi: already 400 images — skipping
+2026-07-13 13:18:57,682  INFO  [HIGH] Neem (Azadirachta indica)
+2026-07-13 13:18:57,684  INFO    Neem: already 400 images — skipping
+2026-07-13 13:18:57,684  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-07-13 13:29:43,547  INFO    Brahmi: 400 images total
+2026-07-13 13:29:43,555  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-07-13 13:38:57,092  INFO    Ashwagandha: 400 images total
+2026-07-13 13:38:57,095  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-07-13 13:51:11,990  INFO    AloeVera: 400 images total
+2026-07-13 13:51:11,994  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-07-13 14:05:12,293  INFO    Turmeric: 400 images total
+2026-07-13 14:05:12,298  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-07-13 14:21:18,534  INFO    Ginger: 400 images total
+2026-07-13 14:21:18,541  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-07-13 14:21:18,544  INFO    Moringa: already 400 images — skipping
+2026-07-13 14:21:18,544  INFO  [HIGH] CurryLeaf (Murraya koenigii)
+2026-07-13 14:21:18,545  INFO    CurryLeaf: already 400 images — skipping
+2026-07-13 14:21:18,545  INFO  [HIGH] Betel (Piper betle)
+2026-07-13 14:34:51,294  INFO    Betel: 400 images total
+2026-07-13 14:34:51,298  INFO  [HIGH] Mint (Mentha spicata)
+2026-07-13 14:51:26,815  INFO    Mint: 400 images total
+2026-07-13 14:51:26,819  INFO  [HIGH] Lemongrass (Cymbopogon citratus)
+2026-07-13 15:07:29,494  INFO    Lemongrass: 400 images total
+2026-07-13 15:07:29,501  INFO  [HIGH] IndianBeech (Millettia pinnata)
+2026-07-13 15:07:29,502  INFO    IndianBeech: already 400 images — skipping
+2026-07-13 15:07:29,503  INFO  [HIGH] Amla (Phyllanthus emblica)
+2026-07-13 15:07:29,503  INFO    Amla: already 400 images — skipping
+2026-07-13 15:07:29,504  INFO  [HIGH] Bael (Aegle marmelos)
+2026-07-13 15:07:29,504  INFO    Bael: already 400 images — skipping
+2026-07-13 15:07:29,504  INFO  [HIGH] Giloy (Tinospora cordifolia)
+2026-07-13 15:12:35,608  INFO    Giloy: 400 images total
+2026-07-13 15:12:35,614  INFO  [HIGH] Shatavari (Asparagus racemosus)
+2026-07-13 15:25:58,640  INFO    Shatavari: 400 images total
+2026-07-13 15:25:58,643  INFO  [HIGH] GotoKola (Centella asiatica)
+2026-07-13 15:30:01,631  INFO    GotoKola: 400 images total
+2026-07-13 15:30:01,636  INFO  [HIGH] Kalmegh (Andrographis paniculata)
+2026-07-13 15:31:46,994  INFO    Kalmegh: 400 images total
+2026-07-13 15:31:46,999  INFO  [HIGH] Adulsa (Justicia adhatoda)
+2026-07-13 15:38:24,088  INFO    Adulsa: 400 images total
+2026-07-13 15:38:24,094  INFO  [HIGH] Haritaki (Terminalia chebula)
+2026-07-13 15:52:29,699  INFO    Haritaki: 373 images total
+2026-07-13 15:52:29,703  INFO  [HIGH] Gudmar (Gymnema sylvestre)
+2026-07-13 16:11:03,619  INFO    Gudmar: 400 images total
+2026-07-13 16:11:03,625  INFO  [HIGH] Nirgundi (Vitex negundo)
+2026-07-13 16:20:23,681  INFO    Nirgundi: 400 images total
+2026-07-13 16:20:23,686  INFO  [HIGH] BlackPepper (Piper nigrum)
+2026-07-13 16:35:17,842  INFO    BlackPepper: 400 images total
+2026-07-13 16:35:17,845  INFO  [HIGH] LongPepper (Piper longum)
+2026-07-13 16:43:33,198  INFO    LongPepper: 169 images total
+2026-07-13 16:43:33,200  INFO  [MEDIUM] Guava (Psidium guajava)
+2026-07-13 16:43:33,201  INFO    Guava: already 400 images — skipping
+2026-07-13 16:43:33,201  INFO  [MEDIUM] Papaya (Carica papaya)
+2026-07-13 16:43:33,207  INFO    Papaya: already 400 images — skipping
+2026-07-13 16:43:33,207  INFO  [MEDIUM] Bhringraj (Eclipta prostrata)
+2026-07-13 16:43:33,207  INFO    Bhringraj: already 400 images — skipping
+2026-07-13 16:43:33,207  INFO  [MEDIUM] Punarnava (Boerhavia diffusa)
+2026-07-13 16:47:01,333  INFO    Punarnava: 400 images total
+2026-07-13 16:47:01,341  INFO  [MEDIUM] Karela (Momordica charantia)
+2026-07-13 16:47:01,343  INFO    Karela: already 400 images — skipping
+2026-07-13 16:47:01,343  INFO  [MEDIUM] Jamun (Syzygium cumini)
+2026-07-13 16:47:01,344  INFO    Jamun: already 400 images — skipping
+2026-07-13 16:47:01,344  INFO  [MEDIUM] Hibiscus (Hibiscus rosa-sinensis)
+2026-07-13 16:47:01,345  INFO    Hibiscus: already 400 images — skipping
+2026-07-13 16:47:01,345  INFO  [MEDIUM] IndianPennywort (Hydrocotyle asiatica)
+2026-07-13 16:52:44,974  INFO    IndianPennywort: 400 images total
+2026-07-13 16:52:44,982  INFO  [MEDIUM] Castor (Ricinus communis)
+2026-07-13 16:52:44,983  INFO    Castor: already 400 images — skipping
+2026-07-13 16:52:44,983  INFO  [MEDIUM] Mulethi (Glycyrrhiza glabra)
+2026-07-13 17:15:33,154  INFO    Mulethi: 400 images total
+2026-07-13 17:15:33,160  INFO  [MEDIUM] Karpuravalli (Coleus aromaticus)
+2026-07-13 17:25:46,803  INFO    Karpuravalli: 400 images total
+2026-07-13 17:25:46,810  INFO  [MEDIUM] InsulinPlant (Costus igneus)
+2026-07-13 17:31:14,252  INFO    InsulinPlant: 97 images total
+2026-07-13 17:31:14,256  INFO  [MEDIUM] Peepal (Ficus religiosa)
+2026-07-13 17:31:14,257  INFO    Peepal: already 400 images — skipping
+2026-07-13 17:31:14,257  INFO  [MEDIUM] Banyan (Ficus benghalensis)
+2026-07-13 17:48:08,822  INFO    Banyan: 400 images total
+2026-07-13 17:48:08,826  INFO  [MEDIUM] Aparajita (Clitoria ternatea)
+2026-07-13 17:48:08,827  INFO    Aparajita: already 400 images — skipping
+2026-07-13 17:48:08,827  INFO  [MEDIUM] Patharchatta (Bryophyllum pinnatum)
+2026-07-13 17:48:08,828  INFO    Patharchatta: already 400 images — skipping
+2026-07-13 17:48:08,828  INFO  [MEDIUM] Bringaraj (Eclipta alba)
+2026-07-13 17:48:08,829  INFO    Bringaraj: already 400 images — skipping
+2026-07-13 17:48:08,829  INFO  [MEDIUM] HolyBasilVana (Ocimum gratissimum)
+2026-07-13 18:06:08,444  INFO    HolyBasilVana: 400 images total
+2026-07-13 18:06:08,447  INFO  [MEDIUM] Amruth (Tinospora sinensis)
+2026-07-13 18:11:12,375  INFO    Amruth: 113 images total
+2026-07-13 18:11:12,378  INFO  [MEDIUM] Palash (Butea monosperma)
+2026-07-13 18:11:12,379  INFO    Palash: already 400 images — skipping
+2026-07-13 18:11:12,379  INFO  [MEDIUM] Vibhitaki (Terminalia bellirica)
+2026-07-13 18:19:16,123  INFO    Vibhitaki: 400 images total
+2026-07-13 18:19:16,130  INFO  [MEDIUM] Arjuna (Terminalia arjuna)
+2026-07-13 18:19:16,131  INFO    Arjuna: already 400 images — skipping
+2026-07-13 18:19:16,132  INFO  [MEDIUM] Sarpagandha (Rauvolfia serpentina)
+2026-07-13 18:25:16,929  INFO    Sarpagandha: 400 images total
+2026-07-13 18:25:16,936  INFO  [MEDIUM] Vacha (Acorus calamus)
+2026-07-13 18:43:42,358  INFO    Vacha: 400 images total
+2026-07-13 18:43:42,363  INFO  [MEDIUM] Chitraka (Plumbago zeylanica)
+2026-07-13 18:43:42,365  INFO    Chitraka: already 400 images — skipping
+2026-07-13 18:43:42,365  INFO  [MEDIUM] Kutaja (Holarrhena pubescens)
+2026-07-13 18:48:13,631  INFO    Kutaja: 400 images total
+2026-07-13 18:48:13,634  INFO  [MEDIUM] Kanchnaar (Bauhinia variegata)
+2026-07-13 18:55:13,940  INFO    Kanchnaar: 400 images total
+2026-07-13 18:55:13,945  INFO  [MEDIUM] Agathi (Sesbania grandiflora)
+2026-07-13 19:09:51,158  INFO    Agathi: 400 images total
+2026-07-13 19:09:51,164  INFO  [MEDIUM] BetelNut (Areca catechu)
+2026-07-13 19:22:40,498  INFO    BetelNut: 400 images total
+2026-07-13 19:22:40,502  INFO  [MEDIUM] Vetiver (Chrysopogon zizanioides)
+2026-07-13 19:39:03,637  INFO    Vetiver: 400 images total
+2026-07-13 19:39:03,641  INFO  [MEDIUM] Pomegranate (Punica granatum)
+2026-07-13 19:39:03,642  INFO    Pomegranate: already 400 images — skipping
+2026-07-13 19:39:03,642  INFO  [MEDIUM] Fenugreek (Trigonella foenum-graecum)
+2026-07-13 19:55:47,076  INFO    Fenugreek: 374 images total
+2026-07-13 19:55:47,079  INFO  [MEDIUM] IndianSarsaparilla (Hemidesmus indicus)
+2026-07-13 19:58:21,111  INFO    IndianSarsaparilla: 400 images total
+2026-07-13 19:58:21,116  INFO  [MEDIUM] Clove (Syzygium aromaticum)
+2026-07-13 20:00:34,772  WARNING    Clove page 2: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-07-13 20:00:39,774  INFO    Clove: 52 images total
+2026-07-13 20:00:39,774  INFO  [LOW] SnakePlant (Sansevieria trifasciata)
+2026-07-13 20:09:29,144  INFO    SnakePlant: 400 images total
+2026-07-13 20:09:29,149  INFO  [LOW] Lemon (Citrus limon)
+2026-07-13 20:29:23,194  INFO    Lemon: 400 images total
+2026-07-13 20:29:23,199  INFO  [LOW] Chamomile (Matricaria chamomilla)
+2026-07-13 20:47:32,691  INFO    Chamomile: 400 images total
+2026-07-13 20:47:32,695  INFO  [LOW] Devadaru (Cedrus deodara)
+2026-07-13 20:58:02,491  INFO    Devadaru: 400 images total
+2026-07-13 20:58:02,494  INFO  [LOW] Yashad (Withania coagulans)
+2026-07-13 20:59:52,856  INFO    Yashad: 41 images total
+2026-07-13 20:59:52,858  INFO  [LOW] Shyonaka (Oroxylum indicum)
+2026-07-13 21:15:33,311  INFO    Shyonaka: 400 images total
+2026-07-13 21:15:33,317  INFO  [LOW] Sesame (Sesamum indicum)
+2026-07-13 21:15:33,318  INFO    Sesame: already 400 images — skipping
+2026-07-13 21:15:33,319  INFO  [LOW] Coriander (Coriandrum sativum)
+2026-07-13 21:32:04,557  INFO    Coriander: 400 images total
+2026-07-16 10:26:18,431  INFO  Collecting 5 species from iNaturalist (max 250 each)
+2026-07-16 10:26:18,454  INFO  [MEDIUM] InsulinPlant (Costus igneus)
+2026-07-16 10:26:26,886  INFO    InsulinPlant: 97 images total
+2026-07-16 10:26:26,887  INFO  [MEDIUM] Bringaraj (Eclipta alba)
+2026-07-16 10:29:34,498  INFO  Collecting 5 species from iNaturalist (max 350 each)
+2026-07-16 10:29:34,499  INFO  [MEDIUM] InsulinPlant (Costus igneus)
+2026-07-16 10:29:42,369  INFO    InsulinPlant: 97 images total
+2026-07-16 10:29:42,370  INFO  [MEDIUM] Bringaraj (Eclipta alba)
+2026-07-16 10:45:13,412  INFO    Bringaraj: 350 images total
+2026-07-16 10:45:13,417  INFO  [MEDIUM] Amruth (Tinospora sinensis)
+2026-07-16 10:45:32,951  INFO    Amruth: 116 images total
+2026-07-16 10:45:32,954  INFO  [MEDIUM] Clove (Syzygium aromaticum)
+2026-07-16 11:02:31,624  INFO    Clove: 343 images total
+2026-07-16 11:02:31,628  INFO  [LOW] Yashad (Withania coagulans)
+2026-07-16 11:02:35,629  INFO    Yashad: 41 images total

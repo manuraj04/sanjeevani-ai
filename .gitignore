@@ -1,0 +1,43 @@
+# Python
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Massive Archives & Backups
+*.zip
+*.tar.gz
+*.rar
+Sanjeevani_App_Transfer.zip
+Sanjeevani_Lean_Transfer.zip
+data/raw/*.zip
+
+# Large Data & Datasets
+data/raw/
+data/processed/train/
+data/processed/val/
+data/processed/test/
+data/processed/saved_model/
+data/processed/saved_model_static/
+*.pth
+*.onnx
+
+# Mobile Node Modules & Builds
+src/mobile/node_modules/
+src/mobile/.expo/
+src/mobile/dist/
+.expo/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

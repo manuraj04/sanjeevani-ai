@@ -1,0 +1,22 @@
+2026-05-01 12:04:07,741  ERROR    6 species below 80 images. Collect more before splitting.
+2026-05-01 12:04:07,741  ERROR      BlackPepper                  78
+2026-05-01 12:04:07,741  ERROR      Ginger                       27
+2026-05-01 12:04:07,741  ERROR      Gudmar                       50
+2026-05-01 12:04:07,741  ERROR      Lemongrass                   71
+2026-05-01 12:04:07,741  ERROR      LongPepper                   9
+2026-05-01 12:04:07,741  ERROR      Turmeric                     72
+2026-05-01 12:06:42,316  ERROR    2 species below 80 images. Collect more before splitting.
+2026-05-01 12:06:42,316  ERROR      Betel                        75
+2026-05-01 12:06:42,316  ERROR      Mint                         24
+2026-07-12 22:30:11,009  ERROR    5 species below 80 images. Collect more before splitting.
+2026-07-12 22:30:11,009  ERROR      Ginger                       27
+2026-07-12 22:30:11,009  ERROR      Gudmar                       50
+2026-07-12 22:30:11,009  ERROR      Lemongrass                   74
+2026-07-12 22:30:11,009  ERROR      LongPepper                   10
+2026-07-12 22:30:11,009  ERROR      Turmeric                     76
+2026-07-12 22:33:43,582  WARNING    val: 2 species with < 5 images: ['Ginger', 'LongPepper']
+2026-07-12 22:33:43,583  WARNING    test: 2 species with < 5 images: ['Ginger', 'LongPepper']
+2026-07-12 22:33:59,827  WARNING    val: 2 species with < 5 images: ['Ginger', 'LongPepper']
+2026-07-12 22:33:59,828  WARNING    test: 2 species with < 5 images: ['Ginger', 'LongPepper']
+2026-07-12 22:34:52,945  WARNING    val: 2 species with < 5 images: ['Ginger', 'LongPepper']
+2026-07-12 22:34:52,946  WARNING    test: 2 species with < 5 images: ['Ginger', 'LongPepper']

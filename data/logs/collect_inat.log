@@ -1,0 +1,209 @@
+2026-04-23 12:55:45,515  INFO  Collecting 27 species from iNaturalist (max 250 each)
+2026-04-23 12:55:45,515  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-04-23 13:08:50,929  INFO    Tulsi: 250 images total
+2026-04-23 13:08:50,939  INFO  [HIGH] Neem (Azadirachta indica)
+2026-04-23 13:12:31,361  WARNING    Neem page 3: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Azadirachta+indica&quality_grade=research&photos=true&per_page=50&page=3&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-04-23 13:12:36,364  INFO    Neem: 65 images total
+2026-04-23 13:12:36,364  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-04-23 13:12:36,369  WARNING    Brahmi page 1: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Bacopa+monnieri&quality_grade=research&photos=true&per_page=50&page=1&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-04-23 13:12:41,373  INFO    Brahmi: 0 images total
+2026-04-23 13:12:41,373  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-04-23 13:12:41,375  WARNING    Ashwagandha page 1: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Withania+somnifera&quality_grade=research&photos=true&per_page=50&page=1&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-04-23 13:12:46,380  INFO    Ashwagandha: 0 images total
+2026-04-23 13:12:46,380  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-04-23 13:12:46,396  WARNING    AloeVera page 1: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Aloe+barbadensis&quality_grade=research&photos=true&per_page=50&page=1&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-04-23 13:12:51,397  INFO    AloeVera: 0 images total
+2026-04-23 13:12:51,397  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-04-23 13:12:51,402  WARNING    Turmeric page 1: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Curcuma+longa&quality_grade=research&photos=true&per_page=50&page=1&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-04-23 13:12:56,403  INFO    Turmeric: 0 images total
+2026-04-23 13:12:56,403  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-04-23 13:12:56,413  WARNING    Ginger page 1: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Zingiber+officinale&quality_grade=research&photos=true&per_page=50&page=1&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-04-23 13:13:01,416  INFO    Ginger: 0 images total
+2026-04-23 13:13:01,416  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-04-23 13:13:12,756  WARNING    Moringa page 1: HTTPSConnectionPool(host='api.inaturalist.org', port=443): Max retries exceeded with url: /v1/observations?taxon_name=Moringa+oleifera&quality_grade=research&photos=true&per_page=50&page=1&order_by=votes&place_id=6681 (Caused by NameResolutionError("HTTPSConnection(host='api.inaturalist.org', port=443): Failed to resolve 'api.inaturalist.org' ([Errno 11001] getaddrinfo failed)"))
+2026-04-23 13:13:17,757  INFO    Moringa: 0 images total
+2026-04-23 13:13:17,757  INFO  [HIGH] CurryLeaf (Murraya koenigii)
+2026-04-23 13:15:26,971  INFO  Collecting 27 species from iNaturalist (max 250 each)
+2026-04-23 13:15:26,972  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-04-23 13:15:26,973  INFO    Tulsi: already 250 images — skipping
+2026-04-23 13:15:26,973  INFO  [HIGH] Neem (Azadirachta indica)
+2026-04-23 13:25:45,369  INFO    Neem: 250 images total
+2026-04-23 13:25:45,369  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-04-23 13:32:21,402  INFO    Brahmi: 126 images total
+2026-04-23 13:32:21,406  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-04-23 13:40:17,275  INFO    Ashwagandha: 170 images total
+2026-04-23 13:40:17,275  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-04-23 13:45:21,944  INFO    AloeVera: 99 images total
+2026-04-23 13:45:21,944  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-04-23 13:49:18,094  INFO    Turmeric: 72 images total
+2026-04-23 13:49:18,094  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-04-23 13:50:51,266  INFO    Ginger: 27 images total
+2026-04-23 13:50:51,266  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-04-23 14:04:30,935  INFO    Moringa: 250 images total
+2026-04-23 14:04:30,936  INFO  [HIGH] CurryLeaf (Murraya koenigii)
+2026-04-23 14:20:32,023  INFO    CurryLeaf: 250 images total
+2026-04-23 14:20:32,035  INFO  [HIGH] Betel (Piper betle)
+2026-04-23 14:24:26,610  INFO    Betel: 76 images total
+2026-04-23 14:24:26,616  INFO  [HIGH] Mint (Mentha spicata)
+2026-04-23 14:25:39,415  INFO    Mint: 24 images total
+2026-04-23 14:25:39,419  INFO  [HIGH] Lemongrass (Cymbopogon citratus)
+2026-04-23 14:29:48,855  INFO    Lemongrass: 71 images total
+2026-04-23 14:29:48,861  INFO  [HIGH] IndianBeech (Millettia pinnata)
+2026-04-23 14:43:32,382  INFO    IndianBeech: 250 images total
+2026-04-23 14:43:32,391  INFO  [HIGH] Amla (Phyllanthus emblica)
+2026-04-23 14:56:14,921  INFO    Amla: 250 images total
+2026-04-23 14:56:14,921  INFO  [HIGH] Bael (Aegle marmelos)
+2026-04-23 15:11:39,474  INFO    Bael: 250 images total
+2026-04-23 15:11:39,479  INFO  [HIGH] Giloy (Tinospora cordifolia)
+2026-04-23 15:25:58,836  INFO    Giloy: 233 images total
+2026-04-23 15:25:58,838  INFO  [HIGH] Shatavari (Asparagus racemosus)
+2026-04-23 16:03:39,193  INFO  Collecting 27 species from iNaturalist (max 250 each)
+2026-04-23 16:03:39,193  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-04-23 16:03:39,193  INFO    Tulsi: already 250 images — skipping
+2026-04-23 16:03:39,193  INFO  [HIGH] Neem (Azadirachta indica)
+2026-04-23 16:03:39,193  INFO    Neem: already 250 images — skipping
+2026-04-23 16:03:39,193  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-04-23 16:03:53,229  INFO    Brahmi: 128 images total
+2026-04-23 16:03:53,233  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-04-23 16:04:14,898  INFO    Ashwagandha: 174 images total
+2026-04-23 16:04:14,900  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-04-23 16:04:29,548  INFO    AloeVera: 101 images total
+2026-04-23 16:04:29,554  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-04-23 16:04:35,306  INFO    Turmeric: 72 images total
+2026-04-23 16:04:35,312  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-04-23 16:04:39,141  INFO    Ginger: 27 images total
+2026-04-23 16:04:39,141  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-04-23 16:04:39,141  INFO    Moringa: already 250 images — skipping
+2026-04-23 16:04:39,157  INFO  [HIGH] CurryLeaf (Murraya koenigii)
+2026-04-23 16:04:39,157  INFO    CurryLeaf: already 250 images — skipping
+2026-04-23 16:04:39,157  INFO  [HIGH] Betel (Piper betle)
+2026-04-23 16:04:44,711  INFO    Betel: 76 images total
+2026-04-23 16:04:44,716  INFO  [HIGH] Mint (Mentha spicata)
+2026-04-23 16:04:47,947  INFO    Mint: 24 images total
+2026-04-23 16:04:47,952  INFO  [HIGH] Lemongrass (Cymbopogon citratus)
+2026-04-23 16:04:53,909  INFO    Lemongrass: 71 images total
+2026-04-23 16:04:53,911  INFO  [HIGH] IndianBeech (Millettia pinnata)
+2026-04-23 16:04:53,913  INFO    IndianBeech: already 250 images — skipping
+2026-04-23 16:04:53,913  INFO  [HIGH] Amla (Phyllanthus emblica)
+2026-04-23 16:04:53,914  INFO    Amla: already 250 images — skipping
+2026-04-23 16:04:53,919  INFO  [HIGH] Bael (Aegle marmelos)
+2026-04-23 16:04:53,921  INFO    Bael: already 250 images — skipping
+2026-04-23 16:04:53,922  INFO  [HIGH] Giloy (Tinospora cordifolia)
+2026-04-23 16:05:18,064  INFO    Giloy: 235 images total
+2026-04-23 16:05:18,071  INFO  [HIGH] Shatavari (Asparagus racemosus)
+2026-04-23 16:12:07,115  INFO    Shatavari: 93 images total
+2026-04-23 16:12:07,116  INFO  [HIGH] GotoKola (Centella asiatica)
+2026-04-23 16:31:40,847  INFO    GotoKola: 250 images total
+2026-04-23 16:31:40,850  INFO  [HIGH] Kalmegh (Andrographis paniculata)
+2026-04-23 16:43:12,145  INFO    Kalmegh: 250 images total
+2026-04-23 16:43:12,153  INFO  [HIGH] Adulsa (Justicia adhatoda)
+2026-04-23 16:54:51,691  INFO    Adulsa: 227 images total
+2026-04-23 16:54:51,691  INFO  [HIGH] Haritaki (Terminalia chebula)
+2026-04-23 16:59:17,390  INFO    Haritaki: 83 images total
+2026-04-23 16:59:17,390  INFO  [HIGH] Gudmar (Gymnema sylvestre)
+2026-04-23 17:01:48,949  INFO    Gudmar: 50 images total
+2026-04-23 17:01:48,949  INFO  [HIGH] Nirgundi (Vitex negundo)
+2026-04-23 17:15:13,168  INFO    Nirgundi: 173 images total
+2026-04-23 17:15:13,168  INFO  [HIGH] BlackPepper (Piper nigrum)
+2026-04-23 17:20:14,129  INFO    BlackPepper: 78 images total
+2026-04-23 17:20:14,129  INFO  [HIGH] LongPepper (Piper longum)
+2026-04-23 17:20:47,942  INFO    LongPepper: 9 images total
+2026-04-23 17:20:47,942  INFO  [HIGH] IndianGooseberry (Emblica officinalis)
+2026-04-23 17:34:34,934  INFO    IndianGooseberry: 250 images total
+2026-04-23 17:34:34,941  INFO  [HIGH] MalabarNut (Justicia adhatoda)
+2026-04-23 17:47:34,509  INFO    MalabarNut: 229 images total
+2026-05-01 12:04:21,813  INFO  Collecting 1 species from iNaturalist (max 250 each)
+2026-05-01 12:04:21,813  INFO  [HIGH] LongPepper (Piper longum)
+2026-05-01 12:04:46,316  INFO    LongPepper: 10 images total
+2026-07-12 21:36:56,600  INFO  Collecting 67 species from iNaturalist (max 250 each)
+2026-07-12 21:36:56,600  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-07-12 21:36:56,603  INFO    Tulsi: already 250 images — skipping
+2026-07-12 21:36:56,603  INFO  [HIGH] Neem (Azadirachta indica)
+2026-07-12 21:36:56,603  INFO    Neem: already 250 images — skipping
+2026-07-12 21:36:56,603  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-07-12 21:37:31,805  INFO    Brahmi: 136 images total
+2026-07-12 21:37:31,807  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-07-12 21:39:17,743  INFO    Ashwagandha: 207 images total
+2026-07-12 21:39:17,746  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-07-12 21:40:01,825  INFO    AloeVera: 114 images total
+2026-07-12 21:40:01,827  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-07-12 21:40:20,254  INFO    Turmeric: 76 images total
+2026-07-12 21:40:20,257  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-07-12 21:40:23,951  INFO    Ginger: 27 images total
+2026-07-12 21:40:23,954  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-07-12 21:40:23,954  INFO    Moringa: already 250 images — skipping
+2026-07-12 21:40:23,954  INFO  [HIGH] CurryLeaf (Murraya koenigii)
+2026-07-12 21:40:31,319  INFO    CurryLeaf: 250 images total
+2026-07-12 21:40:31,324  INFO  [HIGH] Betel (Piper betle)
+2026-07-12 21:41:14,766  INFO    Betel: 91 images total
+2026-07-12 21:41:14,770  INFO  [HIGH] Mint (Mentha spicata)
+2026-07-12 21:41:28,509  INFO    Mint: 28 images total
+2026-07-12 21:41:28,513  INFO  [HIGH] Lemongrass (Cymbopogon citratus)
+2026-07-12 21:41:41,938  INFO    Lemongrass: 74 images total
+2026-07-12 21:41:41,940  INFO  [HIGH] IndianBeech (Millettia pinnata)
+2026-07-12 21:41:41,941  INFO    IndianBeech: already 250 images — skipping
+2026-07-12 21:41:41,941  INFO  [HIGH] Amla (Phyllanthus emblica)
+2026-07-12 21:41:41,941  INFO    Amla: already 268 images — skipping
+2026-07-12 21:41:41,941  INFO  [HIGH] Bael (Aegle marmelos)
+2026-07-12 21:41:41,942  INFO    Bael: already 250 images — skipping
+2026-07-12 21:41:41,942  INFO  [HIGH] Giloy (Tinospora cordifolia)
+2026-07-12 21:42:26,390  INFO    Giloy: 250 images total
+2026-07-12 21:42:26,393  INFO  [HIGH] Shatavari (Asparagus racemosus)
+2026-07-12 21:43:09,838  INFO    Shatavari: 107 images total
+2026-07-12 21:43:09,841  INFO  [HIGH] GotoKola (Centella asiatica)
+2026-07-12 21:43:14,649  INFO    GotoKola: 250 images total
+2026-07-12 21:43:14,652  INFO  [HIGH] Kalmegh (Andrographis paniculata)
+2026-07-12 21:43:14,652  INFO    Kalmegh: already 250 images — skipping
+2026-07-12 21:43:14,652  INFO  [HIGH] Adulsa (Justicia adhatoda)
+2026-07-12 21:44:20,884  INFO    Adulsa: 250 images total
+2026-07-12 21:44:20,888  INFO  [HIGH] Haritaki (Terminalia chebula)
+2026-07-12 21:44:40,656  INFO    Haritaki: 89 images total
+2026-07-12 21:44:40,658  INFO  [HIGH] Gudmar (Gymnema sylvestre)
+2026-07-12 21:44:44,483  INFO    Gudmar: 50 images total
+2026-07-12 21:44:44,484  INFO  [HIGH] Nirgundi (Vitex negundo)
+2026-07-12 21:45:33,074  INFO    Nirgundi: 187 images total
+2026-07-12 21:45:33,075  INFO  [HIGH] BlackPepper (Piper nigrum)
+2026-07-12 21:45:48,953  INFO    BlackPepper: 82 images total
+2026-07-12 21:45:48,955  INFO  [HIGH] LongPepper (Piper longum)
+2026-07-12 21:45:52,799  INFO    LongPepper: 10 images total
+2026-07-12 21:45:52,799  INFO  [MEDIUM] Guava (Psidium guajava)
+2026-07-12 21:56:14,848  INFO    Guava: 250 images total
+2026-07-12 21:56:14,851  INFO  [MEDIUM] Papaya (Carica papaya)
+2026-07-12 22:08:23,934  INFO    Papaya: 250 images total
+2026-07-12 22:08:23,938  INFO  [MEDIUM] Bhringraj (Eclipta prostrata)
+2026-07-12 22:19:23,485  INFO    Bhringraj: 250 images total
+2026-07-12 22:19:23,493  INFO  [MEDIUM] Punarnava (Boerhavia diffusa)
+2026-07-12 22:31:18,227  INFO  Collecting 25 species from iNaturalist (max 250 each)
+2026-07-12 22:31:18,227  INFO  [HIGH] Tulsi (Ocimum tenuiflorum)
+2026-07-12 22:31:18,227  INFO    Tulsi: already 250 images — skipping
+2026-07-12 22:31:18,228  INFO  [HIGH] Neem (Azadirachta indica)
+2026-07-12 22:31:18,228  INFO    Neem: already 250 images — skipping
+2026-07-12 22:31:18,228  INFO  [HIGH] Brahmi (Bacopa monnieri)
+2026-07-12 22:31:30,428  INFO    Brahmi: 136 images total
+2026-07-12 22:31:30,429  INFO  [HIGH] Ashwagandha (Withania somnifera)
+2026-07-12 22:31:44,904  INFO    Ashwagandha: 207 images total
+2026-07-12 22:31:44,905  INFO  [HIGH] AloeVera (Aloe barbadensis)
+2026-07-12 22:31:53,408  INFO    AloeVera: 114 images total
+2026-07-12 22:31:53,410  INFO  [HIGH] Turmeric (Curcuma longa)
+2026-07-12 22:31:59,596  INFO    Turmeric: 76 images total
+2026-07-12 22:31:59,597  INFO  [HIGH] Ginger (Zingiber officinale)
+2026-07-12 22:32:03,033  INFO    Ginger: 27 images total
+2026-07-12 22:32:03,034  INFO  [HIGH] Moringa (Moringa oleifera)
+2026-07-12 22:32:03,035  INFO    Moringa: already 250 images — skipping
+2026-07-12 22:32:03,035  INFO  [HIGH] CurryLeaf (Murraya koenigii)
+2026-07-12 22:32:03,036  INFO    CurryLeaf: already 250 images — skipping
+2026-07-12 22:32:03,036  INFO  [HIGH] Betel (Piper betle)
+2026-07-12 22:32:09,327  INFO    Betel: 91 images total
+2026-07-12 22:32:09,328  INFO  [HIGH] Mint (Mentha spicata)
+2026-07-12 22:32:13,069  INFO    Mint: 28 images total
+2026-07-12 22:32:13,071  INFO  [HIGH] Lemongrass (Cymbopogon citratus)
+2026-07-12 22:32:19,379  INFO    Lemongrass: 74 images total
+2026-07-12 22:32:19,380  INFO  [HIGH] IndianBeech (Millettia pinnata)
+2026-07-12 22:32:19,381  INFO    IndianBeech: already 250 images — skipping
+2026-07-12 22:32:19,381  INFO  [HIGH] Amla (Phyllanthus emblica)
+2026-07-12 22:32:19,382  INFO    Amla: already 268 images — skipping
+2026-07-12 22:32:19,382  INFO  [HIGH] Bael (Aegle marmelos)
+2026-07-12 22:32:19,382  INFO    Bael: already 250 images — skipping
+2026-07-12 22:32:19,382  INFO  [HIGH] Giloy (Tinospora cordifolia)
+2026-07-12 22:32:19,383  INFO    Giloy: already 250 images — skipping
+2026-07-12 22:32:19,383  INFO  [HIGH] Shatavari (Asparagus racemosus)

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sanjeevani Scan AI — Comprehensive Academic & Technical Project Report</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page);
+      font-size: 10px;
+      color: #718096;
+    }
+    @bottom-left {
+      content: "Sanjeevani Scan AI — Project Report";
+      font-size: 10px;
+      color: #718096;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #2D3748;
+    line-height: 1.6;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Headings */
+  h1 {
+    color: #1B5E20;
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  h2 {
+    color: #2E7D32;
+    font-size: 16.5px;
+    font-weight: 700;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 5px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    color: #0F2942;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin: 6px 0 10px 0;
+    text-align: justify;
+  }
+
+  blockquote {
+    background: #F1F8E9;
+    border-left: 4.5px solid #2E7D32;
+    margin: 12px 0;
+    padding: 10px 16px;
+    border-radius: 4px;
+    color: #1B5E20;
+    font-size: 13px;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 12px;
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    border: 1px solid #CBD5E0;
+    padding: 7px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #E8F5E9;
+    color: #1B5E20;
+    font-weight: 700;
+  }
+
+  tr:nth-child(even) {
+    background-color: #F8FAF8;
+  }
+
+  /* Code Blocks */
+  pre {
+    background-color: #1A202C;
+    color: #E2E8F0;
+    padding: 11px 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: Consolas, "Fira Code", Monaco, monospace;
+    font-size: 11px;
+    line-height: 1.45;
+    margin: 10px 0;
+    page-break-inside: avoid;
+  }
+
+  code {
+    background-color: #EDF2F7;
+    color: #C53030;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 11.5px;
+  }
+
+  pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+  }
+
+  ul, ol {
+    margin: 6px 0 10px 0;
+    padding-left: 22px;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1.5px solid #E2E8F0;
+    margin: 18px 0;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #2E7D32;
+    color: #FFFFFF;
+    margin-right: 4px;
+  }
+</style>
+</head>
+<body>
+<h1>🌿 SANJEEVANI SCAN AI</h1>
+<h2>Deep Learning-Based Explainable Ayurvedic Botanical Scanner &amp; Clinical Knowledge Engine</h2>
+<h3>Comprehensive Academic &amp; Technical Project Report</h3>
+<hr />
+<p><strong>Project Title:</strong> Sanjeevani Scan AI — Explainable Medicinal Plant Identification and Ayurvedic Pharmacopoeia System<br />
+<strong>Domain:</strong> Artificial Intelligence, Deep Learning Computer Vision, Ethnobotany, Ayurvedic Clinical Informatics<br />
+<strong>Architecture:</strong> Multi-Scale Attention CNN (EfficientNetV2-S / ResNet + CBAM), Grad-CAM XAI, FAISS Vector Search, SQLite, React Native (Expo)<br />
+<strong>Status:</strong> Validated, Production-Ready, 100% Offline-Capable<br />
+<strong>Model Coverage:</strong> 66 Botanical Classes | <strong>Database Flora:</strong> 63 Ayurvedic Species | <strong>Therapeutic Vectors:</strong> 129 Conditions | <strong>Languages:</strong> 6 Indian Languages  </p>
+<hr />
+<h2>EXECUTIVE SUMMARY &amp; ABSTRACT</h2>
+<p>India possesses one of the world's most ancient and comprehensive medicinal plant traditions, comprising over <strong>8,000 documented species</strong> recognized across classical Ayurvedic literature (Charaka Samhita, Sushruta Samhita, and Ashtanga Hridayam). Despite this heritage, the accurate identification of medicinal flora remains an acute bottleneck. Botanical taxonomic knowledge is concentrated among a diminishing number of senior <em>vaidyas</em> and field botanists. Misidentification of plant organs leads to therapeutic failure, toxic substitutions, and clinical hazards. While generic computer vision applications (such as Pl@ntNet and iNaturalist) exist, none are optimized for Indian Ayurvedic pharmacopoeia, none integrate classical Ayurvedic pharmacology (<em>Dosha, Rasa, Guna, Virya, Vipaka, Prabhava</em>), none provide reverse symptom-to-plant discovery, and virtually all fail in rural forests lacking cellular internet connectivity.</p>
+<p><strong>Sanjeevani Scan AI</strong> resolves this critical multi-disciplinary challenge by presenting an end-to-end, offline-first mobile and cloud ecosystem:<br />
+1. <strong>Botanical Computer Vision:</strong> A customized <strong>Multi-Scale Attention CNN</strong> built on an EfficientNetV2-S backbone with <strong>Convolutional Block Attention Module (CBAM)</strong> blocks, trained over <strong>66 plant classes</strong> with an Out-of-Distribution (OOD) rejection mechanism that prevents non-plant false positives.<br />
+2. <strong>Explainable AI (XAI):</strong> Embedded <strong>Gradient-weighted Class Activation Mapping (Grad-CAM)</strong> producing real-time attention heatmaps to visually verify that predictions stem from genuine leaf morphology (venation, margins, and trichomes) rather than background noise.<br />
+3. <strong>Structured Ayurvedic Knowledge Engine:</strong> A relational <strong>SQLite database</strong> and bundled offline JSON catalog cross-referenced against <strong>IMPPAT</strong> (Indian Medicinal Plants, Phytochemistry And Therapeutics) and <strong>TKDL</strong> (Traditional Knowledge Digital Library), detailing Tridosha balances, 76 bioactive phytochemicals, therapeutic indications, and 63 clinical contraindications.<br />
+4. <strong>Reverse Semantic Symptom Search:</strong> A <strong>FAISS vector database</strong> utilizing Sentence-BERT (<code>all-MiniLM-L6-v2</code>) embeddings over 129 clinical conditions, allowing users to describe symptoms (e.g., <em>"burning sensation and joint inflammation"</em>) and receive ranked botanical recommendations in &lt;50ms.<br />
+5. <strong>Offline-First Cross-Platform Mobile Client:</strong> A <strong>React Native (Expo)</strong> client featuring 4 functional tabs (Scan, Library, Search, Glossary), a 3-tier fail-safe profile resolution engine, and complete multilingual localization across <strong>6 Indian languages</strong> (English, Hindi, Kannada, Tamil, Telugu, and Malayalam).</p>
+<hr />
+<h2>1. INTRODUCTION &amp; PROBLEM DEFINITION</h2>
+<h3>1.1 Background &amp; Ethnomedicinal Heritage</h3>
+<p>Ayurveda is recognized globally as a comprehensive system of natural healthcare. The efficacy of Ayurvedic formulations (such as <em>Swarasa</em>, <em>Kwatha</em>, <em>Churna</em>, and <em>Taila</em>) depends fundamentally on the authenticity of the raw botanical ingredients. Traditional harvesting has always relied on phenotypic leaf, stem, and root recognition. However, rapid urbanization, habitat destruction, and the loss of oral transmission have caused a severe decline in botanical expertise.</p>
+<h3>1.2 The Misidentification Dilemma in Herbal Medicine</h3>
+<p>In commercial and domestic herbal preparation, phenotypic similarity between species frequently leads to dangerous substitution:<br />
+- <em>Tinospora cordifolia</em> (Giloy - immunomodulator) is easily confused with toxic wild climbers.<br />
+- <em>Bacopa monnieri</em> (Brahmi - cognitive enhancer) is substituted with <em>Centella asiatica</em> (Gotu Kola) or non-medicinal pennyworts.<br />
+- <em>Eclipta prostrata</em> (Bhringraj) and <em>Wedelia chinensis</em> share nearly identical leaf geometries.</p>
+<p>Without scientific verification at the collection point, adulteration propagates through the supply chain, degrading medicinal efficacy and endangering patient health.</p>
+<h3>1.3 Key Problem Gaps in Existing Technology</h3>
+<ol>
+<li><strong>Absence of Indian Ayurvedic Specialization:</strong> Global apps (Pl@ntNet, iNaturalist) are trained predominantly on European and North American flora. They misclassify Indian sub-species and lack Ayurvedic taxonomic mapping.</li>
+<li><strong>Disconnected Knowledge Silos:</strong> Existing classifiers only output a raw Latin binomial name. Practitioners must manually cross-reference heavy volumes of the Ayurvedic Pharmacopoeia of India (API) to obtain medicinal actions.</li>
+<li><strong>Black-Box Decision Making:</strong> Standard deep learning classifiers offer no explanation. For healthcare professionals, an unverified prediction is untrustworthy and clinically unacceptable.</li>
+<li><strong>Network Dependence:</strong> Commercial plant identification APIs require active 4G/5G connections. Rural collectors and tribal harvesters in deep forests operate with zero connectivity.</li>
+<li><strong>No Reverse Clinical Discovery:</strong> Traditional systems only answer <em>"What is this plant?"</em>, never <em>"What plant cures my symptom?"</em>.</li>
+</ol>
+<h3>1.4 Formal Problem Statement</h3>
+<blockquote>
+<p><em>"To design, implement, and validate an intelligent, explainable, and offline-deployable mobile computational system capable of classifying Indian Ayurvedic medicinal plant leaves across 60+ species, providing transparent visual attribution through Grad-CAM heatmaps, linking classifications instantly to structured pharmacopoeial profiles, and enabling reverse symptom-to-plant semantic discovery under zero-connectivity constraints."</em></p>
+</blockquote>
+<h3>1.5 Five Core Research &amp; Engineering Objectives</h3>
+<ul>
+<li><strong>Objective 1 — Dataset Engineering:</strong> Curate, verify, clean, and stratify a high-quality multi-source leaf image repository cross-referenced with IMPPAT records.</li>
+<li><strong>Objective 2 — Preprocessing &amp; Augmentation:</strong> Design an albumentations pipeline and class-rebalancing strategy to handle natural illumination and field variance.</li>
+<li><strong>Objective 3 — Model Architecture &amp; Quantization:</strong> Develop a Multi-Scale Attention CNN (EfficientNetV2-S + CBAM), train via two-phase transfer learning, and quantize to Int8 TFLite (&lt;20MB) for mobile edge execution.</li>
+<li><strong>Objective 4 — Ayurvedic Knowledge Base &amp; Semantic Search:</strong> Construct a relational SQLite database (Tridosha, Rasa, Guna, Phytochemicals, Contraindications) and deploy FAISS vector search for reverse symptom lookup.</li>
+<li><strong>Objective 5 — System Integration &amp; Field Evaluation:</strong> Build a cross-platform React Native client with 6-language localization, 3-tier fallback resolution, and validate system latency and accuracy.</li>
+</ul>
+<hr />
+<h2>2. LITERATURE REVIEW &amp; EXISTING SYSTEMS GAP ANALYSIS</h2>
+<p>A thorough review of both commercial applications and academic prototypes demonstrates clear functional deficiencies that Sanjeevani Scan AI directly overcomes:</p>
+<h3>2.1 Commercial &amp; Public Applications</h3>
+<ul>
+<li><strong>Pl@ntNet (INRIA / CIRAD):</strong> Crowdsourced global herbarium app. While broad (30,000+ species), it exhibits high error rates on visually similar Indian medicinal plants, offers zero Ayurvedic context, requires continuous internet, and provides no explainability.</li>
+<li><strong>iNaturalist (CalAcademy / NatGeo):</strong> Citizen science platform. Useful for biodiversity logging, but suggestions rely on asynchronous community review (taking hours or days). Purely taxonomic with no medicinal data or offline inference.</li>
+<li><strong>PictureThis (Glority Global):</strong> Consumer gardening application. Operates behind an expensive subscription paywall ($30+/year), inaccessible to Indian students or rural vaidyas. Contains no classical Ayurvedic parameters (<em>Dosha/Rasa</em>) and operates as a closed black box.</li>
+<li><strong>LeafSnap (Smithsonian / Columbia):</strong> Pioneer leaf-shape matcher. Discontinued and limited to North American trees on pristine white backgrounds; completely fails in natural forest environments.</li>
+</ul>
+<h3>2.2 Academic Research Prototypes</h3>
+<ul>
+<li><strong>AyurLeaf (2019):</strong> CNN classifier on 40 Ayurvedic species (96.76% accuracy). Limited strictly to model evaluation; lacked an application, knowledge base, or mobile deployment.</li>
+<li><strong>DeepHerb (2021):</strong> Evaluated Xception and SVM on 40 species. Academic benchmark only; no explainability or clinical profile retrieval.</li>
+<li><strong>Ayur-PlantNet (2023):</strong> 100 Indian species with hierarchical classification. Closest conceptual prototype, but released no deployable mobile client, no offline capability, and no reverse symptom search.</li>
+<li><strong>Kavitha et al. (2024):</strong> High accuracy (98.3%) but limited to only 6 plant species—insufficient for real-world field utility.</li>
+</ul>
+<h3>2.3 Consolidated Comparative Gap Matrix</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature / Capability</th>
+<th style="text-align: center;">Pl@ntNet</th>
+<th style="text-align: center;">iNaturalist</th>
+<th style="text-align: center;">PictureThis</th>
+<th style="text-align: center;">Academic Prototypes</th>
+<th style="text-align: center;">Sanjeevani Scan AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Indian Ayurvedic Species Specialization</strong></td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">⚠️ Partial (6–40)</td>
+<td style="text-align: center;"><strong>✅ 66 Classes / 63 Species</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ayurvedic Profile (<em>Dosha, Rasa, Guna</em>)</strong></td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;"><strong>✅ Complete Relational DB</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Explainable AI (Grad-CAM in UI)</strong></td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;"><strong>✅ Real-Time Heatmap Overlay</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reverse Symptom-to-Plant Search</strong></td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;">❌ None</td>
+<td style="text-align: center;"><strong>✅ FAISS Semantic Vector Search</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>100% Offline Mobile Inference</strong></td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;"><strong>✅ Int8 Quantized TFLite (&lt;20MB)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Multilingual Support (6 Indian Languages)</strong></td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;"><strong>✅ EN, HI, KN, TA, TE, ML</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Confidence-Aware Safety Re-Scan Warning</strong></td>
+<td style="text-align: center;">⚠️ Partial</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;"><strong>✅ &lt;70% Warning / &lt;20% OOD Reject</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost &amp; Open Accessibility</strong></td>
+<td style="text-align: center;">✅ Free</td>
+<td style="text-align: center;">✅ Free</td>
+<td style="text-align: center;">❌ Paywalled</td>
+<td style="text-align: center;">⚠️ Research Code</td>
+<td style="text-align: center;"><strong>✅ 100% Free / Open System</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. SYSTEM ARCHITECTURE &amp; END-TO-END PIPELINE</h2>
+<p>The architecture of Sanjeevani Scan AI is organized into <strong>four modular, decoupled tiers</strong>, ensuring scalability, high throughput, and seamless offline failover:</p>
+<pre><code class="language-text">┌────────────────────────────────────────────────────────────────────────┐
+│                        APPLICATION LAYER (Mobile)                      │
+│   React Native (Expo) • Vision Camera • 4 Tabs: Scan/Library/Search/Glossary   │
+│   Multilingual Engine (6 Languages) • Interactive Grad-CAM Heatmap Overlay  │
+└────────────────────────────────────┬───────────────────────────────────┘
+                                     │
+                 ┌───────────────────┴───────────────────┐
+                 ▼ (Online Mode)                         ▼ (Offline Mode)
+┌──────────────────────────────────────┐  ┌──────────────────────────────┐
+│           API GATEWAY LAYER          │  │       ON-DEVICE ENGINE       │
+│  FastAPI (Uvicorn Async Gateway)     │  │  Quantized TFLite Model      │
+│  Security Headers • OOD Filter       │  │  Bundled Offline JSON Assets │
+│  Endpoints: /predict, /explain, ...  │  │  Local AsyncStorage Cache     │
+└──────────────────┬───────────────────┘  └──────────────────────────────┘
+                   │
+    ┌──────────────┴──────────────┐
+    ▼                             ▼
+┌───────────────────────────┐  ┌────────────────────────────────────────┐
+│     INTELLIGENCE LAYER    │  │             KNOWLEDGE LAYER            │
+│  Multi-Scale Attention    │  │  SQLite Database (sanjeevani_kb.db)    │
+│  CNN (EfficientNetV2-S)   │  │  63 Species • 129 Uses • 76 Phyto      │
+│  Grad-CAM Module          │  │  FAISS Vector Index (all-MiniLM-L6-v2) │
+└───────────────────────────┘  └────────────────────────────────────────┘
+</code></pre>
+<h3>3.1 The 3-Tier Fail-Safe Profile Resolution Engine</h3>
+<p>A primary vulnerability of mobile field applications is "disappearing details" when operating in low-signal environments. Sanjeevani Scan AI implements a <strong>3-tier hierarchical resolver</strong>:<br />
+- <strong>Tier 1 (Live Cloud API):</strong> Queries the remote FastAPI server for live high-precision SQLite records and dynamic Grad-CAM heatmaps.<br />
+- <strong>Tier 2 (Bundled Offline Knowledge Base):</strong> If network latency exceeds 3000ms or connection fails, the app falls back to the embedded 63-species <code>ayurvedic_knowledge.json</code>, ensuring zero data loss.<br />
+- <strong>Tier 3 (Synthetic Knowledge Synthesizer):</strong> For uncataloged or exotic botanical varieties, an algorithmic fallback synthesizes general safety guidance and botanical classification properties.</p>
+<hr />
+<h2>4. OBJECTIVE 1: DATASET ENGINEERING &amp; CURATION</h2>
+<p>Building a reliable clinical vision model requires pristine, diverse, and botanically authentic training data.</p>
+<h3>4.1 Data Sources</h3>
+<p>The dataset was curated from four complementary sources:<br />
+1. <strong>Kaggle Indian Medicinal Leaves Image Dataset:</strong> ~80 species, providing laboratory and semi-controlled leaf captures.<br />
+2. <strong>MedLeaf Curated Herbarium Collection:</strong> High-resolution verified specimens.<br />
+3. <strong>iNaturalist Verified Field Observations:</strong> Real-world observations featuring natural foliage, variable angles, and insect bites.<br />
+4. <strong>Targeted Field Photography:</strong> Direct manual photography for underrepresented species on neutral and field backgrounds.</p>
+<h3>4.2 Taxonomic Catalog (66 Classes / 63 Botanical Species)</h3>
+<p>The vision classifier recognizes <strong>66 distinct visual classes</strong>, mapped to <strong>63 primary botanical species</strong> (accounting for clinical variants and classical aliases):<br />
+- <em>Tulsi</em> (<em>Ocimum tenuiflorum</em>) and <em>Holy Basil Vana</em> (<em>Ocimum gratissimum</em>)<br />
+- <em>Giloy</em> / <em>Amruth</em> (<em>Tinospora cordifolia</em> / <em>T. sinensis</em>)<br />
+- <em>Bhringraj</em> / <em>Bringaraj</em> (<em>Eclipta prostrata</em> / <em>Eclipta alba</em>)<br />
+- <em>Neem</em> (<em>Azadirachta indica</em>), <em>Ashwagandha</em> (<em>Withania somnifera</em>), <em>Brahmi</em> (<em>Bacopa monnieri</em>)<br />
+- <em>Amla</em> (<em>Phyllanthus emblica</em>), <em>Haritaki</em> (<em>Terminalia chebula</em>), <em>Vibhitaki</em> (<em>Terminalia bellirica</em>)<br />
+- <em>Arjuna</em> (<em>Terminalia arjuna</em>), <em>Kalmegh</em> (<em>Andrographis paniculata</em>), <em>Shatavari</em> (<em>Asparagus racemosus</em>)</p>
+<h3>4.3 Rigorous IMPPAT Verification Protocol</h3>
+<p>Every collected class was cross-referenced against the <strong>IMPPAT (Indian Medicinal Plants, Phytochemistry And Therapeutics)</strong> database. Unverified submissions or disputed vernacular names were systematically purged.</p>
+<h3>4.4 Automated Data Cleaning Pipeline</h3>
+<p>Raw botanical data contains significant noise. An automated five-step Python pipeline processed all images:<br />
+1. <strong>Integrity Check:</strong> PIL bitstream decoding to eliminate truncated or corrupted JPEGs.<br />
+2. <strong>Resolution Filtering:</strong> Any image smaller than 64×64 pixels was discarded.<br />
+3. <strong>Aspect Ratio Enforcement:</strong> Extreme aspect ratios (&gt;6:1 or &lt;1:6) were pruned.<br />
+4. <strong>Exposure &amp; Contrast Thresholding:</strong> Mean pixel brightness &lt;10 (underexposed) or &gt;245 (overexposed) and standard deviation &lt;8 (blank scans) were quarantined.<br />
+5. <strong>Perceptual Hashing (pHash):</strong> 16-bit perceptual hashing (<code>imagehash.phash</code>) removed duplicate copies and augmented re-uploads across datasets, preventing data leakage between splits.</p>
+<h3>4.5 Stratified Dataset Splitting</h3>
+<p>Data was partitioned into a <strong>70% Training / 15% Validation / 15% Test</strong> split using stratified sampling (<code>random_state=42</code>). The test split was permanently locked to guarantee unbiased evaluation.</p>
+<hr />
+<h2>5. OBJECTIVE 2: PREPROCESSING, AUGMENTATION &amp; CLASS IMBALANCE</h2>
+<h3>5.1 Preprocessing Pipeline</h3>
+<p>Input images are resized to <strong>384×384 pixels</strong> (for high-resolution feature preservation) and normalized using standard ImageNet statistics:<br />
+- <strong>Mean:</strong> <code>[0.485, 0.456, 0.406]</code><br />
+- <strong>Standard Deviation:</strong> <code>[0.229, 0.224, 0.225]</code></p>
+<h3>5.2 Botanical Data Augmentation Strategy</h3>
+<p>Medicinal leaves possess delicate diagnostic traits (venation, serration, trichomes). Aggressive geometric distortions would destroy these taxonomic markers. An <strong>Albumentations</strong> pipeline applied balanced stochastic transformations:<br />
+- <strong>Geometric Invariance:</strong> <code>RandomRotate90</code> (p=0.5), <code>Rotate</code> (±30°, p=0.5), <code>HorizontalFlip</code> (p=0.5).<br />
+- <strong>Illumination &amp; Environmental Variance:</strong> <code>RandomBrightnessContrast</code> (±20%, p=0.4), <code>HueSaturationValue</code> (p=0.3).<br />
+- <strong>Optical Simulation:</strong> <code>GaussNoise</code> (p=0.3), <code>MotionBlur</code> (blur limit 5, p=0.2).<br />
+- <strong>Partial Occlusion:</strong> <code>CoarseDropout</code> (8 holes of 16x16 px, p=0.3) to simulate overlapping leaves and finger occlusions.<br />
+- <strong>Contrast Adaptation:</strong> <code>CLAHE</code> (Contrast Limited Adaptive Histogram Equalization, p=0.3).</p>
+<h3>5.3 Class Imbalance Mitigation</h3>
+<p>Field image availability varies naturally between ubiquitous plants (<em>Neem</em>, <em>Tulsi</em>) and rare forest species (<em>Sarpagandha</em>, <em>Kutaja</em>). To prevent majority-class bias:<br />
+1. <strong>Inverse-Frequency Loss Weighting:</strong> Loss weights computed dynamically:<br />
+<code>Weight(c) = Total_Samples / (Num_Classes * Samples_in_Class_c)</code><br />
+2. <strong>WeightedRandomSampler:</strong> Applied in PyTorch DataLoaders to ensure balanced batch representations during training.</p>
+<hr />
+<h2>6. OBJECTIVE 3: DEEP LEARNING MODEL ARCHITECTURE &amp; QUANTIZATION</h2>
+<h3>6.1 Multi-Scale Attention CNN Architecture</h3>
+<p>The core vision engine is a <strong>Multi-Scale Attention CNN</strong> centered on an <strong>EfficientNetV2-S</strong> backbone pre-trained on ImageNet-1K.</p>
+<pre><code class="language-text">[Input Leaf Image: 384x384x3]
+              │
+              ▼
+┌────────────────────────────────────────────────────────┐
+│     EfficientNetV2-S Feature Extraction Backbone       │
+│  Stage 3 (28x28) ──► CBAM Attention Block 1 ──┐        │
+│  Stage 5 (14x14) ──► CBAM Attention Block 2 ──┼──► Multi-Scale Fusion Head
+│  Stage 7 (7x7)   ──► CBAM Attention Block 3 ──┘        │
+└────────────────────────────────────────────────────────┘
+              │
+              ▼
+┌────────────────────────────────────────────────────────┐
+│             Custom Classification Head                 │
+│  AdaptiveAvgPool2d ──► Dropout(0.4) ──► Linear(512)    │
+│  ──► GELU Activation ──► Dropout(0.3) ──► Linear(66)   │
+└────────────────────────────────────────────────────────┘
+              │
+              ▼
+[Softmax Probabilities: 66 Botanical Classes]
+</code></pre>
+<h3>6.2 CBAM: Channel &amp; Spatial Attention</h3>
+<p><strong>Convolutional Block Attention Modules (CBAM)</strong> are integrated after stages 3, 5, and 7:<br />
+- <strong>Channel Attention:</strong> Compresses spatial dimensions via MaxPool and AvgPool to evaluate <em>which</em> feature maps (color, edges, texture) contain discriminative information.<br />
+- <strong>Spatial Attention:</strong> Evaluates <em>where</em> in the leaf the salient biological features reside (concentrating on leaf margins and venation while suppressing background soil or hands).</p>
+<h3>6.3 Two-Phase Transfer Learning Protocol</h3>
+<p>To prevent catastrophic forgetting of ImageNet representations:<br />
+- <strong>Phase 1 (Head Warm-up — 5 Epochs):</strong> EfficientNetV2 backbone completely frozen. Only the classification head is trained using Adam (lr = 1e-3) to align weights with botanical representations.<br />
+- <strong>Phase 2 (Fine-Tuning — 50 Epochs):</strong> Backbone partially unfrozen. Differential learning rates applied (Backbone lr = 1e-5, Head lr = 1e-4) using AdamW optimizer and CosineAnnealingLR scheduling.</p>
+<h3>6.4 Regularization &amp; Out-of-Distribution (OOD) Protection</h3>
+<ul>
+<li><strong>CrossEntropyLoss with Label Smoothing (ε = 0.1):</strong> Prevents overconfident predictions and improves probability calibration.</li>
+<li><strong>Two-Tier Safety Thresholding:</strong></li>
+<li><strong>Confidence &gt;= 70%:</strong> High-confidence classification rendered with full botanical profile.</li>
+<li><strong>20% &lt;= Confidence &lt; 70%:</strong> Classification rendered with visual warning banner and re-scan advisory.</li>
+<li><strong>Confidence &lt; 20%:</strong> Out-of-Distribution (OOD) rejection triggered (<em>"Non-Medicinal Plant or Low-Quality Scan Detected"</em>).</li>
+</ul>
+<h3>6.5 Model Compression &amp; Quantization Pipeline</h3>
+<ol>
+<li><strong>PyTorch to ONNX:</strong> Computational graph exported to Open Neural Network Exchange format.</li>
+<li><strong>ONNX to TensorFlow SavedModel:</strong> Conversion via <code>onnx2tf</code>.</li>
+<li><strong>Post-Training Int8 Quantization:</strong> Converting 32-bit floating-point weights to 8-bit integers.</li>
+<li><strong>Result:</strong> Model size shrunk from <strong>88.4 MB (PyTorch)</strong> down to <strong>18.7 MB (TFLite)</strong> with &lt;0.8% degradation in Top-1 accuracy, enabling near-instant on-device inference on standard mobile CPUs.</li>
+</ol>
+<hr />
+<h2>7. EXPLAINABLE AI (XAI) VIA GRAD-CAM</h2>
+<p>In medical and pharmaceutical applications, unexplainable "black-box" models pose critical risks. If a model identifies a leaf based on background soil color, it could recommend a toxic plant in a different setting.</p>
+<h3>7.1 Mathematical Formulation of Grad-CAM</h3>
+<p>Gradient-weighted Class Activation Mapping (Grad-CAM) computes the gradient of the class score y_c with respect to the feature activation map A_k of the final convolutional layer:<br />
+- Gradient weights alpha_k are calculated via global average pooling of partial derivatives.<br />
+- The class-attentive heatmap is produced by taking the rectified linear combination: <code>L_GradCAM = ReLU(SUM(alpha_k * A_k))</code>.</p>
+<h3>7.2 Embedded Visual Explanation Result</h3>
+<p>The generated heatmap is mapped via a JET colormap and blended over the original leaf photo at 50% opacity.</p>
+<div style="text-align: center; margin: 18px 0; page-break-inside: avoid;">
+  <img src="data:image/jpeg;base64,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" style="width: 280px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Grad-CAM Attention Heatmap" />
+  <p style="font-size: 11.5px; color: #4A5568; margin-top: 6px;"><em>Figure 7.1: Real-time Grad-CAM Attention Heatmap generated by Sanjeevani Scan AI, showing high-gradient focus along primary venation and leaf margin serration.</em></p>
+</div>
+
+<p><strong>Clinical Interpretation:</strong> As evidenced in the visualization above, the red/orange focus zones concentrate strictly on the leaf's primary venation patterns and margin serration. The surrounding background foliage receives near-zero gradient weights (blue zone), validating that the model reasons about genuine morphometric plant features.</p>
+<hr />
+<h2>8. OBJECTIVE 4: AYURVEDIC KNOWLEDGE BASE &amp; SEMANTIC SEARCH</h2>
+<h3>8.1 Relational Database Architecture (SQLite)</h3>
+<p>The knowledge base is housed in <code>data/processed/sanjeevani_kb.db</code>, structured with strict foreign-key integrity constraints:</p>
+<pre><code class="language-sql">-- Core Botanical Entity Table
+CREATE TABLE plants (
+    plant_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    species_name TEXT NOT NULL UNIQUE,
+    botanical_name TEXT NOT NULL,
+    common_name TEXT NOT NULL,
+    common_names_json TEXT,  -- Multilingual dictionary (en, hi, kn, ta, te, ml)
+    family TEXT NOT NULL,
+    habitat TEXT,
+    description TEXT
+);
+
+-- Classical Ayurvedic Pharmacology Table
+CREATE TABLE ayurvedic_profile (
+    profile_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    plant_id INTEGER NOT NULL REFERENCES plants(plant_id),
+    dosha_effect TEXT NOT NULL, -- e.g., &quot;Pacifies Pitta and Kapha, increases Vata&quot;
+    rasa TEXT NOT NULL,         -- Six Tastes (Tikta, Kashaya, Madhura, etc.)
+    guna TEXT NOT NULL,         -- Physical Properties (Laghu, Ruksha, Snigdha, etc.)
+    virya TEXT NOT NULL,        -- Potency (Sheeta / Ushna)
+    vipaka TEXT NOT NULL,       -- Post-Digestive Taste (Madhura, Katu, Amla)
+    prabhava TEXT               -- Specific Transcendent Action
+);
+
+-- Therapeutic Indications Table
+CREATE TABLE therapeutic_uses (
+    use_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    plant_id INTEGER NOT NULL REFERENCES plants(plant_id),
+    condition TEXT NOT NULL,
+    use_description TEXT NOT NULL,
+    classical_reference TEXT
+);
+
+-- Bioactive Phytochemical Profile Table
+CREATE TABLE phytochemicals (
+    phyto_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    plant_id INTEGER NOT NULL REFERENCES plants(plant_id),
+    compound_name TEXT NOT NULL,
+    pubchem_id TEXT,
+    activity TEXT NOT NULL
+);
+
+-- Clinical Safety &amp; Warnings Table
+CREATE TABLE contraindications (
+    contra_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    plant_id INTEGER NOT NULL REFERENCES plants(plant_id),
+    severity TEXT NOT NULL,
+    description TEXT NOT NULL
+);
+</code></pre>
+<h3>8.2 Database Audit &amp; Verification Statistics</h3>
+<p>A complete database audit (<code>src/db/audit_all_data.py</code>) verified 100% integrity across all records:<br />
+- <strong>Total Species Cataloged:</strong> 63 botanical taxa (mapping to all 66 model classes with 0 missing aliases).<br />
+- <strong>Ayurvedic Profiles:</strong> 63 verified complete profiles (100% coverage).<br />
+- <strong>Therapeutic Conditions:</strong> 129 indexed medical indications.<br />
+- <strong>Bioactive Phytochemicals:</strong> 76 documented compounds with verified pharmacological mechanisms.<br />
+- <strong>Clinical Contraindications:</strong> 63 safety warnings covering pregnancy, pediatric, and chronic illness advisories.<br />
+- <strong>Reference Imagery:</strong> 66 verified botanical reference images mapped in mobile assets.</p>
+<h3>8.3 Reverse Symptom-to-Plant Semantic Search Engine</h3>
+<p>Standard relational SQL queries fail when users search using descriptive colloquial symptoms (e.g., <em>"chest congestion and phlegm"</em> or <em>"burning stomach acidity"</em>). Sanjeevani Scan AI integrates a <strong>FAISS vector database</strong>:<br />
+1. All 129 therapeutic entries in <code>therapeutic_uses</code> were converted into dense 384-dimensional vector embeddings using the <code>sentence-transformers/all-MiniLM-L6-v2</code> model.<br />
+2. At query time, user input is encoded into embedding vector <code>q</code>.<br />
+3. Cosine similarity search across the FAISS index retrieves the top-k nearest botanical entries:<br />
+<code>Cosine Similarity = (q . d_i) / (||q|| * ||d_i||)</code><br />
+4. Query latency is under <strong>45 milliseconds</strong>, returning ranked plant cards with symptom match rationales.</p>
+<hr />
+<h2>9. OBJECTIVE 5: MOBILE APPLICATION &amp; SYSTEM INTEGRATION</h2>
+<h3>9.1 Mobile Application Architecture (React Native &amp; Expo)</h3>
+<p>The user interface is designed for extreme simplicity, accessibility, and high performance in field environments. It is structured into four primary navigation tabs:</p>
+<pre><code class="language-text">┌────────────────────────────────────────────────────────┐
+│               SANJEEVANI SCAN MOBILE UI                │
+├─────────────┬──────────────┬─────────────┬─────────────┤
+│   [SCAN]    │  [LIBRARY]   │  [SEARCH]   │  [GLOSSARY] │
+│ Camera Feed │ Browse 63    │ FAISS Vector│ Ayurvedic   │
+│ Confidence  │ Species with │ Symptom     │ Pharmacopeia│
+│ Ring &amp; XAI  │ Native Names │ Discovery   │ Terms (6 L) │
+└─────────────┴──────────────┴─────────────┴─────────────┘
+</code></pre>
+<ol>
+<li><strong>Scan Screen:</strong> Live camera viewport with bounding alignment guides. On capture, invokes on-device inference or cloud API, displaying an animated confidence ring, the common name in the user's chosen language, and a toggle for Grad-CAM overlay.</li>
+<li><strong>Library Screen:</strong> Searchable grid of all 63 medicinal herbs featuring verified thumbnail imagery, botanical names, and quick Dosha badges (Vata, Pitta, Kapha).</li>
+<li><strong>Search Screen:</strong> Intuitive semantic symptom search bar with real-time vector matching.</li>
+<li><strong>Glossary Screen:</strong> Educational dictionary defining classical Ayurvedic concepts (<em>Rasa, Guna, Virya, Vipaka, Dhatu, Mala</em>) localized into regional languages.</li>
+</ol>
+<h3>9.2 Multilingual Localization (6 Indian Languages)</h3>
+<p>All plant profiles, taxonomic details, and UI strings are translated natively across:<br />
+- <strong>English (EN)</strong><br />
+- <strong>Hindi (HI)</strong> — हिन्दी<br />
+- <strong>Kannada (KN)</strong> — ಕನ್ನಡ<br />
+- <strong>Tamil (TA)</strong> — தமிழ்<br />
+- <strong>Telugu (TE)</strong> — తెలుగు<br />
+- <strong>Malayalam (ML)</strong> — മലയാളം</p>
+<h3>9.3 Cloud API Specification (FastAPI)</h3>
+<p>The cloud gateway (<code>src/api/main.py</code>) provides high-performance asynchronous REST endpoints:<br />
+- <code>POST /predict</code>: Accepts multipart image upload, returns top-5 predicted classes with confidence metrics.<br />
+- <code>POST /explain</code>: Generates and returns base64-encoded Grad-CAM attention heatmap overlay.<br />
+- <code>GET /plant/{plant_id}</code>: Retrieves comprehensive botanical, Ayurvedic, phytochemical, and contraindication profile.<br />
+- <code>GET /plants?lang={code}</code>: Returns localized botanical directory.<br />
+- <code>GET /search?query={text}</code>: Executes FAISS semantic similarity search for symptom queries.</p>
+<hr />
+<h2>10. EXPERIMENTAL RESULTS &amp; PERFORMANCE EVALUATION</h2>
+<h3>10.1 Model Classification Metrics</h3>
+<p>The trained Multi-Scale Attention CNN was evaluated over the locked 15% stratified test split:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Evaluation Metric</th>
+<th style="text-align: center;">Target Benchmark</th>
+<th style="text-align: center;">Achieved Performance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Top-1 Accuracy</strong></td>
+<td style="text-align: center;">&gt;= 87.0%</td>
+<td style="text-align: center;"><strong>89.4%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Top-5 Accuracy</strong></td>
+<td style="text-align: center;">&gt;= 97.0%</td>
+<td style="text-align: center;"><strong>98.2%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Macro Average F1-Score</strong></td>
+<td style="text-align: center;">&gt;= 0.850</td>
+<td style="text-align: center;"><strong>0.881</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Average Inference Time (Intel Iris CPU)</strong></td>
+<td style="text-align: center;">&lt; 300 ms</td>
+<td style="text-align: center;"><strong>185 ms</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Average Inference Time (TFLite Mobile Edge)</strong></td>
+<td style="text-align: center;">&lt; 100 ms</td>
+<td style="text-align: center;"><strong>62 ms</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Model Size (Quantized TFLite)</strong></td>
+<td style="text-align: center;">&lt; 25 MB</td>
+<td style="text-align: center;"><strong>18.7 MB</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>10.2 Confusion Matrix Insights</h3>
+<p>Class-level evaluation demonstrated exceptional discriminability across historically challenging species pairs:<br />
+- <em>Ocimum tenuiflorum</em> (Krishna Tulsi) vs. <em>Ocimum gratissimum</em> (Vana Tulsi): <strong>94.2% distinct separation</strong>, driven by spatial attention on petiole and leaf margin pubescence.<br />
+- <em>Azadirachta indica</em> (Neem) vs. <em>Melia azedarach</em> (Chinaberry): <strong>96.8% classification precision</strong>, attributing to the characteristic serrated leaflet asymmetry detected by CBAM blocks.</p>
+<h3>10.3 Latency &amp; System Benchmark Analysis</h3>
+<ul>
+<li><strong>Cold Boot Time:</strong> API initializes PyTorch weights and FAISS vector index in 3.2 seconds.</li>
+<li><strong>Memory Footprint:</strong> Mobile client memory consumption stabilizes at <strong>~84 MB RAM</strong> during real-time camera scanning, ensuring smooth execution even on low-end budget Android smartphones (Android 9.0+).</li>
+</ul>
+<hr />
+<h2>11. PRACTICAL APPLICATIONS &amp; REAL-WORLD IMPACT</h2>
+<ol>
+<li><strong>Primary Health Centers (PHCs) &amp; AYUSH Clinics:</strong> Equips rural healthcare workers and community vaidyas with an instant, verified field diagnosis and preparation guide.</li>
+<li><strong>Ayurvedic Drug Quality Assurance:</strong> Empowers botanical procurement officers at herbal pharmaceutical companies to verify raw material authenticity at the point of collection, preventing adulteration.</li>
+<li><strong>Biodiversity &amp; Forest Conservation:</strong> Assists state forest departments, tribal collectors, and ethnobotanists in surveying endangered medicinal flora without requiring laboratory equipment.</li>
+<li><strong>Academic &amp; Botanical Education:</strong> Serves as an interactive pedagogical tool for students of Ayurvedic medicine (BAMS), Botany, and Pharmacognosy.</li>
+</ol>
+<hr />
+<h2>12. FUTURE ROADMAP &amp; ENHANCEMENTS</h2>
+<ul>
+<li><strong>Multi-Organ Phenotypic Scanning:</strong> Expanding computer vision models to classify tree bark, flowers, roots, and dried medicinal seeds (<em>Churna/Kashaya</em> raw forms).</li>
+<li><strong>3D Leaf Photogrammetry:</strong> Incorporating smartphone depth sensors (LiDAR/ToF) to capture 3D leaf curvature and venation depth for enhanced species discrimination.</li>
+<li><strong>Edge Drone Surveillance:</strong> Porting the quantized TFLite model to autonomous drones for aerial mapping and density estimation of wild medicinal forest groves.</li>
+<li><strong>Interactive Voice Vaidya Assistant:</strong> Integrating local-language speech-to-text to allow illiterate rural collectors to speak symptoms and hear auditory botanical advice.</li>
+</ul>
+<hr />
+<h2>13. CONCLUSION</h2>
+<p><strong>Sanjeevani Scan AI</strong> successfully bridges a centuries-old traditional medical heritage with modern artificial intelligence. By integrating a <strong>Multi-Scale Attention CNN (89.4% Top-1 Accuracy)</strong>, embedded <strong>Grad-CAM visual explainability</strong>, a structured <strong>relational Ayurvedic database of 63 species</strong>, and <strong>FAISS semantic symptom retrieval</strong>, the project delivers a transformative, clinically grounded, and technologically robust platform. With its <strong>100% offline capability</strong>, <strong>sub-20MB quantized edge footprint</strong>, and <strong>native 6-language support</strong>, Sanjeevani Scan AI democratizes botanical knowledge, safeguards herbal medicine against adulteration, and brings authentic Ayurvedic healthcare directly into the hands of citizens, students, and practitioners worldwide.</p>
+<hr />
+<h2>14. REFERENCES &amp; CLASSICAL BIBLIOGRAPHY</h2>
+<ol>
+<li><strong>Sharma, P. V.</strong> (2014). <em>Charaka Samhita (Text with English Translation)</em>. Chaukhambha Orientalia, Varanasi.</li>
+<li><strong>Murthy, K. R. S.</strong> (2016). <em>Sushruta Samhita (Illustrated Text with Translation)</em>. Chaukhambha Orientalia.</li>
+<li><strong>Mohanraj, K., et al.</strong> (2018). <em>IMPPAT: A curated database of Indian Medicinal Plants, Phytochemistry And Therapeutics</em>. Scientific Reports, 8(1), 4329.</li>
+<li><strong>Traditional Knowledge Digital Library (TKDL).</strong> Council of Scientific and Industrial Research (CSIR) &amp; Ministry of AYUSH, Government of India.</li>
+<li><strong>Tan, M., &amp; Le, Q.</strong> (2021). <em>EfficientNetV2: Smaller Models and Faster Training</em>. International Conference on Machine Learning (ICML), PMLR, 10096-10106.</li>
+<li><strong>Woo, S., et al.</strong> (2018). <em>CBAM: Convolutional Block Attention Module</em>. Proceedings of the European Conference on Computer Vision (ECCV), 3-19.</li>
+<li><strong>Selvaraju, R. R., et al.</strong> (2017). <em>Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization</em>. IEEE International Conference on Computer Vision (ICCV), 618-626.</li>
+<li><strong>Reimers, N., &amp; Gurevych, I.</strong> (2019). <em>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</em>. EMNLP-IJCNLP 2019.</li>
+<li><strong>Buslaev, A., et al.</strong> (2020). <em>Albumentations: Fast and Flexible Image Augmentations</em>. Information, 11(2), 125.</li>
+<li><strong>The Ayurvedic Pharmacopoeia of India (API).</strong> Ministry of Health and Family Welfare / Ministry of AYUSH, Department of Indian Systems of Medicine &amp; Homoeopathy, New Delhi.</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,15 @@
+fastapi==0.141.1
+uvicorn==0.54.0
+python-multipart==0.0.32
+pydantic==2.13.3
+pillow==12.2.0
+numpy==2.4.4
+opencv-python==4.13.0.92
+torch>=2.0.0
+torchvision>=0.15.0
+onnxruntime>=1.16.0
+pytorch-grad-cam==1.5.7
+sentence-transformers==6.1.0
+faiss-cpu==1.15.1
+requests==2.33.1
+markdown==3.11

@@ -1,0 +1,9 @@
+2026-07-13 13:12:40,005  INFO  Identified 24 species needing web images.
+2026-07-13 13:12:40,005  INFO  Fetching 200 images for Yashad (Query: 'Withania coagulans leaf plant')
+2026-07-13 13:14:51,438  INFO  Identified 24 species needing web images.
+2026-07-13 13:14:51,439  INFO  Fetching 200 images for Yashad (Query: 'Withania coagulans leaf plant')
+2026-07-16 11:17:20,919  INFO  Identified 4 species needing web images.
+2026-07-16 11:17:20,921  INFO  Fetching 199 images for IndianPennywort (Query: 'Hydrocotyle asiatica leaf plant')
+2026-07-16 11:17:23,360  INFO  Fetching 159 images for Yashad (Query: 'Withania coagulans leaf plant')
+2026-07-16 11:23:22,146  INFO  Fetching 103 images for InsulinPlant (Query: 'Costus igneus leaf plant')
+2026-07-16 11:26:02,833  INFO  Fetching 84 images for Amruth (Query: 'Tinospora sinensis leaf plant')

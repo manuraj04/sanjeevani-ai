@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sanjeevani Scan AI — Production Deployment Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 15mm 18mm 15mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #2D3748;
+    line-height: 1.6;
+    font-size: 13.5px;
+    padding: 0;
+    margin: 0;
+  }
+  h1 {
+    color: #1B5E20;
+    font-size: 26px;
+    border-bottom: 2.5px solid #2E7D32;
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  h2 {
+    color: #2E7D32;
+    font-size: 19px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 6px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+  }
+  h3 {
+    color: #1A365D;
+    font-size: 15px;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+  blockquote {
+    background: #F1F8E9;
+    border-left: 4px solid #43A047;
+    margin: 12px 0;
+    padding: 10px 16px;
+    border-radius: 4px;
+    color: #2E7D32;
+    font-weight: 500;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 12.5px;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid #CBD5E0;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th {
+    background-color: #E8F5E9;
+    color: #1B5E20;
+    font-weight: 700;
+  }
+  tr:nth-child(even) {
+    background-color: #F7FAFC;
+  }
+  pre {
+    background-color: #1A202C;
+    color: #E2E8F0;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: Consolas, "Fira Code", Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.45;
+    margin: 10px 0;
+    page-break-inside: avoid;
+  }
+  code {
+    background-color: #EDF2F7;
+    color: #C53030;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 12px;
+  }
+  pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  ul, ol {
+    margin: 8px 0;
+    padding-left: 22px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    margin: 20px 0;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<h1>Sanjeevani Scan AI — Production, Security &amp; Deployment Master Guide</h1>
+<blockquote>
+<p><strong>Status:</strong> Ready for Testing &amp; Production Staging<br />
+<strong>Last Verified:</strong> October 2026<br />
+<strong>Target Release:</strong> Signed Android Standalone APK (<code>.apk</code> / <code>.aab</code>) with Hardened Anti-Reverse Engineering</p>
+</blockquote>
+<hr />
+<h2>1. System Architecture Overview</h2>
+<p>The application is structured according to the <strong>Zero-Trust Client–Brain Architecture</strong>, mirroring modern enterprise mobile AI applications (e.g., Google Lens, PlantNet):</p>
+<pre><code>┌────────────────────────────────────────────────────────┐
+│               📱 CLIENT: Mobile Application            │
+│                 (React Native / Expo / Hermes)         │
+│  - Camera &amp; Gallery Capture                            │
+│  - Dynamic 6-Language Localization (EN, HI, KN, TA, TE, ML)│
+│  - Side-by-Side Visual Botanical Verification          │
+│  - Standalone Medical Disclaimer &amp; Modern UI           │
+│  - Zero Proprietary Weights / No Plaintext Code Inside │
+└───────────────────────────┬────────────────────────────┘
+                            │ Encrypted HTTPS / TLS
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│               💻 SERVER: AI &amp; Knowledge Brain          │
+│               (FastAPI / PyTorch / FAISS / SQLite)     │
+│  - 66-Class DenseNet-121 Classifier (OOD Rejection)    │
+│  - Grad-CAM Explainability Heatmap Generator           │
+│  - Semantic Symptom Search Engine (all-MiniLM-L6-v2)   │
+│  - Ayurvedic Knowledge Base (16+ Species, Multi-lingual│
+│  - Security Headers &amp; Protected Gateway                │
+└────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2>2. Security &amp; Anti-Reverse Engineering Protections</h2>
+<p>Your proprietary code, trained weights, and classical database are safeguarded through 5 active layers:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">Mechanism</th>
+<th style="text-align: left;">Protection Offered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Layer 1</strong></td>
+<td style="text-align: left;"><strong>Hermes Bytecode (<code>.hbc</code>)</strong></td>
+<td style="text-align: left;">React Native code is pre-compiled into binary machine bytecode. <strong>No human-readable <code>.js</code> files exist in the release APK.</strong> Decompilers (like JADX) only see binary bytecode.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Layer 2</strong></td>
+<td style="text-align: left;"><strong>R8 / ProGuard Obfuscation</strong></td>
+<td style="text-align: left;">Replaces all function, variable, and class names with scrambled symbols (e.g., <code>a.b()</code>). Strips debug symbols and metadata.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Layer 3</strong></td>
+<td style="text-align: left;"><strong>Air-Gapped IP Isolation</strong></td>
+<td style="text-align: left;">The neural network (<code>best_model_final.pth</code>), training datasets, and SQLite DB remain strictly on the private server. <strong>They are never bundled into the user's phone.</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Layer 4</strong></td>
+<td style="text-align: left;"><strong>Security Gateway Headers</strong></td>
+<td style="text-align: left;">The API automatically injects <code>nosniff</code>, <code>X-Frame-Options: DENY</code>, <code>X-XSS-Protection</code>, and masks server software signatures.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Layer 5</strong></td>
+<td style="text-align: left;"><strong>SSL Pinning &amp; Integrity</strong></td>
+<td style="text-align: left;">Prevents Man-In-The-Middle (MITM) packet sniffing via Burp Suite or Charles Proxy on production builds.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Verified Features Currently Active</h2>
+<ol>
+<li><strong>Leaf Identification</strong>:</li>
+<li>High-confidence classification for 66 plant classes.</li>
+<li>Out-of-Distribution (OOD) rejection for non-leaf or unknown objects.</li>
+<li>Grad-CAM AI heatmaps showing leaf venation patterns.</li>
+<li><strong>Side-by-Side Visual Botanical Verification</strong>:</li>
+<li>Displays user-taken leaf side-by-side with official reference botanical photography.</li>
+<li>Direct match percentage badge and venation/apex matching tips.</li>
+<li><strong>Ergonomic Scan Action</strong>:</li>
+<li>Vibrant "Scan Another Leaf" button positioned directly below the taken photo box.</li>
+<li>Quick gallery and live camera shortcut buttons.</li>
+<li><strong>Standalone Medical Disclaimer</strong>:</li>
+<li>Clean, distinct amber warning card positioned at the bottom of the scan view.</li>
+<li><strong>Full Dynamic 6-Language Localization</strong>:</li>
+<li>Supports: <strong>English (<code>en</code>)</strong>, <strong>Hindi (<code>hi</code>)</strong>, <strong>Kannada (<code>kn</code>)</strong>, <strong>Tamil (<code>ta</code>)</strong>, <strong>Telugu (<code>te</code>)</strong>, and <strong>Malayalam (<code>ml</code>)</strong>.</li>
+<li>Translates UI buttons, Glossary terms &amp; definitions, Botanical taxonomy, and dynamic Ayurvedic profiles (<strong>Dosha, Rasa, Guna, Virya, Vipaka, Prabhava</strong>).</li>
+<li><strong>Ayurvedic Flora Library</strong>:</li>
+<li>Localized common names (e.g., <em>गिलोय</em>, <em>नीम</em>, <em>बेल</em>, <em>घृतकुमारी</em>).</li>
+<li>"View Full Profile" button opens an in-app encyclopedia modal.</li>
+<li><strong>Semantic Symptom Search</strong>:</li>
+<li>Matches clinical symptoms (e.g. <em>fever</em>, <em>anxiety</em>, <em>skin disorders</em>) directly to classical Ayurvedic remedies.</li>
+</ol>
+<hr />
+<h2>4. Local Run &amp; Verification Commands</h2>
+<p>Whenever you test the application on your computer and phone:</p>
+<h3>A. Start the Backend API Server</h3>
+<pre><code class="language-powershell"># From project root (d:\Sanjeevani Scan AI)
+.venv\Scripts\python -m uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+</code></pre>
+<h3>B. Start the Expo Mobile Development Server</h3>
+<pre><code class="language-powershell"># In src/mobile directory
+cd src/mobile
+npx expo start
+</code></pre>
+<h3>C. Run the Complete Deep-Run Test Suite</h3>
+<pre><code class="language-powershell"># Validates API, DB, Giloy/Aloe profiles, Predict, and Explainability
+.venv\Scripts\python test_deep_run.py
+</code></pre>
+<hr />
+<h2>5. Production Build Runbook (When Ready to Finalize)</h2>
+<p>When you are done testing and ready to package the final production app, follow these steps:</p>
+<h3>Step 1: Deploy the Backend (Zero Cost Options)</h3>
+<p>Deploy the FastAPI backend container to <strong>Render</strong>, <strong>Hugging Face Spaces (Docker)</strong>, or <strong>Google Cloud Run</strong>:</p>
+<pre><code class="language-dockerfile">FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD [&quot;uvicorn&quot;, &quot;src.api.main:app&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;--port&quot;, &quot;8000&quot;]
+</code></pre>
+<h3>Step 2: Configure Production URL in <code>App.js</code></h3>
+<p>In <code>src/mobile/App.js</code>:</p>
+<pre><code class="language-javascript">// Replace local IP with your live cloud backend
+const API_BASE_URL = 'https://your-sanjeevani-api.onrender.com';
+</code></pre>
+<h3>Step 3: Install &amp; Configure EAS Build</h3>
+<pre><code class="language-bash">cd src/mobile
+npm install -g eas-cli
+npx eas login
+npx eas build:configure
+</code></pre>
+<h3>Step 4: Build the Standalone Signed APK</h3>
+<pre><code class="language-bash"># Builds a standalone APK ready to install directly on Android phones
+npx eas build -p android --profile preview
+</code></pre>
+<p>EAS will output a direct download link to <code>Sanjeevani-Scan-AI.apk</code>.</p>
+<hr />
+<h2>6. Project Directory Map</h2>
+<pre><code>D:\Sanjeevani Scan AI\
+├── data/
+│   └── processed/
+│       ├── sanjeevani_kb.db          # SQLite Database (Plants, Profiles, Uses)
+│       ├── ayurvedic_knowledge.json  # Multi-lingual JSON Knowledge Base
+│       └── best_model_final.pth      # Trained PyTorch Model Weights
+├── src/
+│   ├── api/
+│   │   ├── main.py                   # FastAPI REST API &amp; Security Gateway
+│   │   ├── explainability.py         # Grad-CAM Heatmap Logic
+│   │   └── semantic_search.py        # Sentence-Transformer FAISS Engine
+│   ├── db/
+│   │   ├── schema.sql                # Relational Database Schema
+│   │   ├── extract_imppat.py         # Enriched Plant Data Generator
+│   │   └── populate_db.py            # SQLite Ingestion Script
+│   ├── mobile/
+│   │   ├── App.js                    # Complete React Native Mobile Application
+│   │   ├── app.json                  # Expo Config (Hermes Bytecode Enabled)
+│   │   └── package.json              # Mobile Dependencies
+│   └── models/
+│       ├── model.py                  # DenseNet-121 Architecture
+│       └── export_onnx.py            # ONNX Conversion Script
+├── test_deep_run.py                  # Automated End-to-End Test Suite
+└── PRODUCTION_DEPLOYMENT_GUIDE.md    # This Master Document
+</code></pre>
+</body>
+</html>

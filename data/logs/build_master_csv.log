@@ -1,0 +1,29 @@
+2026-05-01 11:05:29,887  INFO  Scanning raw/ for images ...
+2026-05-01 11:05:29,947  WARNING    Skipping 'data' � not in SPECIES_MAP
+2026-05-01 11:05:29,994  WARNING    1 unknown directories skipped. Add them to species_list.py if valid.
+
+  master_labels.csv written: 10,490 total images
+  Species: 34  |  OK: 24  |  LOW: 4  |  CRITICAL: 6
+
+  Per-species image count:
+  Species                       Count  Status
+Traceback (most recent call last):
+  File "D:\Sanjeevani Scan AI\sanjeevani_dataset\scripts\build_master_csv.py", line 139, in <module>
+    main()
+  File "D:\Sanjeevani Scan AI\sanjeevani_dataset\scripts\build_master_csv.py", line 129, in main
+    print_status_table(counts)
+  File "D:\Sanjeevani Scan AI\sanjeevani_dataset\scripts\build_master_csv.py", line 89, in print_status_table
+    print("  " + "\u2500" * 50)
+  File "C:\Users\soumy\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 2-51: character maps to <undefined>
+2026-07-12 21:36:07,510  INFO  Scanning raw/ for images ...
+2026-07-12 21:36:07,535  WARNING    Skipping 'data' — not in SPECIES_MAP
+2026-07-12 21:36:07,559  WARNING    1 unknown directories skipped. Add them to species_list.py if valid.
+2026-07-12 22:29:57,790  INFO  Scanning raw/ for images ...
+2026-07-12 22:29:57,818  WARNING    Skipping 'data' — not in SPECIES_MAP
+2026-07-12 22:29:57,852  WARNING    1 unknown directories skipped. Add them to species_list.py if valid.
+2026-07-12 22:33:42,045  INFO  Scanning raw/ for images ...
+2026-07-12 22:33:42,074  WARNING    Skipping 'data' — not in SPECIES_MAP
+2026-07-12 22:33:42,096  WARNING    1 unknown directories skipped. Add them to species_list.py if valid.
