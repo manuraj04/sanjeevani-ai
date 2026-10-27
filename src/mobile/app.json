@@ -2,18 +2,23 @@
   "expo": {
     "name": "Sanjeevani AI",
     "slug": "sanjeevani-scan-ai",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "jsEngine": "hermes",
+    "description": "Indigenous Ayurvedic Botanical Identification & Clinical Pharmacopoeia Engine powered by Multi-Scale CBAM Attention Deep Learning.",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.sanjeevani.scanai"
+      "bundleIdentifier": "com.sanjeevani.scanai",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Sanjeevani AI uses your camera to capture live images of medicinal plant leaves for instant botanical identification.",
+        "NSPhotoLibraryUsageDescription": "Sanjeevani AI accesses your photo library to allow you to select plant leaf photographs for Ayurvedic analysis."
+      }
     },
     "android": {
       "package": "com.sanjeevani.scanai",
-      "versionCode": 1,
+      "versionCode": 2,
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.READ_EXTERNAL_STORAGE",
