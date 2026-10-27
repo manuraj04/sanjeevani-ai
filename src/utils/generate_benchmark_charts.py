@@ -32,66 +32,68 @@ def generate_benchmark_figures():
     # PANEL A: Internal Baseline Evaluation on 8,408 Test Images
     # -------------------------------------------------------------
     ax1 = fig.add_subplot(gs[0, 0])
-    models = ['ResNet-50\n(Baseline)', 'MobileNetV3-Large\n(Baseline)', 'EfficientNetV2-S\n(Proposed)']
-    top1 = [64.96, 60.61, 95.49]
-    top5 = [85.53, 82.05, 98.80]
-    f1 = [56.83, 52.47, 94.53]
+    models = ['ResNet-50\n(Baseline)', 'MobileNetV3\n(Baseline)', 'EfficientNetV2-S\n(Backbone)', 'Multi-Scale CBAM\n(Attention)']
+    top1 = [64.96, 60.61, 95.49, 94.91]
+    top5 = [85.53, 82.05, 98.80, 98.49]
+    f1 = [56.83, 52.47, 94.53, 93.80]
 
     x = np.arange(len(models))
-    width = 0.26
+    width = 0.22
 
     rects1 = ax1.bar(x - width, top1, width, label='Top-1 Accuracy (%)', color='#2b5c8f', edgecolor='black', linewidth=0.8)
     rects2 = ax1.bar(x, top5, width, label='Top-5 Accuracy (%)', color='#4a90e2', edgecolor='black', linewidth=0.8)
-    rects3 = ax1.bar(x + width, f1, width, label='Macro F1-Score (×100)', color='#2e7d32', edgecolor='black', linewidth=0.8)
+    rects3 = ax1.bar(x + width, f1, width, label='Macro F1 (×100)', color='#2e7d32', edgecolor='black', linewidth=0.8)
 
     ax1.set_ylabel('Performance Metric (%)', fontsize=12, fontweight='bold')
     ax1.set_title('(a) Empirical Evaluation on Sealed Test Set (8,408 Images, 66 Classes)', fontsize=12, fontweight='bold', pad=12)
     ax1.set_xticks(x)
-    ax1.set_xticklabels(models, fontsize=11)
-    ax1.set_ylim(40, 106)
+    ax1.set_xticklabels(models, fontsize=9.5)
+    ax1.set_ylim(40, 107)
     ax1.grid(axis='y', linestyle='--', alpha=0.5)
-    ax1.legend(loc='lower right', framealpha=0.95, fontsize=10)
+    ax1.legend(loc='lower right', framealpha=0.95, fontsize=9.5)
 
     # Add data labels
     for rect in rects1:
         h = rect.get_height()
         ax1.annotate(f'{h:.1f}%', xy=(rect.get_x() + rect.get_width()/2, h), xytext=(0, 4),
-                     textcoords="offset points", ha='center', va='bottom', fontsize=9.5, fontweight='bold')
+                     textcoords="offset points", ha='center', va='bottom', fontsize=8.5, fontweight='bold')
     for rect in rects2:
         h = rect.get_height()
         ax1.annotate(f'{h:.1f}%', xy=(rect.get_x() + rect.get_width()/2, h), xytext=(0, 4),
-                     textcoords="offset points", ha='center', va='bottom', fontsize=9.5)
+                     textcoords="offset points", ha='center', va='bottom', fontsize=8.5)
     for rect in rects3:
         h = rect.get_height()
         ax1.annotate(f'{h:.1f}%', xy=(rect.get_x() + rect.get_width()/2, h), xytext=(0, 4),
-                     textcoords="offset points", ha='center', va='bottom', fontsize=9.5, color='#1b5e20', fontweight='bold')
+                     textcoords="offset points", ha='center', va='bottom', fontsize=8.5, color='#1b5e20', fontweight='bold')
 
     # -------------------------------------------------------------
     # PANEL B: Pareto Frontier (Accuracy vs Latency vs Parameters)
     # -------------------------------------------------------------
     ax2 = fig.add_subplot(gs[0, 1])
-    latencies = [3.91, 1.10, 3.31]  # ms
-    top1_acc = [64.96, 60.61, 95.49]
-    params_m = [24.59, 3.50, 20.87]
-    bubble_colors = ['#c62828', '#f57c00', '#2e7d32']
+    latencies = [3.91, 1.10, 3.31, 27.40]  # ms
+    top1_acc = [64.96, 60.61, 95.49, 94.91]
+    params_m = [24.59, 3.50, 20.87, 21.19]
+    bubble_colors = ['#c62828', '#f57c00', '#2e7d32', '#00897b']
 
     for i in range(len(models)):
-        size = params_m[i] * 50
+        size = params_m[i] * 40
         ax2.scatter(latencies[i], top1_acc[i], s=size, color=bubble_colors[i], alpha=0.75, edgecolors='black', linewidth=1.5, zorder=4)
 
     # Annotations
-    ax2.annotate('ResNet-50\n(24.6M Params, 3.91 ms)\nTop-1: 64.96%', xy=(3.91, 64.96), xytext=(3.2, 73),
-                 arrowprops=dict(facecolor='black', shrink=0.08, width=0.8, headwidth=6), fontsize=10)
-    ax2.annotate('MobileNetV3-Large\n(3.5M Params, 1.10 ms)\nTop-1: 60.61%', xy=(1.10, 60.61), xytext=(1.45, 52),
-                 arrowprops=dict(facecolor='black', shrink=0.08, width=0.8, headwidth=6), fontsize=10)
-    ax2.annotate('Sanjeevani Scan (Proposed)\n(20.9M Params, 3.31 ms)\nTop-1: 95.49%', xy=(3.31, 95.49), xytext=(1.5, 93),
-                 arrowprops=dict(facecolor='#1b5e20', shrink=0.08, width=1.2, headwidth=7), fontsize=10.5, fontweight='bold', color='#1b5e20')
+    ax2.annotate('ResNet-50\n(24.6M, 3.91 ms)\nTop-1: 64.96%', xy=(3.91, 64.96), xytext=(5.5, 62),
+                 arrowprops=dict(facecolor='black', shrink=0.08, width=0.8, headwidth=5), fontsize=9)
+    ax2.annotate('MobileNetV3\n(3.5M, 1.10 ms)\nTop-1: 60.61%', xy=(1.10, 60.61), xytext=(2.0, 52),
+                 arrowprops=dict(facecolor='black', shrink=0.08, width=0.8, headwidth=5), fontsize=9)
+    ax2.annotate('EfficientNetV2-S\n(20.9M, 3.31 ms)\nTop-1: 95.49%', xy=(3.31, 95.49), xytext=(4.5, 96),
+                 arrowprops=dict(facecolor='#1b5e20', shrink=0.08, width=1.0, headwidth=6), fontsize=9.5, fontweight='bold', color='#1b5e20')
+    ax2.annotate('Multi-Scale CBAM\n(21.2M, 27.4 ms)\nTop-1: 94.91%', xy=(27.40, 94.91), xytext=(19.0, 84),
+                 arrowprops=dict(facecolor='#00897b', shrink=0.08, width=1.0, headwidth=6), fontsize=9.5, fontweight='bold', color='#00695c')
 
     ax2.set_xlabel('GPU Inference Latency per Image (ms)', fontsize=12, fontweight='bold')
     ax2.set_ylabel('Top-1 Accuracy (%)', fontsize=12, fontweight='bold')
-    ax2.set_title('(b) Accuracy-Latency Pareto Frontier (Bubble Area ∝ Parameter Count)', fontsize=12, fontweight='bold', pad=12)
-    ax2.set_xlim(0.5, 4.8)
-    ax2.set_ylim(45, 102)
+    ax2.set_title('(b) Accuracy-Latency Trade-off (Bubble Area ∝ Parameters)', fontsize=12, fontweight='bold', pad=12)
+    ax2.set_xlim(0.0, 32.0)
+    ax2.set_ylim(45, 103)
     ax2.grid(True, linestyle='--', alpha=0.5)
 
     # -------------------------------------------------------------
@@ -161,7 +163,8 @@ def generate_table_image():
         ["Gopal et al. (2022) / InceptionV3", "AyurLeaf Custom", "40", "4,800 images", "93.10%", "0.9180", "15.4 ms", "92 MB", "Lacks reverse symptom search and on-device quantization"],
         ["ResNet-50 (Baseline Benchmark)", "Sanjeevani-66", "66", "45,530 images", "64.96%", "0.5683", "3.91 ms", "98 MB", "Struggles with fine venation & serration across 66 taxa"],
         ["MobileNetV3-Large (Baseline)", "Sanjeevani-66", "66", "45,530 images", "60.61%", "0.5247", "1.10 ms", "15 MB", "Severely under-parameterized for 66 distinct medicinal classes"],
-        ["Sanjeevani Scan (Proposed)", "Sanjeevani-66", "66", "45,530 images", "95.49%", "0.9453", "3.31 ms", "21.6 MB", "SELECTED: SOTA Pareto frontier + IMPPAT Clinical KB"]
+        ["EfficientNetV2-S (Stock Backbone)", "Sanjeevani-66", "66", "45,530 images", "95.49%", "0.9453", "3.31 ms", "21.6 MB", "SELECTED (Edge Model): SOTA Pareto frontier + IMPPAT Clinical KB"],
+        ["Multi-Scale CBAM (Proposed Attention)", "Sanjeevani-66", "66", "45,530 images", "94.91%", "0.9380", "27.40 ms", "84 MB", "SELECTED (Attention Architecture): Spatial & channel attention on leaf margins"]
     ]
 
     table = ax.table(cellText=rows, colLabels=columns, colWidths=col_widths, cellLoc='center', loc='center')

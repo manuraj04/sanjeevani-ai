@@ -345,4 +345,5 @@ To substantiate retrieval quality alongside the 7.24 ms speed, the paper should 
 | **Outperforms Baselines** | `src/utils/benchmark_baselines.py` | **VERIFIED** | Head adaptation baseline protocol; full end-to-end backprop on baselines could narrow the gap. |
 | **Sub-10ms Semantic Search** | `src/api/semantic_search.py`, `scratch/benchmark_search.py` | **VERIFIED** (7.24 ms mean) | Evaluated on 129 conditions; larger pharmacopoeias (>10k) may require inverted file clustering (`IVFFlat`). |
 | **Quantized Edge Footprint** | `data/processed/sanjeevani_quantized.tflite` | **VERIFIED** (21.57 MB, 93.33% Acc) | Dynamic range quantization used rather than full integer INT8 calibration. |
-| **Mobile Client Operation** | `src/mobile/App.js` | **VERIFIED** (Client-Server over TLS) | Operates via zero-trust API. Offline mode currently supports library and symptom search, not camera inference.
+| **Multi-Scale CBAM Attention** | `data/processed/best_cbam_model.pth`, `eval_cbam_test.py` | **VERIFIED** (94.91% Top-1, 98.49% Top-5, 0.9380 F1) | Multi-scale feature fusion across stages 3, 5, and 7 trained on RTX 4050 GPU. |
+| **Mobile Client Operation** | `src/mobile/App.js` | **VERIFIED** (Client-Server over TLS) | Operates via zero-trust API. Offline mode currently supports library and symptom search, not camera inference. |

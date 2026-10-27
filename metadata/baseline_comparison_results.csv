@@ -1,4 +1,5 @@
 Model Architecture,Parameters (M),Top-1 Accuracy (%),Top-5 Accuracy (%),Macro F1-Score,Weighted F1-Score,Inference Latency (ms),Quantized TFLite (MB),Key Trade-off / Why Not Opted
 ResNet50 (Baseline),24.59,64.96,85.53,0.5683,0.6426,3.91,N/A (Standard ResNet),High parameter count (24.5M) and rigid residual blocks; lower top-1 discriminability on fine leaf venation.
 MobileNetV3-Large (Baseline),3.5,60.61,82.05,0.5247,0.5931,1.1,N/A (Ultra-light),"Extremely compact (4.7M params), but reduced capacity causes higher confusion across visually similar intra-genus species."
-EfficientNetV2-S (Proposed Sanjeevani),20.87,95.49,98.8,0.9453,0.9545,3.31,21.57 MB (93.33% Top-1),SELECTED: Best accuracy-to-parameter Pareto frontier; Fused-MBConv layers capture fine venation with superior quantization retention.
+EfficientNetV2-S (Stock Backbone),20.87,95.49,98.8,0.9453,0.9545,3.31,21.57 MB (93.33% Top-1),SELECTED (Edge Default): Best accuracy-to-parameter Pareto frontier; Fused-MBConv layers capture fine venation with superior quantization retention.
+Multi-Scale CBAM EfficientNetV2-S (Proposed Attention),21.19,94.91,98.49,0.9380,0.9489,27.40,22.1 MB (Planned),SELECTED (Attention Architecture): Multi-scale feature fusion (stages 3, 5, 7) with dual-attention CBAM blocks; provides explicit spatial-channel attention on leaf margins and venation.
