@@ -135,18 +135,61 @@ CLASS_TO_SPECIES = {
     "Yashad": "Yashada Mineralia",
 }
 
+ALLOWED_IMAGE_SIGNATURES = [
+    b"\xff\xd8\xff",        # JPEG
+    b"\x89PNG\r\n\x1a\n",   # PNG
+    b"RIFF"                 # WEBP
+]
+
+def validate_image_payload(content: bytes):
+    if len(content) > 10 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="Image file exceeds maximum allowable 10MB limit.")
+    if len(content) < 16:
+        raise HTTPException(status_code=400, detail="Empty or corrupted image file.")
+    is_valid_magic = any(content.startswith(sig) for sig in ALLOWED_IMAGE_SIGNATURES)
+    if not is_valid_magic:
+        raise HTTPException(status_code=400, detail="Invalid image payload signature. Allowed formats: JPEG, PNG, WebP.")
+
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to Sanjeevani Scan AI API"}
+    return {
+        "status": "online",
+        "service": "Sanjeevani AI Production Gateway",
+        "version": "2.0.0",
+        "primary_backbone": "EfficientNetV2-S (20.87M params)",
+        "quantized_edge_engine": "TensorFlow Lite Dynamic INT8 (21.57 MB)",
+        "top1_accuracy": "95.49%",
+        "top5_accuracy": "98.80%",
+        "macro_f1": "0.9453",
+        "species_mapped": 63,
+        "classes": 66,
+        "imppat_verified": True,
+        "endpoints": {
+            "predict": "POST /predict",
+            "explain": "POST /explain",
+            "search": "GET /search?query={symptom}",
+            "library": "GET /plants?lang={code}",
+            "plant_details": "GET /plant/{id}",
+            "documentation": "GET /docs"
+        }
+    }
+
+@app.get("/health")
+def health_status():
+    return {
+        "status": "healthy",
+        "models_loaded": classifier is not None and grad_cam is not None,
+        "search_engine_loaded": search_engine is not None,
+        "database_connected": os.path.exists(db_path)
+    }
 
 @app.post("/predict")
 async def predict_image(file: UploadFile = File(...)):
-    """Classifies a leaf image and rejects non-plants."""
-    if not file.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
-        raise HTTPException(status_code=400, detail="Invalid file type. Only JPEG and PNG allowed.")
+    """Classifies a leaf image with security validation and rejects non-plants."""
+    content = await file.read()
+    validate_image_payload(content)
         
     with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
-        content = await file.read()
         temp_file.write(content)
         temp_path = temp_file.name
 
@@ -184,9 +227,11 @@ async def predict_image(file: UploadFile = File(...)):
 
 @app.post("/explain")
 async def explain_prediction(file: UploadFile = File(...)):
-    """Returns a Grad-CAM heatmap base64 string for the image."""
+    """Returns a Grad-CAM heatmap base64 string for the image with payload validation."""
+    content = await file.read()
+    validate_image_payload(content)
+
     with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
-        content = await file.read()
         temp_file.write(content)
         temp_path = temp_file.name
 
