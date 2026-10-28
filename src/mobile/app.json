@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "jsEngine": "hermes",
-    "description": "Indigenous Ayurvedic Botanical Identification & Clinical Pharmacopoeia Engine powered by Multi-Scale CBAM Attention Deep Learning.",
+    "description": "Indigenous Ayurvedic Botanical Identification and Medicinal Plant Knowledge Guide.",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sanjeevani.scanai",

@@ -53,6 +53,26 @@ export function getLocalizedPlantName(key, lang = 'en') {
 }
 
 /**
+ * Returns a summary string of regional/vernacular names for a plant, excluding the active language.
+ */
+export function getVernacularNamesSummary(plantOrKey, excludeLang = 'en') {
+  if (!plantOrKey) return '';
+  let plant = plantOrKey;
+  if (typeof plantOrKey === 'string') {
+    const cleanKey = plantOrKey.trim().toLowerCase();
+    const resolvedKey = CLASS_ALIASES[cleanKey] || cleanKey;
+    plant = PLANT_LOOKUP_MAP.get(resolvedKey) || PLANT_LOOKUP_MAP.get(cleanKey);
+  } else if (plantOrKey.plant) {
+    plant = plantOrKey.plant;
+  }
+  if (!plant || !plant.common_names || typeof plant.common_names !== 'object') return '';
+  return Object.entries(plant.common_names)
+    .filter(([l]) => l !== excludeLang)
+    .map(([_, name]) => name)
+    .join(' • ');
+}
+
+/**
  * Returns dynamic localized translations for Ayurvedic attributes (Dosha, Rasa, Guna, etc.).
  */
 export function getDynamicTranslation(value, lang = 'en') {
