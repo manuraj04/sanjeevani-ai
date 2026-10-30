@@ -17,9 +17,10 @@ import {
   searchOfflinePlants
 } from './services/plantService';
 
+const configuredApiUrl = Constants.expoConfig?.extra?.apiUrl;
 const hostUri = Constants.expoConfig?.hostUri || Constants.manifest2?.extra?.expoGo?.debuggerHost || '';
-const localIp = hostUri ? hostUri.split(':')[0] : '10.0.2.2';
-const API_BASE_URL = `http://${localIp}:8000`;
+const localIp = hostUri ? hostUri.split(':')[0] : '';
+const API_BASE_URL = configuredApiUrl || (localIp ? `http://${localIp}:8000` : 'http://10.0.2.2:8000');
 const SETTINGS_FILE = `${FileSystem.documentDirectory}sanjeevani_settings.json`;
 
 const TOUR_SLIDES = [
