@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, ActivityIndicator, TextInput, Linking, Modal, Dimensions, Animated } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system/legacy';
@@ -60,48 +60,63 @@ const TOUR_SLIDES = [
   }
 ];
 
+const HERB_ASSETS = {
+  tulsi: require('./assets/herbs/tulsi.jpg'),
+  neem: require('./assets/herbs/neem.jpg'),
+  ashwagandha: require('./assets/herbs/ashwagandha.jpg'),
+  moringa: require('./assets/herbs/moringa.jpg'),
+  giloy: require('./assets/herbs/giloy.jpg'),
+  amla: require('./assets/herbs/amla.jpg'),
+  'ocimum tenuiflorum': require('./assets/herbs/tulsi.jpg'),
+  'azadirachta indica': require('./assets/herbs/neem.jpg'),
+  'withania somnifera': require('./assets/herbs/ashwagandha.jpg'),
+  'moringa oleifera': require('./assets/herbs/moringa.jpg'),
+  'tinospora cordifolia': require('./assets/herbs/giloy.jpg'),
+  'phyllanthus emblica': require('./assets/herbs/amla.jpg'),
+};
+
 const POPULAR_HERBS = [
   {
     id: 'tulsi',
     species_name: 'Ocimum tenuiflorum',
     common_name: 'Tulsi',
     tag: 'Immunity & Prana',
-    image: REFERENCE_IMAGES['Tulsi']
+    image: HERB_ASSETS.tulsi
   },
   {
     id: 'neem',
     species_name: 'Azadirachta indica',
     common_name: 'Neem',
     tag: 'Skin & Detox',
-    image: REFERENCE_IMAGES['Neem']
+    image: HERB_ASSETS.neem
   },
   {
     id: 'ashwagandha',
     species_name: 'Withania somnifera',
     common_name: 'Ashwagandha',
     tag: 'Vitality & Rasayana',
-    image: REFERENCE_IMAGES['Ashwagandha']
+    image: HERB_ASSETS.ashwagandha
   },
   {
     id: 'moringa',
     species_name: 'Moringa oleifera',
     common_name: 'Moringa',
     tag: 'Nutritive & Energy',
-    image: REFERENCE_IMAGES['Moringa']
+    image: HERB_ASSETS.moringa
   },
   {
     id: 'giloy',
     species_name: 'Tinospora cordifolia',
     common_name: 'Giloy',
     tag: 'Immunity & Vitality',
-    image: REFERENCE_IMAGES['Giloy']
+    image: HERB_ASSETS.giloy
   },
   {
     id: 'amla',
     species_name: 'Phyllanthus emblica',
     common_name: 'Amla',
     tag: 'Vitamin C & Digestion',
-    image: REFERENCE_IMAGES['Amla']
+    image: HERB_ASSETS.amla
   }
 ];
 
@@ -139,12 +154,26 @@ export default function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchLoading, setSearchLoading] = useState(false);
 
-  // Library State
-  const [libraryPlants, setLibraryPlants] = useState([]);
+  // Library State (Pre-populated offline so the index is NEVER empty)
+  const [libraryPlants, setLibraryPlants] = useState(() => getOfflineFloraList('en'));
   const [libraryLoading, setLibraryLoading] = useState(false);
+  const [librarySearch, setLibrarySearch] = useState('');
 
   // Selected Profile Modal in Library
   const [selectedPlantModal, setSelectedPlantModal] = useState(null);
+
+  // Live filtered library list based on search query
+  const filteredFlora = useMemo(() => {
+    if (!librarySearch.trim()) return libraryPlants;
+    const q = librarySearch.toLowerCase().trim();
+    return libraryPlants.filter((item) => {
+      const name = (item.common_names || item.species_name || '').toLowerCase();
+      const bot = (item.botanical_name || '').toLowerCase();
+      const fam = (item.family || '').toLowerCase();
+      const loc = (getLocalizedPlantName(item.species_name, lang) || '').toLowerCase();
+      return name.includes(q) || bot.includes(q) || fam.includes(q) || loc.includes(q);
+    });
+  }, [libraryPlants, librarySearch, lang]);
 
   // Initial Onboarding Check: Auto-launch Tour on First Ever Run
   useEffect(() => {
@@ -198,49 +227,57 @@ export default function App() {
     });
   };
 
-  // Auto-fetch library when tab switches or language changes
+  // Auto-sync library when tab switches or language changes
   useEffect(() => {
+    // Immediately update localized names from bundled knowledge base
+    const localFlora = getOfflineFloraList(lang);
+    setLibraryPlants(localFlora);
+
     if (activeTab === 'LIBRARY') {
       fetchLibrary();
     }
   }, [activeTab, lang]);
 
   const fetchLibrary = async () => {
+    const offlineData = getOfflineFloraList(lang);
     setLibraryLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/plants?lang=${lang}`);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2500);
+      const response = await fetch(`${API_BASE_URL}/plants?lang=${lang}`, { signal: controller.signal });
+      clearTimeout(timeoutId);
       if (response.ok) {
         const data = await response.json();
-        setLibraryPlants(data);
-        setLibraryLoading(false);
-        return;
+        if (Array.isArray(data) && data.length > 0) {
+          setLibraryPlants(data);
+        }
       }
     } catch (e) {
-      // Offline fallback
+      // Seamless offline fallback - already populated
+      setLibraryPlants(offlineData);
     } finally {
       setLibraryLoading(false);
     }
-
-    // 100% Offline Fallback
-    setLibraryPlants(getOfflineFloraList(lang));
   };
 
   const openPlantDetails = async (plantId) => {
-    try {
-      const res = await fetch(`${API_BASE_URL}/plant/${plantId}`);
-      if (res.ok) {
-        const data = await res.json();
-        setSelectedPlantModal(normalizePlantProfile(data));
-        return;
-      }
-    } catch (e) {
-      // Offline fallback
-    }
-
-    // 100% Offline Fallback
+    // Open immediately with offline profile so there is zero delay
     const offlineProfile = getOfflinePlantById(plantId);
     if (offlineProfile) {
       setSelectedPlantModal(offlineProfile);
+    }
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2000);
+      const res = await fetch(`${API_BASE_URL}/plant/${plantId}`, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        const data = await res.json();
+        setSelectedPlantModal(normalizePlantProfile(data));
+      }
+    } catch (e) {
+      // Retain offlineProfile
     }
   };
 
@@ -1184,7 +1221,7 @@ export default function App() {
                       activeOpacity={0.88}
                     >
                       <Text style={styles.primaryActionIcon}>📷</Text>
-                      <Text style={styles.primaryActionText}>{t.openCamera || "Take Photo"}</Text>
+                      <Text style={styles.primaryActionText} numberOfLines={1} ellipsizeMode="tail">{t.openCamera || "Take Photo"}</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity 
@@ -1193,7 +1230,7 @@ export default function App() {
                       activeOpacity={0.88}
                     >
                       <Text style={styles.secondaryActionIcon}>🖼️</Text>
-                      <Text style={styles.secondaryActionText}>{t.uploadGallery || "From Gallery"}</Text>
+                      <Text style={styles.secondaryActionText} numberOfLines={1} ellipsizeMode="tail">{t.uploadGallery || "From Gallery"}</Text>
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -1225,7 +1262,11 @@ export default function App() {
                           onPress={() => openPlantDetails(herb.species_name)}
                           activeOpacity={0.85}
                         >
-                          <Image source={{ uri: herb.image }} style={styles.herbCardImage} resizeMode="cover" />
+                          <Image 
+                            source={typeof herb.image === 'number' ? herb.image : { uri: herb.image }} 
+                            style={styles.herbCardImage} 
+                            resizeMode="cover" 
+                          />
                           <View style={styles.herbCardBody}>
                             <Text style={styles.herbCardTitle} numberOfLines={1}>{localizedName}</Text>
                             <Text style={styles.herbCardBotanical} numberOfLines={1}>{herb.species_name}</Text>
@@ -1455,33 +1496,89 @@ export default function App() {
               {t.librarySubtitle}
             </Text>
 
-            <TouchableOpacity 
-              style={[styles.button, {marginBottom: 20, backgroundColor: '#0F9D58', width: '85%', paddingVertical: 12}]} 
-              onPress={fetchLibrary}
-            >
-              <Text style={styles.buttonText}>
-                {libraryLoading ? 'Loading...' : t.loadPlantIndex}
-              </Text>
-            </TouchableOpacity>
+            {/* Live Search & Filter Bar */}
+            <View style={styles.librarySearchRow}>
+              <Text style={styles.librarySearchIcon}>🔍</Text>
+              <TextInput
+                style={styles.librarySearchInput}
+                placeholder={t.searchLibraryPlaceholder || "Search 63 medicinal herbs..."}
+                placeholderTextColor="#888"
+                value={librarySearch}
+                onChangeText={setLibrarySearch}
+                autoCorrect={false}
+              />
+              {librarySearch.length > 0 && (
+                <TouchableOpacity onPress={() => setLibrarySearch('')} style={styles.librarySearchClear} hitSlop={{top: 8, bottom: 8, left: 8, right: 8}}>
+                  <Text style={{color: '#888', fontSize: 14, fontWeight: 'bold'}}>✕</Text>
+                </TouchableOpacity>
+              )}
+            </View>
 
-            {libraryPlants.map((item, idx) => {
+            {/* Catalog Metadata & Refresh Row */}
+            <View style={styles.libraryMetaRow}>
+              <View style={styles.libraryCountPill}>
+                <Text style={styles.libraryCountText}>🌿 {filteredFlora.length} {t.herbsCatalogued || "Herbs Catalogued"}</Text>
+              </View>
+              <TouchableOpacity 
+                style={styles.librarySyncBtn} 
+                onPress={fetchLibrary} 
+                disabled={libraryLoading}
+                activeOpacity={0.7}
+              >
+                {libraryLoading ? (
+                  <ActivityIndicator size="small" color="#0F9D58" style={{ marginRight: 4 }} />
+                ) : (
+                  <Text style={{ marginRight: 4, fontSize: 12 }}>🔄</Text>
+                )}
+                <Text style={styles.librarySyncText}>
+                  {libraryLoading ? 'Syncing...' : (t.syncCatalog || 'Sync')}
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            {/* Empty Search Result Fallback */}
+            {filteredFlora.length === 0 && (
+              <View style={styles.libraryEmptyState}>
+                <Text style={{ fontSize: 32, marginBottom: 8 }}>🔍</Text>
+                <Text style={styles.libraryEmptyText}>
+                  {t.noHerbsFound || "No medicinal herbs found matching your search."}
+                </Text>
+                {librarySearch.length > 0 && (
+                  <TouchableOpacity style={styles.clearSearchBtn} onPress={() => setLibrarySearch('')}>
+                    <Text style={styles.clearSearchBtnText}>{t.clearSearch || "Clear Search"}</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            )}
+
+            {/* Flora List Cards */}
+            {filteredFlora.map((item, idx) => {
               const displayName = item.common_names || getLocalizedPlantName(item.species_name, lang) || item.species_name;
+              const speciesKey = (item.species_name || '').toLowerCase();
+              const commonKey = (item.common_names || '').toLowerCase();
+              const localImg = HERB_ASSETS[speciesKey] || HERB_ASSETS[commonKey];
+
               return (
                 <TouchableOpacity 
-                  key={idx} 
+                  key={item.plant_id || item.species_name || idx} 
                   style={styles.libraryCard}
                   activeOpacity={0.85}
                   onPress={() => openPlantDetails(item.plant_id || item.species_name)}
                 >
                   <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-                    <View style={{flex: 1}}>
-                      <Text style={styles.libraryPlantTitle}>{displayName}</Text>
-                      <Text style={styles.libraryBotanical}>{item.botanical_name}</Text>
-                      <Text style={styles.libraryFamily}><Text style={{fontWeight: 'bold'}}>{t.family}</Text> {item.family || 'Medicinal flora'}</Text>
+                    <View style={{flex: 1, paddingRight: 10}}>
+                      <Text style={styles.libraryPlantTitle} numberOfLines={1}>{displayName}</Text>
+                      <Text style={styles.libraryBotanical} numberOfLines={1}>{item.botanical_name}</Text>
+                      <Text style={styles.libraryFamily} numberOfLines={1}><Text style={{fontWeight: 'bold'}}>{t.family}</Text> {item.family || 'Medicinal flora'}</Text>
                       <Text style={styles.libraryTapAction}>📖 {t.viewProfile} →</Text>
                     </View>
-                    {REFERENCE_IMAGES[item.species_name] && (
-                      <Image source={{ uri: REFERENCE_IMAGES[item.species_name] }} style={styles.libraryThumb} />
+                    {localImg ? (
+                      <Image source={localImg} style={styles.libraryThumb} resizeMode="cover" />
+                    ) : (
+                      <View style={styles.libraryThumbEmblem}>
+                        <Text style={styles.libraryEmblemIcon}>🌿</Text>
+                        <Text style={styles.libraryEmblemText} numberOfLines={1}>Ayurveda</Text>
+                      </View>
                     )}
                   </View>
                 </TouchableOpacity>
@@ -1774,8 +1871,10 @@ const styles = StyleSheet.create({
   },
   actionButtonsRow: { 
     flexDirection: 'row', 
-    gap: 10, 
-    width: '100%' 
+    justifyContent: 'space-between',
+    width: '100%',
+    marginTop: 4,
+    marginBottom: 6
   },
   primaryActionButton: { 
     flex: 1, 
@@ -1783,22 +1882,24 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center', 
     backgroundColor: '#0F9D58', 
-    paddingVertical: 13, 
+    paddingVertical: 12, 
+    paddingHorizontal: 8,
     borderRadius: 24, 
-    elevation: 3, 
+    marginRight: 6,
+    elevation: 2, 
     shadowColor: '#0F9D58', 
     shadowOffset: { width: 0, height: 2 }, 
-    shadowOpacity: 0.3, 
+    shadowOpacity: 0.25, 
     shadowRadius: 3 
   },
   primaryActionIcon: { 
-    fontSize: 18, 
+    fontSize: 16, 
     color: 'white', 
     marginRight: 6 
   },
   primaryActionText: { 
     color: 'white', 
-    fontSize: 14.5, 
+    fontSize: 13.5, 
     fontWeight: 'bold' 
   },
   secondaryActionButton: { 
@@ -1807,19 +1908,21 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center', 
     backgroundColor: '#FFFFFF', 
-    paddingVertical: 13, 
+    paddingVertical: 12, 
+    paddingHorizontal: 8,
     borderRadius: 24, 
+    marginLeft: 6,
     borderWidth: 1.5, 
     borderColor: '#81C784', 
     elevation: 1 
   },
   secondaryActionIcon: { 
-    fontSize: 18, 
+    fontSize: 16, 
     marginRight: 6 
   },
   secondaryActionText: { 
     color: '#1B5E20', 
-    fontSize: 14, 
+    fontSize: 13.5, 
     fontWeight: 'bold' 
   },
 
@@ -2264,6 +2367,97 @@ const styles = StyleSheet.create({
   clearBtnText: { color: '#D32F2F', fontWeight: 'bold' },
 
   // Library
+  librarySearchRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 24,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderWidth: 1,
+    borderColor: '#E0E0E0',
+    width: '100%',
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1
+  },
+  librarySearchIcon: {
+    fontSize: 16,
+    marginRight: 8,
+    color: '#666'
+  },
+  librarySearchInput: {
+    flex: 1,
+    fontSize: 14,
+    color: '#222',
+    paddingVertical: 0
+  },
+  librarySearchClear: {
+    padding: 4
+  },
+  libraryMetaRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: 14,
+    paddingHorizontal: 4
+  },
+  libraryCountPill: {
+    backgroundColor: '#E8F5E9',
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: '#C8E6C9'
+  },
+  libraryCountText: {
+    fontSize: 12.5,
+    fontWeight: 'bold',
+    color: '#1B5E20'
+  },
+  librarySyncBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: '#81C784'
+  },
+  librarySyncText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#0F9D58'
+  },
+  libraryEmptyState: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 36,
+    paddingHorizontal: 20,
+    width: '100%'
+  },
+  libraryEmptyText: {
+    fontSize: 14,
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 14
+  },
+  clearSearchBtn: {
+    backgroundColor: '#0F9D58',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 18
+  },
+  clearSearchBtnText: {
+    color: 'white',
+    fontSize: 13,
+    fontWeight: 'bold'
+  },
   libraryCard: { 
     backgroundColor: 'white', 
     width: '100%', 
@@ -2277,11 +2471,31 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 }, 
     shadowOpacity: 0.08 
   },
-  libraryPlantTitle: { fontSize: 18, fontWeight: 'bold', color: '#1B5E20' },
-  libraryBotanical: { fontSize: 14, color: '#666', fontStyle: 'italic', marginTop: 2 },
-  libraryFamily: { fontSize: 13, color: '#444', marginTop: 5 },
-  libraryTapAction: { fontSize: 13, color: '#0F9D58', fontWeight: 'bold', marginTop: 8 },
-  libraryThumb: { width: 75, height: 75, borderRadius: 12, marginLeft: 10 },
+  libraryPlantTitle: { fontSize: 17, fontWeight: 'bold', color: '#1B5E20' },
+  libraryBotanical: { fontSize: 13.5, color: '#666', fontStyle: 'italic', marginTop: 2 },
+  libraryFamily: { fontSize: 12.5, color: '#444', marginTop: 5 },
+  libraryTapAction: { fontSize: 12.5, color: '#0F9D58', fontWeight: 'bold', marginTop: 8 },
+  libraryThumb: { width: 70, height: 70, borderRadius: 12, marginLeft: 10 },
+  libraryThumbEmblem: {
+    width: 68,
+    height: 68,
+    borderRadius: 12,
+    backgroundColor: '#E8F5E9',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 10,
+    borderWidth: 1,
+    borderColor: '#C8E6C9'
+  },
+  libraryEmblemIcon: {
+    fontSize: 24,
+    marginBottom: 2
+  },
+  libraryEmblemText: {
+    fontSize: 9.5,
+    fontWeight: 'bold',
+    color: '#2E7D32'
+  },
   button: { flex: 1, paddingVertical: 14, borderRadius: 10, alignItems: 'center', marginHorizontal: 5 },
   buttonText: { color: 'white', fontSize: 16, fontWeight: 'bold' },
 
