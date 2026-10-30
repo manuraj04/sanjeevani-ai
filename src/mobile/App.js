@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, ActivityIndicator, TextInput, Linking, Modal, Dimensions, Animated } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import Constants from 'expo-constants';
 
 import { translations, GLOSSARY_DATA, LANGUAGES, LANG_LABELS } from './constants/i18n';
