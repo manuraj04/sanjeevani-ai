@@ -165,7 +165,11 @@ export const translations = {
     propTabProperties: "🌿 Properties",
     propTabRemedies: "🍵 Remedies",
     propTabSafety: "🛡️ Safety",
-    vernacularLabel: "Regional Names"
+    vernacularLabel: "Regional Names",
+    deepDiveTitle: "AI Neural Diagnostics & Venation Focus",
+    deepDiveSubtitle: "Inspect Grad-CAM attention heatmap & decision zones",
+    deepDiveLayer: "Layer: Multi-Scale CBAM",
+    deepDiveGradCam: "Grad-CAM Explainability"
   },
   hi: {
     appTitle: "संजीवनी एआई",
@@ -322,7 +326,11 @@ export const translations = {
     propTabProperties: "🌿 गुण व प्रभाव",
     propTabRemedies: "🍵 उपचार व नुस्खे",
     propTabSafety: "🛡️ विज्ञान व सुरक्षा",
-    vernacularLabel: "क्षेत्रीय नाम"
+    vernacularLabel: "क्षेत्रीय नाम",
+    deepDiveTitle: "एआई न्यूरल विश्लेषण व शिरा विन्यास",
+    deepDiveSubtitle: "Grad-CAM हीटमैप व निर्णय क्षेत्र देखें",
+    deepDiveLayer: "परत: CBAM अटेंशन",
+    deepDiveGradCam: "Grad-CAM व्याख्या"
   },
   kn: {
     appTitle: "ಸಂಜೀವಿನಿ ಎಐ",
@@ -479,7 +487,11 @@ export const translations = {
     propTabProperties: "🌿 ಗುಣಲಕ್ಷಣಗಳು",
     propTabRemedies: "🍵 ಚಿಕಿತ್ಸೆ ಮತ್ತು ಪಾಕವಿಧಾನ",
     propTabSafety: "🛡️ ವಿಜ್ಞಾನ ಮತ್ತು ಸುರಕ್ಷತೆ",
-    vernacularLabel: "ಪ್ರಾದೇಶಿಕ ಹೆಸರುಗಳು"
+    vernacularLabel: "ಪ್ರಾದೇಶಿಕ ಹೆಸರುಗಳು",
+    deepDiveTitle: "ಎಐ ನ್ಯೂರಲ್ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ನರ ರಚನೆ",
+    deepDiveSubtitle: "Grad-CAM ಹೀಟ್‌ಮ್ಯಾಪ್ ಪರಿಶೀಲಿಸಿ",
+    deepDiveLayer: "ಪದರ: CBAM ಅಟೆನ್ಶನ್",
+    deepDiveGradCam: "Grad-CAM ವಿವರಣೆ"
   },
   ta: {
     appTitle: "சஞ்சீவனி ஏஐ",
@@ -636,7 +648,11 @@ export const translations = {
     propTabProperties: "🌿 பண்புகள்",
     propTabRemedies: "🍵 தீர்வுகள் & முறைகள்",
     propTabSafety: "🛡️ அறிவியல் & பாதுகாப்பு",
-    vernacularLabel: "பிராந்திய பெயர்கள்"
+    vernacularLabel: "பிராந்திய பெயர்கள்",
+    deepDiveTitle: "ஏஐ நரம்பியல் ஆய்வு மற்றும் நரம்பு அமைப்பு",
+    deepDiveSubtitle: "Grad-CAM வெப்ப வரைபடத்தை காண்க",
+    deepDiveLayer: "அடுக்கு: CBAM கவனம்",
+    deepDiveGradCam: "Grad-CAM விளக்கம்"
   },
   te: {
     appTitle: "సంజీవని ఏఐ",
@@ -793,7 +809,11 @@ export const translations = {
     propTabProperties: "🌿 గుణాలు & ప్రభావం",
     propTabRemedies: "🍵 నివారణలు & వంటకాలు",
     propTabSafety: "🛡️ సైన్స్ & భద్రత",
-    vernacularLabel: "ప్రాంతీయ పేర్లు"
+    vernacularLabel: "ప్రాంతీయ పేర్లు",
+    deepDiveTitle: "ఏఐ న్యూరల్ విశ్లేషణ మరియు ఈనెల నిర్మాణం",
+    deepDiveSubtitle: "Grad-CAM హీట్‌మ్యాప్ పరిశీలించండి",
+    deepDiveLayer: "లేయర్: CBAM శ్రద్ధ",
+    deepDiveGradCam: "Grad-CAM వివరణ"
   },
   ml: {
     appTitle: "സഞ്ജീവനി എഐ",
@@ -950,7 +970,11 @@ export const translations = {
     propTabProperties: "🌿 ഗുണവിശേഷങ്ങൾ",
     propTabRemedies: "🍵 ഔഷധപ്രയോഗങ്ങൾ & പാചകം",
     propTabSafety: "🛡️ ശാസ്ത്രവും സുരക്ഷയും",
-    vernacularLabel: "പ്രാദേശിക പേരുകൾ"
+    vernacularLabel: "പ്രാദേശിക പേരുകൾ",
+    deepDiveTitle: "എഐ ന്യൂറൽ വിശകലനവും ഞരമ്പ് ഘടനയും",
+    deepDiveSubtitle: "Grad-CAM ഹീറ്റ്മാപ്പ് പരിശോധിക്കുക",
+    deepDiveLayer: "ലെയർ: CBAM അറ്റൻഷൻ",
+    deepDiveGradCam: "Grad-CAM വിശദീകരണം"
   }
 };
 

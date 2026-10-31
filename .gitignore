@@ -24,6 +24,7 @@ data/processed/test/
 data/processed/saved_model/
 data/processed/saved_model_static/
 *.pth
+!data/processed/best_model_final.pth
 *.onnx
 
 # Mobile Node Modules & Builds

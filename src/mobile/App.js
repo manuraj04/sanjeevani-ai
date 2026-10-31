@@ -144,6 +144,7 @@ export default function App() {
   const [imageUri, setImageUri] = useState(null);
   const [prediction, setPrediction] = useState(null);
   const [heatmap, setHeatmap] = useState(null);
+  const [showHeatmapDetails, setShowHeatmapDetails] = useState(false);
   const [ayurvedicProfile, setAyurvedicProfile] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -286,6 +287,7 @@ export default function App() {
     setImageUri(null);
     setPrediction(null);
     setHeatmap(null);
+    setShowHeatmapDetails(false);
     setAyurvedicProfile(null);
     setActiveProfileTab('PROPERTIES');
   };
@@ -1446,15 +1448,6 @@ export default function App() {
               </View>
             )}
 
-            {/* AI Vision Leaf Focus */}
-            {heatmap && (
-              <View style={styles.resultCard}>
-                <Text style={styles.resultHeader}>{t.aiVision}</Text>
-                <Image source={{ uri: heatmap }} style={styles.heatmap} />
-                <Text style={styles.smallText}>{t.aiVisionDesc}</Text>
-              </View>
-            )}
-
             {/* Full Ayurvedic Encyclopedia with Tabbed Views */}
             {ayurvedicProfile && (
               <View style={[styles.resultCard, { padding: 18 }]}>
@@ -1462,6 +1455,45 @@ export default function App() {
                   {t.encyclopedia}
                 </Text>
                 {renderProfileContent(ayurvedicProfile)}
+              </View>
+            )}
+
+            {/* Deep Neural Explainability (Expandable "Dive Deeper into AI" Section at the End) */}
+            {heatmap && (
+              <View style={styles.deepDiveCard}>
+                <TouchableOpacity 
+                  style={styles.deepDiveHeader} 
+                  onPress={() => setShowHeatmapDetails(!showHeatmapDetails)}
+                  activeOpacity={0.8}
+                >
+                  <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
+                    <Text style={styles.deepDiveIcon}>🔬</Text>
+                    <View style={{ flex: 1, paddingRight: 6 }}>
+                      <Text style={styles.deepDiveTitle}>{t.deepDiveTitle || "AI Neural Diagnostic & Venation Focus"}</Text>
+                      <Text style={styles.deepDiveSubtitle}>{t.deepDiveSubtitle || "Inspect Grad-CAM attention heatmap & decision zones"}</Text>
+                    </View>
+                  </View>
+                  <View style={styles.deepDiveChevronBadge}>
+                    <Text style={styles.deepDiveChevron}>{showHeatmapDetails ? '▲ Hide' : '▼ View'}</Text>
+                  </View>
+                </TouchableOpacity>
+
+                {showHeatmapDetails && (
+                  <View style={styles.deepDiveBody}>
+                    <Image source={{ uri: heatmap }} style={styles.heatmap} resizeMode="cover" />
+                    <View style={styles.deepDiveBadgeRow}>
+                      <View style={styles.deepDivePill}>
+                        <Text style={styles.deepDivePillText}>🎯 {t.deepDiveLayer || "Layer: Multi-Scale CBAM"}</Text>
+                      </View>
+                      <View style={styles.deepDivePill}>
+                        <Text style={styles.deepDivePillText}>🧠 {t.deepDiveGradCam || "Grad-CAM Explainability"}</Text>
+                      </View>
+                    </View>
+                    <Text style={styles.deepDiveExplanation}>
+                      {t.aiVisionDesc || "Warm colored zones (red/yellow) indicate the specific morphological venation and leaf margin patterns that activated the convolutional neural network's classification decision."}
+                    </Text>
+                  </View>
+                )}
               </View>
             )}
 
@@ -2252,6 +2284,92 @@ const styles = StyleSheet.create({
   resultText: { fontSize: 16, color: '#444', marginBottom: 8 },
   smallText: { fontSize: 13, color: '#777', marginTop: 12, fontStyle: 'italic', textAlign: 'center', lineHeight: 20 },
   sectionHeader: { fontSize: 14.5, fontWeight: 'bold', color: '#0F9D58', marginTop: 12, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 0.5 },
+
+  // Deep Dive Explainability (Expandable AI Card)
+  deepDiveCard: {
+    backgroundColor: '#F1F8E9',
+    borderRadius: 18,
+    width: '100%',
+    marginBottom: 16,
+    borderWidth: 1.5,
+    borderColor: '#C8E6C9',
+    overflow: 'hidden',
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
+    shadowRadius: 3
+  },
+  deepDiveHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 16,
+    backgroundColor: '#FFFFFF'
+  },
+  deepDiveIcon: {
+    fontSize: 24,
+    marginRight: 12
+  },
+  deepDiveTitle: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#1B5E20'
+  },
+  deepDiveSubtitle: {
+    fontSize: 12,
+    color: '#666',
+    marginTop: 2
+  },
+  deepDiveChevronBadge: {
+    backgroundColor: '#E8F5E9',
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#A5D6A7'
+  },
+  deepDiveChevron: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: '#2E7D32'
+  },
+  deepDiveBody: {
+    padding: 16,
+    paddingTop: 8,
+    backgroundColor: '#F9FBE7',
+    borderTopWidth: 1,
+    borderTopColor: '#E0E0E0'
+  },
+  deepDiveBadgeRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginTop: 12,
+    marginBottom: 6,
+    justifyContent: 'center'
+  },
+  deepDivePill: {
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#A5D6A7'
+  },
+  deepDivePillText: {
+    fontSize: 11.5,
+    fontWeight: 'bold',
+    color: '#1B5E20'
+  },
+  deepDiveExplanation: {
+    fontSize: 12.5,
+    color: '#444',
+    lineHeight: 18,
+    textAlign: 'center',
+    marginTop: 8,
+    fontStyle: 'italic'
+  },
 
   // Tabbed Profile Navigation
   profileTabsBar: { 
