@@ -36,6 +36,9 @@
     },
     "extra": {
       "apiUrl": ""
-    }
+    },
+    "plugins": [
+      "expo-status-bar"
+    ]
   }
 }
