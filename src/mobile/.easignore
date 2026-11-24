@@ -1,0 +1,10 @@
+# Exclude build artifacts, local dependencies, and caches from EAS archive
+node_modules/
+.expo/
+dist/
+web-build/
+*.log
+*.tar.gz
+*.zip
+.DS_Store
+Thumbs.db

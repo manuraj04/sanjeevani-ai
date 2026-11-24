@@ -1,0 +1,25 @@
+# Exclude heavy ML datasets, models, Python backend, and virtual environments from EAS mobile upload
+data/
+models/
+.venv/
+venv/
+docs/
+scripts/
+tests/
+Dockerfile
+render.yaml
+*.pdf
+*.pth
+*.tflite
+*.onnx
+*.db
+*.zip
+*.tar.gz
+*.pkl
+
+# Exclude dependencies and cache in mobile directory
+src/mobile/node_modules/
+src/mobile/.expo/
+node_modules/
+.expo/
+.git/
