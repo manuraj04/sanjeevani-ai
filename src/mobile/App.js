@@ -5,7 +5,7 @@ import * as FileSystem from 'expo-file-system/legacy';
 import Constants from 'expo-constants';
 
 import { translations, GLOSSARY_DATA, LANGUAGES, LANG_LABELS } from './constants/i18n';
-import { REFERENCE_IMAGES } from './constants/references';
+import { REFERENCE_IMAGES, getReferenceHerbImage } from './constants/references';
 import {
   getLocalizedPlantName,
   getVernacularNamesSummary,
@@ -20,7 +20,7 @@ import {
 const configuredApiUrl = Constants.expoConfig?.extra?.apiUrl;
 const hostUri = Constants.expoConfig?.hostUri || Constants.manifest2?.extra?.expoGo?.debuggerHost || '';
 const localIp = hostUri ? hostUri.split(':')[0] : '';
-const API_BASE_URL = configuredApiUrl || (localIp ? `http://${localIp}:8000` : 'http://10.0.2.2:8000');
+const API_BASE_URL = configuredApiUrl || (localIp ? `http://${localIp}:8000` : 'http://10.26.57.178:8000');
 const SETTINGS_FILE = `${FileSystem.documentDirectory}sanjeevani_settings.json`;
 
 const TOUR_SLIDES = [
@@ -68,12 +68,41 @@ const HERB_ASSETS = {
   moringa: require('./assets/herbs/moringa.jpg'),
   giloy: require('./assets/herbs/giloy.jpg'),
   amla: require('./assets/herbs/amla.jpg'),
+  betel: require('./assets/herbs/betel.jpg'),
+  brahmi: require('./assets/herbs/brahmi.jpg'),
+  turmeric: require('./assets/herbs/turmeric.jpg'),
+  shatavari: require('./assets/herbs/shatavari.jpg'),
+  ginger: require('./assets/herbs/ginger.jpg'),
+  aloevera: require('./assets/herbs/aloevera.jpg'),
+  adulsa: require('./assets/herbs/adulsa.jpg'),
+  bhringraj: require('./assets/herbs/bhringraj.jpg'),
+  jamun: require('./assets/herbs/jamun.jpg'),
+  bael: require('./assets/herbs/bael.jpg'),
+  papaya: require('./assets/herbs/papaya.jpg'),
+  peepal: require('./assets/herbs/peepal.jpg'),
+  pomegranate: require('./assets/herbs/pomegranate.jpg'),
+  amruth: require('./assets/herbs/giloy.jpg'),
+  holybasilvana: require('./assets/herbs/tulsi.jpg'),
+  bringaraj: require('./assets/herbs/bhringraj.jpg'),
   'ocimum tenuiflorum': require('./assets/herbs/tulsi.jpg'),
   'azadirachta indica': require('./assets/herbs/neem.jpg'),
   'withania somnifera': require('./assets/herbs/ashwagandha.jpg'),
   'moringa oleifera': require('./assets/herbs/moringa.jpg'),
   'tinospora cordifolia': require('./assets/herbs/giloy.jpg'),
   'phyllanthus emblica': require('./assets/herbs/amla.jpg'),
+  'piper betle': require('./assets/herbs/betel.jpg'),
+  'bacopa monnieri': require('./assets/herbs/brahmi.jpg'),
+  'curcuma longa': require('./assets/herbs/turmeric.jpg'),
+  'asparagus racemosus': require('./assets/herbs/shatavari.jpg'),
+  'zingiber officinale': require('./assets/herbs/ginger.jpg'),
+  'aloe barbadensis': require('./assets/herbs/aloevera.jpg'),
+  'justicia adhatoda': require('./assets/herbs/adulsa.jpg'),
+  'eclipta prostrata': require('./assets/herbs/bhringraj.jpg'),
+  'syzygium cumini': require('./assets/herbs/jamun.jpg'),
+  'aegle marmelos': require('./assets/herbs/bael.jpg'),
+  'carica papaya': require('./assets/herbs/papaya.jpg'),
+  'ficus religiosa': require('./assets/herbs/peepal.jpg'),
+  'punica granatum': require('./assets/herbs/pomegranate.jpg'),
 };
 
 const POPULAR_HERBS = [
@@ -148,6 +177,12 @@ export default function App() {
   const [ayurvedicProfile, setAyurvedicProfile] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Dynamic AI Server Configuration State
+  const [serverUrl, setServerUrl] = useState(API_BASE_URL);
+  const [showServerModal, setShowServerModal] = useState(false);
+  const [tempServerUrl, setTempServerUrl] = useState(API_BASE_URL);
+  const [serverPingStatus, setServerPingStatus] = useState(null); // null, 'checking', 'success', 'failed'
+
   // Tabbed Ayurvedic Properties view state
   const [activeProfileTab, setActiveProfileTab] = useState('PROPERTIES'); // 'PROPERTIES', 'REMEDIES', 'SAFETY'
 
@@ -177,7 +212,7 @@ export default function App() {
     });
   }, [libraryPlants, librarySearch, lang]);
 
-  // Initial Onboarding Check: Auto-launch Tour on First Ever Run
+  // Initial Onboarding Check: Auto-launch Tour on First Ever Run & Load Settings
   useEffect(() => {
     const checkFirstRun = async () => {
       try {
@@ -185,6 +220,10 @@ export default function App() {
         if (info.exists) {
           const content = await FileSystem.readAsStringAsync(SETTINGS_FILE);
           const parsed = JSON.parse(content);
+          if (parsed && parsed.customServerUrl) {
+            setServerUrl(parsed.customServerUrl);
+            setTempServerUrl(parsed.customServerUrl);
+          }
           if (parsed && parsed.hasSeenTour) {
             return;
           }
@@ -196,6 +235,39 @@ export default function App() {
     };
     checkFirstRun();
   }, []);
+
+  const pingServer = async (testUrl) => {
+    const target = (testUrl || tempServerUrl || serverUrl).trim().replace(/\/+$/, '');
+    setServerPingStatus('checking');
+    try {
+      const res = await fetch(`${target}/health`, { method: 'GET' });
+      if (res.ok) {
+        const data = await res.json();
+        setServerPingStatus(data.status === 'healthy' ? 'success' : 'warning');
+      } else {
+        setServerPingStatus('failed');
+      }
+    } catch (e) {
+      setServerPingStatus('failed');
+    }
+  };
+
+  const saveServerUrl = async () => {
+    const clean = tempServerUrl.trim().replace(/\/+$/, '');
+    setServerUrl(clean);
+    setShowServerModal(false);
+    try {
+      let current = {};
+      const info = await FileSystem.getInfoAsync(SETTINGS_FILE);
+      if (info.exists) {
+        current = JSON.parse(await FileSystem.readAsStringAsync(SETTINGS_FILE));
+      }
+      current.customServerUrl = clean;
+      await FileSystem.writeAsStringAsync(SETTINGS_FILE, JSON.stringify(current));
+    } catch (e) {
+      console.log('Settings save error:', e);
+    }
+  };
 
   const completeTour = async () => {
     setShowTourModal(false);
@@ -364,20 +436,35 @@ export default function App() {
   const uploadAndAnalyze = async () => {
     if (!imageUri) return;
     setLoading(true);
+    const activeApi = (serverUrl || API_BASE_URL).replace(/\/+$/, '');
     try {
-      const predictRes = await FileSystem.uploadAsync(`${API_BASE_URL}/predict`, imageUri, {
+      const predictRes = await FileSystem.uploadAsync(`${activeApi}/predict`, imageUri, {
         httpMethod: 'POST', uploadType: 1, fieldName: 'file', mimeType: 'image/jpeg',
       });
       const predictData = JSON.parse(predictRes.body);
+      
+      if (predictData.status === 'out_of_domain' || predictData.status === 'rejected') {
+        setPrediction({
+          status: 'out_of_domain',
+          message: predictData.message || 'Specimen is unrecognized or non-medicinal. Please ensure a clear, well-lit botanical leaf photo.'
+        });
+        setLoading(false);
+        return;
+      }
+
       setPrediction(predictData);
 
-      const explainRes = await FileSystem.uploadAsync(`${API_BASE_URL}/explain`, imageUri, {
+      // Async Grad-CAM visual explainability fetch
+      FileSystem.uploadAsync(`${activeApi}/explain`, imageUri, {
         httpMethod: 'POST', uploadType: 1, fieldName: 'file', mimeType: 'image/jpeg',
-      });
-      const explainData = JSON.parse(explainRes.body);
-      if (explainData.heatmap_base64) {
-        setHeatmap(`data:image/jpeg;base64,${explainData.heatmap_base64}`);
-      }
+      })
+      .then(res => {
+        const explainData = JSON.parse(res.body);
+        if (explainData.heatmap_base64) {
+          setHeatmap(`data:image/jpeg;base64,${explainData.heatmap_base64}`);
+        }
+      })
+      .catch(e => console.log("Explainability notice:", e));
 
       if (predictData.status === 'success') {
         let resolved = null;
@@ -385,7 +472,7 @@ export default function App() {
         // 1. Try server database lookup by plant_id if available
         if (predictData.plant_id) {
           try {
-            const profileRes = await fetch(`${API_BASE_URL}/plant/${predictData.plant_id}`);
+            const profileRes = await fetch(`${activeApi}/plant/${predictData.plant_id}`);
             if (profileRes.ok) {
               const profileData = await profileRes.json();
               resolved = normalizePlantProfile(profileData);
@@ -410,21 +497,12 @@ export default function App() {
         setAyurvedicProfile(resolved);
       }
     } catch (error) {
-      console.log("Network unreachable, activating Offline Edge Fallback mode:", error);
-      
-      const offlineFlora = getOfflineFloraList(lang);
-      const fallbackEntry = offlineFlora[0] || { species_name: "Tulsi", botanical_name: "Ocimum tenuiflorum", common_names: "Holy Basil" };
-      const offlineProfile = getOfflinePlantById(fallbackEntry.species_name) || generateFallbackProfile(fallbackEntry.species_name, fallbackEntry.common_names);
-      
+      console.log("Network error contacting AI server:", error);
       setPrediction({
-        status: 'success',
-        prediction: fallbackEntry.species_name,
-        common_name: fallbackEntry.common_names,
-        botanical_name: fallbackEntry.botanical_name,
-        confidence: "0.9625",
-        is_offline_edge: true
+        status: 'error',
+        message: `Could not connect to the Sanjeevani AI Server at ${activeApi}.\n\n• Please verify your laptop backend is running: uvicorn src.api.main:app --host 0.0.0.0 --port 8000\n• Ensure your phone is connected to the same Wi-Fi.\n• You can update the server IP anytime in the side menu (☰ > AI Server Settings).`
       });
-      setAyurvedicProfile(offlineProfile);
+      setAyurvedicProfile(null);
     } finally {
       setLoading(false);
     }
@@ -473,7 +551,7 @@ export default function App() {
             onPress={() => setActiveProfileTab('PROPERTIES')}
             activeOpacity={0.8}
           >
-            <Text style={[styles.profileTabText, activeProfileTab === 'PROPERTIES' && styles.profileTabTextActive]}>
+            <Text style={[styles.profileTabText, activeProfileTab === 'PROPERTIES' && styles.profileTabTextActive]} numberOfLines={1}>
               {t.propTabProperties || "🌿 Properties"}
             </Text>
           </TouchableOpacity>
@@ -483,7 +561,7 @@ export default function App() {
             onPress={() => setActiveProfileTab('REMEDIES')}
             activeOpacity={0.8}
           >
-            <Text style={[styles.profileTabText, activeProfileTab === 'REMEDIES' && styles.profileTabTextActive]}>
+            <Text style={[styles.profileTabText, activeProfileTab === 'REMEDIES' && styles.profileTabTextActive]} numberOfLines={1}>
               {t.propTabRemedies || "🍵 Remedies"}
             </Text>
           </TouchableOpacity>
@@ -493,7 +571,7 @@ export default function App() {
             onPress={() => setActiveProfileTab('SAFETY')}
             activeOpacity={0.8}
           >
-            <Text style={[styles.profileTabText, activeProfileTab === 'SAFETY' && styles.profileTabTextActive]}>
+            <Text style={[styles.profileTabText, activeProfileTab === 'SAFETY' && styles.profileTabTextActive]} numberOfLines={1}>
               {t.propTabSafety || "🛡️ Safety"}
             </Text>
           </TouchableOpacity>
@@ -654,10 +732,28 @@ export default function App() {
   };
 
   const getReferenceImage = () => {
-    if (!prediction) return null;
-    return REFERENCE_IMAGES[prediction.prediction] || 
-           (ayurvedicProfile?.plant?.botanical_name && REFERENCE_IMAGES[ayurvedicProfile.plant.botanical_name]) || 
-           (ayurvedicProfile?.plant?.species_name && REFERENCE_IMAGES[ayurvedicProfile.plant.species_name]) || null;
+    if (!prediction) return HERB_ASSETS.neem;
+    const candidates = [
+      prediction.prediction,
+      prediction.common_name,
+      prediction.botanical_name,
+      ayurvedicProfile?.plant?.species_name,
+      ayurvedicProfile?.plant?.common_name,
+      ayurvedicProfile?.plant?.botanical_name,
+    ].filter(Boolean);
+
+    for (const cand of candidates) {
+      const clean = String(cand).trim().toLowerCase();
+      const noSpace = clean.replace(/[\s\-_]+/g, '');
+      if (HERB_ASSETS[clean]) return HERB_ASSETS[clean];
+      if (HERB_ASSETS[noSpace]) return HERB_ASSETS[noSpace];
+      for (const [k, v] of Object.entries(HERB_ASSETS)) {
+        if (clean.includes(k) || k.includes(clean)) return v;
+      }
+      const ext = getReferenceHerbImage(cand);
+      if (ext) return ext;
+    }
+    return HERB_ASSETS.neem;
   };
 
   return (
@@ -799,6 +895,22 @@ export default function App() {
                   </View>
                   <Text style={styles.drawerMenuChevron}>›</Text>
                 </TouchableOpacity>
+
+                {/* AI Server Gateway Connection */}
+                <TouchableOpacity 
+                  style={styles.drawerMenuItem}
+                  onPress={() => closeDrawer(() => { setTempServerUrl(serverUrl); setShowServerModal(true); })}
+                  activeOpacity={0.7}
+                >
+                  <View style={[styles.drawerMenuIconBox, { backgroundColor: '#EDE7F6' }]}>
+                    <Text style={{ fontSize: 18 }}>⚙️</Text>
+                  </View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.drawerMenuTitle}>AI Server Gateway</Text>
+                    <Text style={styles.drawerMenuSubtitle} numberOfLines={1}>{serverUrl || "Configure IP"}</Text>
+                  </View>
+                  <Text style={styles.drawerMenuChevron}>›</Text>
+                </TouchableOpacity>
               </View>
 
               <View style={styles.drawerDivider} />
@@ -883,6 +995,75 @@ export default function App() {
               </TouchableOpacity>
               <TouchableOpacity style={styles.permissionCancelBtn} onPress={() => setShowPermissionModal(false)}>
                 <Text style={styles.permissionCancelBtnText}>{t.permCancelBtn}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* AI Server Gateway Configuration Modal */}
+      <Modal visible={showServerModal} transparent={true} animationType="slide" onRequestClose={() => setShowServerModal(false)}>
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, { width: '90%', padding: 20 }]}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+              <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#1B5E20' }}>⚙️ AI Server Gateway</Text>
+              <TouchableOpacity onPress={() => setShowServerModal(false)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+                <Text style={{ fontSize: 18, color: '#666', fontWeight: 'bold' }}>✕</Text>
+              </TouchableOpacity>
+            </View>
+
+            <Text style={{ fontSize: 13, color: '#555', marginBottom: 12, lineHeight: 18 }}>
+              Configure the IP or URL of your laptop running the Sanjeevani AI FastAPI backend.
+            </Text>
+
+            <Text style={{ fontSize: 12, fontWeight: 'bold', color: '#333', marginBottom: 6 }}>Server URL / IP Address:</Text>
+            <TextInput
+              style={{
+                backgroundColor: '#F5F5F5',
+                borderWidth: 1,
+                borderColor: '#CCD',
+                borderRadius: 8,
+                padding: 10,
+                fontSize: 14,
+                color: '#222',
+                marginBottom: 12
+              }}
+              value={tempServerUrl}
+              onChangeText={setTempServerUrl}
+              placeholder="e.g. http://10.26.57.178:8000"
+              autoCapitalize="none"
+              autoCorrect={false}
+            />
+
+            {serverPingStatus === 'checking' && (
+              <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
+                <ActivityIndicator size="small" color="#0F9D58" style={{ marginRight: 8 }} />
+                <Text style={{ fontSize: 12, color: '#666' }}>Pinging AI Gateway...</Text>
+              </View>
+            )}
+            {serverPingStatus === 'success' && (
+              <View style={{ backgroundColor: '#E8F5E9', padding: 8, borderRadius: 6, marginBottom: 12 }}>
+                <Text style={{ fontSize: 12, color: '#2E7D32', fontWeight: 'bold' }}>🟢 Connected: PyTorch + INT8 Engine Online</Text>
+              </View>
+            )}
+            {serverPingStatus === 'failed' && (
+              <View style={{ backgroundColor: '#FFEBEE', padding: 8, borderRadius: 6, marginBottom: 12 }}>
+                <Text style={{ fontSize: 12, color: '#C62828', fontWeight: 'bold' }}>🔴 Unreachable: Check if server is running on laptop</Text>
+              </View>
+            )}
+
+            <View style={{ flexDirection: 'row', gap: 10, marginTop: 6 }}>
+              <TouchableOpacity
+                style={[styles.permissionCancelBtn, { flex: 1 }]}
+                onPress={() => pingServer(tempServerUrl)}
+              >
+                <Text style={styles.permissionCancelBtnText}>🔍 Test Ping</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.permissionAllowBtn, { flex: 1 }]}
+                onPress={saveServerUrl}
+              >
+                <Text style={styles.permissionAllowBtnText}>💾 Save & Apply</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -1339,14 +1520,31 @@ export default function App() {
               </View>
             )}
 
-            {/* Prediction Rejected Card */}
-            {prediction && prediction.status === 'rejected' && (
-              <View style={[styles.resultCard, { borderColor: '#F44336', borderWidth: 2 }]}>
-                <Text style={[styles.resultHeader, { color: '#D32F2F' }]}>{t.scanRejected}</Text>
-                <Text style={styles.resultText}>{prediction.message}</Text>
-                <TouchableOpacity style={styles.primaryScanBtn} onPress={resetScanState} activeOpacity={0.88}>
-                  <Text style={styles.primaryScanBtnText}>📸 {t.scanAnotherLeaf}</Text>
-                </TouchableOpacity>
+            {/* Prediction Rejected / Error / OOD Card */}
+            {prediction && (prediction.status === 'error' || prediction.status === 'rejected' || prediction.status === 'out_of_domain') && (
+              <View style={[styles.resultCard, { borderColor: prediction.status === 'error' ? '#FF9800' : '#F44336', borderWidth: 2, padding: 18 }]}>
+                <Text style={[styles.resultHeader, { color: prediction.status === 'error' ? '#E65100' : '#D32F2F', borderBottomWidth: 0, paddingBottom: 0, marginBottom: 8 }]}>
+                  {prediction.status === 'error' ? '📡 AI Gateway Server Offline' : (t.scanRejected || 'Specimen Unrecognized')}
+                </Text>
+                <Text style={[styles.resultText, { fontSize: 13.5, lineHeight: 20, color: '#444' }]}>{prediction.message}</Text>
+                <View style={{ flexDirection: 'row', gap: 10, marginTop: 14 }}>
+                  {prediction.status === 'error' && (
+                    <TouchableOpacity 
+                      style={[styles.primaryScanBtn, { flex: 1, backgroundColor: '#2E7D32', marginTop: 0 }]} 
+                      onPress={() => setShowServerModal(true)} 
+                      activeOpacity={0.88}
+                    >
+                      <Text style={styles.primaryScanBtnText}>⚙️ Set Server IP</Text>
+                    </TouchableOpacity>
+                  )}
+                  <TouchableOpacity 
+                    style={[styles.primaryScanBtn, { flex: 1, marginTop: 0 }]} 
+                    onPress={resetScanState} 
+                    activeOpacity={0.88}
+                  >
+                    <Text style={styles.primaryScanBtnText}>📸 {t.scanAnotherLeaf}</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             )}
 
@@ -1426,7 +1624,7 @@ export default function App() {
                   {/* Right: Verified Reference Herb */}
                   <View style={styles.comparisonColumn}>
                     <View style={styles.comparisonFrame}>
-                      <Image source={{ uri: getReferenceImage() }} style={styles.comparisonImage} />
+                      <Image source={getReferenceImage()} style={styles.comparisonImage} resizeMode="cover" />
                     </View>
                     <View style={styles.comparisonBadgeVerified}>
                       <Text style={styles.comparisonBadgeVerifiedText} numberOfLines={1}>
@@ -2376,15 +2574,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     backgroundColor: '#F1F8E9', 
     borderRadius: 14, 
-    padding: 4, 
+    padding: 3, 
     marginBottom: 12, 
     marginTop: 4 
   },
   profileTabBtn: { 
     flex: 1, 
     paddingVertical: 9, 
+    paddingHorizontal: 2, 
     borderRadius: 10, 
-    alignItems: 'center' 
+    alignItems: 'center',
+    justifyContent: 'center' 
   },
   profileTabBtnActive: { 
     backgroundColor: '#FFFFFF', 
@@ -2394,9 +2594,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1 
   },
   profileTabText: { 
-    fontSize: 12.5, 
+    fontSize: 12, 
     fontWeight: '600', 
-    color: '#666' 
+    color: '#666',
+    textAlign: 'center' 
   },
   profileTabTextActive: { 
     color: '#1B5E20', 
@@ -2405,9 +2606,9 @@ const styles = StyleSheet.create({
 
   // Botanical Info Card
   botanicalCard: { backgroundColor: '#F8FAF6', borderRadius: 14, padding: 14, borderWidth: 1, borderColor: '#E0EFE2', marginTop: 4, marginBottom: 6 },
-  botanicalRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 4 },
-  botanicalLabel: { fontSize: 13, fontWeight: 'bold', color: '#333' },
-  botanicalValue: { fontSize: 13, color: '#555', fontStyle: 'italic' },
+  botanicalRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 5 },
+  botanicalLabel: { fontSize: 13, fontWeight: 'bold', color: '#2E7D32', marginRight: 8 },
+  botanicalValue: { fontSize: 13, color: '#444', fontStyle: 'italic', flexShrink: 1, textAlign: 'right' },
 
   // Ayurvedic Bio-Energetics Grid
   bioEnergeticsGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 4 },

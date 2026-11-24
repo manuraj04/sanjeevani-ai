@@ -1,3 +1,49 @@
+export const BUNDLED_HERB_IMAGES = {
+  "adulsa": require('../assets/herbs/adulsa.jpg'),
+  "justicia adhatoda": require('../assets/herbs/adulsa.jpg'),
+  "aloevera": require('../assets/herbs/aloevera.jpg'),
+  "aloe vera": require('../assets/herbs/aloevera.jpg'),
+  "aloe barbadensis": require('../assets/herbs/aloevera.jpg'),
+  "amla": require('../assets/herbs/amla.jpg'),
+  "phyllanthus emblica": require('../assets/herbs/amla.jpg'),
+  "ashwagandha": require('../assets/herbs/ashwagandha.jpg'),
+  "withania somnifera": require('../assets/herbs/ashwagandha.jpg'),
+  "bael": require('../assets/herbs/bael.jpg'),
+  "aegle marmelos": require('../assets/herbs/bael.jpg'),
+  "betel": require('../assets/herbs/betel.jpg'),
+  "piper betle": require('../assets/herbs/betel.jpg'),
+  "bhringraj": require('../assets/herbs/bhringraj.jpg'),
+  "bringaraj": require('../assets/herbs/bhringraj.jpg'),
+  "eclipta prostrata": require('../assets/herbs/bhringraj.jpg'),
+  "brahmi": require('../assets/herbs/brahmi.jpg'),
+  "bacopa monnieri": require('../assets/herbs/brahmi.jpg'),
+  "giloy": require('../assets/herbs/giloy.jpg'),
+  "amruth": require('../assets/herbs/giloy.jpg'),
+  "tinospora cordifolia": require('../assets/herbs/giloy.jpg'),
+  "ginger": require('../assets/herbs/ginger.jpg'),
+  "zingiber officinale": require('../assets/herbs/ginger.jpg'),
+  "jamun": require('../assets/herbs/jamun.jpg'),
+  "syzygium cumini": require('../assets/herbs/jamun.jpg'),
+  "moringa": require('../assets/herbs/moringa.jpg'),
+  "moringa oleifera": require('../assets/herbs/moringa.jpg'),
+  "neem": require('../assets/herbs/neem.jpg'),
+  "azadirachta indica": require('../assets/herbs/neem.jpg'),
+  "papaya": require('../assets/herbs/papaya.jpg'),
+  "carica papaya": require('../assets/herbs/papaya.jpg'),
+  "peepal": require('../assets/herbs/peepal.jpg'),
+  "ficus religiosa": require('../assets/herbs/peepal.jpg'),
+  "pomegranate": require('../assets/herbs/pomegranate.jpg'),
+  "punica granatum": require('../assets/herbs/pomegranate.jpg'),
+  "shatavari": require('../assets/herbs/shatavari.jpg'),
+  "asparagus racemosus": require('../assets/herbs/shatavari.jpg'),
+  "tulsi": require('../assets/herbs/tulsi.jpg'),
+  "holybasilvana": require('../assets/herbs/tulsi.jpg'),
+  "holy basil": require('../assets/herbs/tulsi.jpg'),
+  "ocimum tenuiflorum": require('../assets/herbs/tulsi.jpg'),
+  "turmeric": require('../assets/herbs/turmeric.jpg'),
+  "curcuma longa": require('../assets/herbs/turmeric.jpg'),
+};
+
 export const REFERENCE_IMAGES = {
   // Existing 16 classes
   "Neem": "https://upload.wikimedia.org/wikipedia/commons/4/46/Azadirachta_indica_-_Neem_leaves_and_fruits.jpg",
@@ -132,3 +178,44 @@ export const REFERENCE_IMAGES = {
   "Yashad": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Zinc_bhasma_ayurveda.jpg/1200px-Zinc_bhasma_ayurveda.jpg",
   "Yashada Mineralia": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Zinc_bhasma_ayurveda.jpg/1200px-Zinc_bhasma_ayurveda.jpg"
 };
+
+/**
+ * Returns a valid React Native Image source object or bundled require ID for any plant identifier.
+ * Bundled offline assets take priority, followed by network URLs.
+ */
+export function getReferenceHerbImage(identifier) {
+  if (!identifier) return null;
+  const clean = String(identifier).trim().toLowerCase();
+  
+  // 1. Direct match in bundled assets
+  if (BUNDLED_HERB_IMAGES[clean]) {
+    return BUNDLED_HERB_IMAGES[clean];
+  }
+  
+  // 2. No-spaces match (e.g., 'aloevera' -> 'aloe vera')
+  const noSpace = clean.replace(/[\s\-_]+/g, '');
+  if (BUNDLED_HERB_IMAGES[noSpace]) {
+    return BUNDLED_HERB_IMAGES[noSpace];
+  }
+
+  // 3. Substring match in bundled assets
+  for (const [key, asset] of Object.entries(BUNDLED_HERB_IMAGES)) {
+    if (clean.includes(key) || key.includes(clean)) {
+      return asset;
+    }
+  }
+
+  // 4. Fallback to external reference URLs
+  for (const [key, url] of Object.entries(REFERENCE_IMAGES)) {
+    const k = key.toLowerCase();
+    if (k === clean || k === noSpace || clean.includes(k)) {
+      return { 
+        uri: url, 
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' } 
+      };
+    }
+  }
+
+  // 5. Default fallback to neem asset
+  return BUNDLED_HERB_IMAGES['neem'];
+}

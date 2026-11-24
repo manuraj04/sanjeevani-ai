@@ -35,7 +35,7 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "apiUrl": "",
+      "apiUrl": "http://10.26.57.178:8000",
       "eas": {
         "projectId": "59d68979-4113-493f-a1a8-cc409abe207a"
       }
