@@ -1,0 +1,113 @@
+{
+  "database": {
+    "plant_count": 63,
+    "profile_count": 63,
+    "uses_count": 129,
+    "phyto_count": 76,
+    "contra_count": 63,
+    "sample_plants": [
+      [
+        1,
+        "Azadirachta indica",
+        "Azadirachta indica A. Juss.",
+        "Meliaceae"
+      ],
+      [
+        2,
+        "Ocimum tenuiflorum",
+        "Ocimum tenuiflorum L.",
+        "Lamiaceae"
+      ],
+      [
+        3,
+        "Withania somnifera",
+        "Withania somnifera (L.) Dunal",
+        "Solanaceae"
+      ],
+      [
+        4,
+        "Bacopa monnieri",
+        "Bacopa monnieri (L.) Wettst.",
+        "Plantaginaceae"
+      ],
+      [
+        5,
+        "Aloe barbadensis",
+        "Aloe vera (L.) Burm.f.",
+        "Asphodelaceae"
+      ]
+    ]
+  },
+  "catalog": {
+    "catalog_count": 63,
+    "sample_entries": [
+      "Azadirachta indica",
+      "Ocimum tenuiflorum",
+      "Withania somnifera",
+      "Bacopa monnieri",
+      "Aloe barbadensis"
+    ]
+  },
+  "evaluations": [
+    {
+      "target": "Tulsi",
+      "folder": "Tulsi",
+      "image_file": "inat_105659712.jpg",
+      "prediction": "Class_60",
+      "confidence": 0.8943821787834167,
+      "is_ood": null,
+      "leaf_img_rel": "presentation_assets/tulsi_test_leaf.jpg",
+      "heatmap_rel": "presentation_assets/tulsi_gradcam_heatmap.jpg"
+    },
+    {
+      "target": "Neem",
+      "folder": "Neem",
+      "image_file": "inat_101080370.jpg",
+      "prediction": "Class_47",
+      "confidence": 0.9799550175666809,
+      "is_ood": null,
+      "leaf_img_rel": "presentation_assets/neem_test_leaf.jpg",
+      "heatmap_rel": "presentation_assets/neem_gradcam_heatmap.jpg"
+    },
+    {
+      "target": "Ashwagandha",
+      "folder": "Ashwagandha",
+      "image_file": "inat_102462752.jpg",
+      "prediction": "Class_28",
+      "confidence": 0.20202229917049408,
+      "is_ood": null,
+      "leaf_img_rel": "presentation_assets/ashwagandha_test_leaf.jpg",
+      "heatmap_rel": "presentation_assets/ashwagandha_gradcam_heatmap.jpg"
+    },
+    {
+      "target": "Amla",
+      "folder": "Amla",
+      "image_file": "inat_102525468.jpg",
+      "prediction": "Class_3",
+      "confidence": 0.9825912117958069,
+      "is_ood": null,
+      "leaf_img_rel": "presentation_assets/amla_test_leaf.jpg",
+      "heatmap_rel": "presentation_assets/amla_gradcam_heatmap.jpg"
+    },
+    {
+      "target": "Giloy",
+      "folder": "Amruth",
+      "image_file": "inat_154541384.jpg",
+      "prediction": "Class_4",
+      "confidence": 0.9242339730262756,
+      "is_ood": null,
+      "leaf_img_rel": "presentation_assets/giloy_test_leaf.jpg",
+      "heatmap_rel": "presentation_assets/giloy_gradcam_heatmap.jpg"
+    },
+    {
+      "target": "Brahmi",
+      "folder": "Brahmi",
+      "image_file": "inat_100051135.jpg",
+      "prediction": "Class_14",
+      "confidence": 0.8953142166137695,
+      "is_ood": null,
+      "leaf_img_rel": "presentation_assets/brahmi_test_leaf.jpg",
+      "heatmap_rel": "presentation_assets/brahmi_gradcam_heatmap.jpg"
+    }
+  ]
+}
