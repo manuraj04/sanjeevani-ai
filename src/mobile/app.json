@@ -2,7 +2,7 @@
   "expo": {
     "name": "Sanjeevani AI",
     "slug": "sanjeevani-scan-ai",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,7 +18,7 @@
     },
     "android": {
       "package": "com.sanjeevani.scanai",
-      "versionCode": 2,
+      "versionCode": 3,
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.READ_EXTERNAL_STORAGE",
@@ -35,7 +35,7 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "apiUrl": "http://10.26.57.178:8000",
+      "apiUrl": "https://sanjeevani-scan-ai.onrender.com",
       "eas": {
         "projectId": "59d68979-4113-493f-a1a8-cc409abe207a"
       }
