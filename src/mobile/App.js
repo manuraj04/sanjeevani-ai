@@ -16,6 +16,10 @@ import {
   generateFallbackProfile,
   searchOfflinePlants
 } from './services/plantService';
+import {
+  getOfflineVisionModel,
+  runOfflineTFLiteInference
+} from './services/offlineVision';
 
 const configuredApiUrl = Constants.expoConfig?.extra?.apiUrl;
 const hostUri = Constants.expoConfig?.hostUri || Constants.manifest2?.extra?.expoGo?.debuggerHost || '';
@@ -234,6 +238,12 @@ export default function App() {
       setShowTourModal(true);
     };
     checkFirstRun();
+    // Pre-warm on-device TFLite model & wake up cloud server quietly on app open
+    getOfflineVisionModel().catch(() => {});
+    const wakeUrl = (API_BASE_URL || '').replace(/\/+$/, '');
+    if (wakeUrl && !wakeUrl.includes('10.0.2.2')) {
+      fetch(`${wakeUrl}/health`).catch(() => {});
+    }
   }, []);
 
   const pingServer = async (testUrl) => {
@@ -437,12 +447,26 @@ export default function App() {
     if (!imageUri) return;
     setLoading(true);
     const activeApi = (serverUrl || API_BASE_URL).replace(/\/+$/, '');
+    const isUsableRemote = activeApi && !activeApi.includes('10.0.2.2');
+
     try {
-      const predictRes = await FileSystem.uploadAsync(`${activeApi}/predict`, imageUri, {
+      if (!isUsableRemote) {
+        throw new Error('No public remote API configured');
+      }
+
+      const uploadPromise = FileSystem.uploadAsync(`${activeApi}/predict`, imageUri, {
         httpMethod: 'POST', uploadType: 1, fieldName: 'file', mimeType: 'image/jpeg',
       });
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Cloud server timeout')), 12000)
+      );
+      const predictRes = await Promise.race([uploadPromise, timeoutPromise]);
+
+      if (!predictRes || predictRes.status < 200 || predictRes.status >= 300) {
+        throw new Error(`HTTP ${predictRes?.status || 'error'}`);
+      }
       const predictData = JSON.parse(predictRes.body);
-      
+
       if (predictData.status === 'out_of_domain' || predictData.status === 'rejected') {
         setPrediction({
           status: 'out_of_domain',
@@ -459,9 +483,11 @@ export default function App() {
         httpMethod: 'POST', uploadType: 1, fieldName: 'file', mimeType: 'image/jpeg',
       })
       .then(res => {
-        const explainData = JSON.parse(res.body);
-        if (explainData.heatmap_base64) {
-          setHeatmap(`data:image/jpeg;base64,${explainData.heatmap_base64}`);
+        if (res.status >= 200 && res.status < 300) {
+          const explainData = JSON.parse(res.body);
+          if (explainData.heatmap_base64) {
+            setHeatmap(`data:image/jpeg;base64,${explainData.heatmap_base64}`);
+          }
         }
       })
       .catch(e => console.log("Explainability notice:", e));
@@ -496,13 +522,30 @@ export default function App() {
 
         setAyurvedicProfile(resolved);
       }
-    } catch (error) {
-      console.log("Network error contacting AI server:", error);
-      setPrediction({
-        status: 'error',
-        message: `Could not connect to the Sanjeevani AI Server at ${activeApi}.\n\n• Please verify your laptop backend is running: uvicorn src.api.main:app --host 0.0.0.0 --port 8000\n• Ensure your phone is connected to the same Wi-Fi.\n• You can update the server IP anytime in the side menu (☰ > AI Server Settings).`
-      });
-      setAyurvedicProfile(null);
+    } catch (networkErr) {
+      console.log("Cloud unreachable or offline, executing On-Device TFLite Edge AI:", networkErr);
+      try {
+        const offlinePred = await runOfflineTFLiteInference(imageUri, 0.20);
+        if (offlinePred.status === 'rejected' || offlinePred.status === 'out_of_domain') {
+          setPrediction(offlinePred);
+          setAyurvedicProfile(null);
+          return;
+        }
+        setPrediction(offlinePred);
+        const offlineProfile =
+          getOfflinePlantById(offlinePred.prediction) ||
+          getOfflinePlantById(offlinePred.botanical_name) ||
+          getOfflinePlantById(offlinePred.common_name) ||
+          generateFallbackProfile(offlinePred.prediction, offlinePred.common_name);
+        setAyurvedicProfile(offlineProfile);
+      } catch (tfliteErr) {
+        console.log("Offline TFLite fallback notice:", tfliteErr);
+        setPrediction({
+          status: 'error',
+          message: `Cloud AI server (${activeApi}) is unreachable and on-device TFLite runtime failed (${tfliteErr.message}). Connect to internet or reinstall the production APK.`
+        });
+        setAyurvedicProfile(null);
+      }
     } finally {
       setLoading(false);
     }
@@ -511,8 +554,12 @@ export default function App() {
   const handleSearch = async (q = searchQuery) => {
     if (!q || q.length < 2) return;
     setSearchLoading(true);
+    const activeApi = (serverUrl || API_BASE_URL).replace(/\/+$/, '');
     try {
-      const res = await fetch(`${API_BASE_URL}/search?query=${encodeURIComponent(q)}`);
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(`${activeApi}/search?query=${encodeURIComponent(q)}`, { signal: controller.signal });
+      clearTimeout(timer);
       if (res.ok) {
         const data = await res.json();
         if (data.results && data.results.length > 0) {
@@ -522,7 +569,7 @@ export default function App() {
         }
       }
     } catch (error) {
-      // Offline fallback
+      // Offline fallback below
     } finally {
       setSearchLoading(false);
     }
@@ -1557,7 +1604,7 @@ export default function App() {
                       {getLocalizedPlantName(prediction.prediction, lang)}
                     </Text>
                     <Text style={styles.identifiedBotanicalName} numberOfLines={1}>
-                      {prediction.botanical_name || prediction.prediction}
+                      {ayurvedicProfile?.plant?.botanical_name || prediction.botanical_name || prediction.prediction}
                     </Text>
                     {/* Vernacular / Regional Names */}
                     {getVernacularNamesSummary(ayurvedicProfile || prediction.prediction, lang) ? (
@@ -1581,11 +1628,11 @@ export default function App() {
                   <TouchableOpacity style={styles.scanAnotherPill} onPress={resetScanState} activeOpacity={0.8}>
                     <Text style={styles.scanAnotherPillText}>📸 {t.scanAnotherLeaf}</Text>
                   </TouchableOpacity>
-                  {prediction.is_offline_edge && (
-                    <View style={styles.offlineStatusBadge}>
-                      <Text style={styles.offlineStatusText}>⚡ {t.featureOffline || "100% Offline"}</Text>
-                    </View>
-                  )}
+                  <View style={[styles.offlineStatusBadge, !prediction.is_offline_edge && { backgroundColor: '#E3F2FD', borderColor: '#90CAF9' }]}>
+                    <Text style={[styles.offlineStatusText, !prediction.is_offline_edge && { color: '#1565C0' }]}>
+                      {prediction.is_offline_edge ? `⚡ ${t.featureOffline || "100% Offline AI"}` : "🌐 Live Cloud AI"}
+                    </Text>
+                  </View>
                 </View>
               </View>
             )}

@@ -23,9 +23,13 @@ data/processed/val/
 data/processed/test/
 data/processed/saved_model/
 data/processed/saved_model_static/
+data/processed/saved_model_dual/
+data/processed/*baseline*.pth
 *.pth
-!data/processed/best_model_final.pth
 *.onnx
+*.tflite
+!src/api/sanjeevani_cloud.tflite
+!src/mobile/assets/sanjeevani_quantized.tflite
 
 # Mobile Node Modules & Builds
 src/mobile/node_modules/

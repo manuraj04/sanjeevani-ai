@@ -10,7 +10,8 @@ Dockerfile
 render.yaml
 *.pdf
 *.pth
-*.tflite
+data/**/*.tflite
+!src/mobile/assets/sanjeevani_quantized.tflite
 *.onnx
 *.db
 *.zip

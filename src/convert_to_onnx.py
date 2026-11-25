@@ -12,7 +12,7 @@ def get_model(num_classes):
     model.classifier = nn.Sequential(
         nn.Dropout(0.4), 
         nn.Linear(in_features, 512), 
-        nn.SiLU(), 
+        nn.GELU(approximate='tanh'), 
         nn.Dropout(0.3), 
         nn.Linear(512, num_classes)
     )

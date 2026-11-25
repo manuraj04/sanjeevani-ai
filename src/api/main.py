@@ -6,14 +6,24 @@ import tempfile
 import json
 from pydantic import BaseModel
 
-# Import our custom modules
+# Import our custom modules cleanly, selecting PyTorch when installed locally or LiteRT (<110 MB RAM) in slim cloud containers
 import sys
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, project_root)
 
-from src.inference import SanjeevaniClassifier
-from src.api.explainability import GradCamGenerator
-from src.api.semantic_search import SemanticSearchEngine
+USE_LITE_RUNTIME = os.environ.get("SANJEEVANI_RUNTIME", "").lower() == "lite"
+if not USE_LITE_RUNTIME:
+    try:
+        from src.inference import SanjeevaniClassifier
+        from src.api.explainability import GradCamGenerator
+        from src.api.semantic_search import SemanticSearchEngine
+        TORCH_STACK_AVAILABLE = True
+    except ImportError:
+        TORCH_STACK_AVAILABLE = False
+else:
+    TORCH_STACK_AVAILABLE = False
+
+from src.api.lite_engine import LiteClassifier, LiteGradCamGenerator, LiteSymptomSearch
 
 app = FastAPI(title="Sanjeevani Scan AI API", version="1.0.0")
 
@@ -43,20 +53,41 @@ grad_cam = None
 search_engine = None
 db_path = os.path.join(project_root, "data", "processed", "sanjeevani_kb.db")
 model_path = os.path.join(project_root, "data", "processed", "best_model_final.pth")
+lite_model_path = os.path.join(os.path.dirname(__file__), "sanjeevani_cloud.tflite")
+head_weights_path = os.path.join(os.path.dirname(__file__), "classifier_head.npz")
+class_names_path = os.path.join(os.path.dirname(__file__), "class_names.json")
+CLASS_NAMES = []
 
 @app.on_event("startup")
 async def startup_event():
-    global classifier, grad_cam, search_engine
+    global classifier, grad_cam, search_engine, CLASS_NAMES
     print("Starting up Sanjeevani API...")
     
-    # We initialize the classifier with our OOD logic parameters
-    classifier = SanjeevaniClassifier(model_path=model_path, num_classes=66, confidence_threshold=0.20)
-    
-    # Initialize Grad-CAM with the loaded model
-    grad_cam = GradCamGenerator(model=classifier.model)
-    
-    # Initialize Semantic Search Engine
-    search_engine = SemanticSearchEngine(db_path)
+    if os.path.exists(class_names_path):
+        with open(class_names_path, "r", encoding="utf-8") as f:
+            CLASS_NAMES = json.load(f)
+    elif os.path.exists(os.path.join(project_root, "data", "processed", "test")):
+        CLASS_NAMES = sorted(os.listdir(os.path.join(project_root, "data", "processed", "test")))
+
+    if TORCH_STACK_AVAILABLE and os.path.exists(model_path):
+        print("Booting full PyTorch + Grad-CAM + MiniLM engine...")
+        classifier = SanjeevaniClassifier(
+            model_path=model_path,
+            num_classes=len(CLASS_NAMES) or 66,
+            confidence_threshold=0.20,
+            class_names_path=class_names_path
+        )
+        grad_cam = GradCamGenerator(model=classifier.model)
+        search_engine = SemanticSearchEngine(db_path)
+    else:
+        print("Booting ultra-slim LiteRT Cloud Engine (<120 MB RAM)...")
+        classifier = LiteClassifier(
+            model_path=lite_model_path,
+            class_names_path=class_names_path,
+            confidence_threshold=0.20
+        )
+        grad_cam = LiteGradCamGenerator(classifier, head_weights_path)
+        search_engine = LiteSymptomSearch(db_path)
 
 def get_db():
     conn = sqlite3.connect(db_path, check_same_thread=False)
@@ -194,9 +225,7 @@ async def predict_image(file: UploadFile = File(...)):
         temp_path = temp_file.name
 
     try:
-        # Load class names dynamically from the test directory structure
-        class_names = sorted(os.listdir(os.path.join(project_root, "data", "processed", "test")))
-        result = classifier.predict(temp_path, class_names=class_names)
+        result = classifier.predict(temp_path, class_names=CLASS_NAMES or classifier.class_names)
         
         if result.get("status") == "success":
             predicted_class = result["prediction"]

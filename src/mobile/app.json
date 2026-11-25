@@ -41,7 +41,15 @@
       }
     },
     "plugins": [
-      "expo-status-bar"
+      "expo-status-bar",
+      "react-native-fast-tflite",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Sanjeevani AI accesses your photo library to analyze leaf photographs.",
+          "cameraPermission": "Sanjeevani AI uses your camera to scan live medicinal leaves."
+        }
+      ]
     ]
   }
 }

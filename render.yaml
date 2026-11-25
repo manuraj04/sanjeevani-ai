@@ -1,10 +1,12 @@
 services:
   - type: web
-    name: sanjeevani-api
+    name: sanjeevani-scan-ai
     runtime: docker
     dockerfilePath: ./Dockerfile
-    plan: standard
+    plan: free
+    healthCheckPath: /health
     envVars:
+      - key: SANJEEVANI_RUNTIME
+        value: lite
       - key: PORT
         value: 8000
-
